@@ -1,0 +1,12 @@
+\contentsline {chapter}{\numberline {Acknowledgments\hspace {-96pt}}}{iv}
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {section}{\numberline {1.1}Preparing your dissertation}{1}
+\contentsline {subsection}{\numberline {1.1.1}Paper}{1}
+\contentsline {subsection}{\numberline {1.1.2}Font and margins}{1}
+\contentsline {section}{\numberline {1.2}Title Page}{2}
+\contentsline {subsection}{\numberline {1.2.1}References}{2}
+\contentsline {chapter}{\numberline {2}Background}{3}
+\contentsline {section}{\numberline {2.1}Introduction}{3}
+\contentsline {subsection}{\numberline {2.1.1}Interpolation}{4}
+\contentsline {chapter}{\numberline {A}The first appendix}{6}
+\contentsline {chapter}{\numberline {Bibliography\hspace {-96pt}}}{7}
