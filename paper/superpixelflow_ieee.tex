@@ -1,0 +1,107 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+%\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out
+                                                          % if you need a4paper
+\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4
+                                                          % paper
+
+\IEEEoverridecommandlockouts                              % This command is only
+                                                          % needed if you want to
+                                                          % use the \thanks command
+\usepackage{epsf,graphicx}
+\usepackage{latexsym,amssymb}
+\usepackage{setspace,cite}
+
+\overrideIEEEmargins
+% See the \addtolength command later in the file to balance the column lengths
+% on the last page of the document
+
+% The following packages can be found on http:\\www.ctan.org
+%\usepackage{graphics} % for pdf, bitmapped graphics files
+%\usepackage{epsfig} % for postscript graphics files
+%\usepackage{mathptmx} % assumes new font selection scheme installed
+%\usepackage{times} % assumes new font selection scheme installed
+%\usepackage{amsmath} % assumes amsmath package installed
+%\usepackage{amssymb}  % assumes amsmath package installed
+
+\title{\LARGE \bf
+Superpixel flow
+}
+
+\author{Juan Perez Rua% <-this % stops a space
+\thanks{This work was supported by Technicolor SA}% <-this % stops a space
+\thanks{Juan Perez Rua  is with Technicolor R\&D and the University of Burgundy,
+        {\tt\small juanmanuel.perezrua@technicolor.com}}%
+}
+
+
+\begin{document}
+
+
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{abstract}
+\input{introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{core}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\input{conclusions}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{thebibliography}{99}
+
+\bibitem{c1}
+J. Malik and X. Ren, Learning a classification model for segmentation, {\it Computer Vision, International Conference}, 2003.
+
+\bibitem{c2}
+S. Boltz; F. Nielsen and S. Soatto, Earth mover distance on superpixels{\it International Conference on Image Processing}, 2010.
+
+\bibitem{c3}
+E. Boros; P. Hammer and G. Tavares, Preprocessing of unconstrained quadratic binary optimization {\it RUTCOR}, 2010
+
+\bibitem{c4}
+E. Boros and P. Hammer, Pseudo-boolean optimization{\it Discrete applied Mathematics.}, 2002
+
+\bibitem{c5}
+B. Horn and B. Schunck, Determining Optical Flow{\it Artificial Intelligence}, 1981
+
+\bibitem{c6}
+H. Ishikawa and P. Bouthemy, Multimodal estimation of discontinous optical flow using Markov random fields{\it TPAMI.}, 1993
+
+\bibitem{c7}
+V. Lempitsky, S. Roth and C. Rother, Fusion Flow: Discrete-Continuos optimization for optical flow estimation{\it Computer Vision and Pattern Recognition}, 2008
+
+\bibitem{c8}
+M. Reso and J. Jachalsky, Temporally Consistent Superpixels{\it International Conference Computer Vision.}, 2011
+
+\bibitem{c9}
+R. Achanta; A. Shaji; K. Smith; Aurelien Lucchi; P. Fua and S. Susstrunk SLIC Superpixels compared to state of the art superpixel methods{\it Discrete applied Mathematics.}, 2002
+
+\bibitem{c10}
+F. Perbet and A. Maki, Homogeneus superpixels from random walks{\it MVA.}, 2011
+
+\bibitem{c11}
+C. Xu and J.J. Corso. Evaluation of super-voxel methods for early video proccesing. {\it Computer Vision and Pattern Recognition}. 2012.
+
+\bibitem{c12}
+A. Shekhovtsov, I. Kovtun and V. Hlavac. Efficient MRF deformation model for non-rigid image matching. {\it Computer Vision and Pattern Recognition}. 2007.
+
+\bibitem{c13}
+J. Sun, N.N Shen and H.Y. Shum. Stereo matching using propagation belief. {\it TPAMI}. 2003.
+
+\bibitem{c14}
+C. Rother, V. Kolmogorov and A. Blake. Grabcut: Interactive foreground extraction using iterated graph cuts. {\it SIGGRAPH}. 2004.
+
+\bibitem{c15}
+L. Yang, Y. Guo, X. Wu and X. Wang. A new video segmentation approach: Grabcut in local window. {\it Soft Computing and Pattern Recognition}. 2011.
+
+\end{thebibliography}
+
+\end{document}

@@ -1,0 +1,44 @@
+\section{INTRODUCTION}
+\label{sec:introduction}
+For some kind of video sequences and computer vision
+applications the video consistency is not well preserved (I.e
+long term tracking, moving camera videos, etc.). Usually,
+the superpixel labelling loses coherency between frames, 
+even when computed as supervoxels. 
+This means superpixel matching techniques offer some interest and can still be
+explored. Some work have been done towards a
+superpixel based image comparison using the Earth
+Mover’s Distance, by taking super pixels as bins of a
+global histogram \cite{c2}. The label propagation or superpixel flow can be
+achieved with this technique by selecting the superpixel in the second frame that maximize the flow
+from each superpixel in the first frame.
+However, we look at the problem of superpixel
+propagation between a pair of frames, in terms of the
+indexes of the already computed superpixelization in
+both of them. \\
+By taking into account superpixels computed separately in images we can open the advantages of
+streaming like approaches, so the video process can be performed by processing only two frames at a time, 
+saving memory and moving towards a more time friendly approach. This propagation means finding
+the superpixel labels in the second frame that
+correspond to a given label in the first frame. This
+matching, however, has to comply with a set of
+constraints. Firstly, two correspondent superpixels
+should be similar in terms of some appearance
+feature, which most likely depends on the way the
+superpixelization was performed (color, texture,
+shape). Also, the superpixel propagation should
+maintain certain global homogeneity (at least for
+superpixels that belong to the same object). This is
+because the superpixel propagation or matching is
+not completely a one-to-one combinatorial problem,
+but more a “superpixel flow”. In this sense, it seems
+natural that the problem of super-pixel propagation
+could be solved with a discrete energy minimization
+procedure. If the size homogeneity of the superpixels is maintained, 
+it actually seems to share some of the properties of the
+optical flow problem, with the difference that the
+smoothness is usually a very strong constraint for the
+last one. The strength of this smoothness prior relies
+not only in the nature of the problem, but also
+because it gives better cues towards an easy-to-
+minimize global approach.
