@@ -1,9 +1,25 @@
 \section{INTRODUCTION}
 \label{sec:introduction}
+Superpixels and over segmentation techniques
+became a widely used pre-processing stage for a
+large number of machine vision applications, after the
+original concept was introduced \cite{c1}. Superpixels are
+traditionally used as performance booster for several
+other techniques. However, it is still mostly related to
+single frame processing \cite{c1}\cite{c10}\cite{c11}. In the search for
+consistency in superpixel labeling through video,
+some authors have proposed different techniques,
+which go from simple extension to supervoxels\cite{c9}\cite{c11},
+to more complicated approaches \cite{c8}. These
+approaches, nonetheless, usually require a global
+processing and knowledge of all (or several of) the
+video frames beforehand. One of the contributions of this work is a superpixel
+matching technique which assumes a flowlike
+behavior in the image sequences (natural video), and
+propose an application for improving object segmentation in videos.
+
 For some kind of video sequences and computer vision
-applications the video consistency is not well preserved (I.e
-long term tracking, moving camera videos, etc.). Usually,
-the superpixel labelling loses coherency between frames, 
+applications the superpixel labelling usually loses coherency between frames, 
 even when computed as supervoxels. 
 This means superpixel matching techniques offer some interest and can still be
 explored. Some work have been done towards a

@@ -8,7 +8,7 @@ even when computed as supervoxels.
 This means superpixel matching techniques offer some interest and can still be
 explored. Some work have been done towards a
 superpixel based image comparison using the Earth
-Mover’s Distance, by taking super pixels as bins of a
+Mover's Distance, by taking super pixels as bins of a
 global histogram \cite{c2}. The label propagation or superpixel flow can be
 achieved with this technique by selecting the superpixel in the second frame that maximize the flow
 from each superpixel in the first frame.
@@ -32,9 +32,9 @@ superpixels that belong to the same object). This is
 because the superpixel propagation or matching is
 not completely a one-to-one combinatorial problem,
 but more a “superpixel flow”. In this sense, it seems
-natural that the problem of super-pixel propagation
+natural that the problem of superpixel propagation
 could be solved with a discrete energy minimization
-procedure. If the size homogeneity of the superpixels is maintained, 
+procedure. If the size compactness of the superpixels is maintained, 
 it actually seems to share some of the properties of the
 optical flow problem, with the difference that the
 smoothness is usually a very strong constraint for the

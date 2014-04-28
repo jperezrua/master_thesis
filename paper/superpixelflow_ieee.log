@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.18)  23 APR 2014 23:32
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.18)  28 APR 2014 23:51
 entering extended mode
  %&-line parsing enabled.
 **superpixelflow_ieee.tex
@@ -168,18 +168,18 @@ Package: cite 2009/08/29  v 5.2
 (./superpixelflow_ieee.aux)
 \openout1 = `superpixelflow_ieee.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
 
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -194,26 +194,40 @@ LaTeX Font Info:    ... okay on input line 40.
 \MPnumerator=\count96
 \everyMPtoPDFconversion=\toks18
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 44.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 39.
  (/usr/share/texmf-texlive/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 44.
+LaTeX Font Info:    Try loading font information for U+msa on input line 39.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 44.
+LaTeX Font Info:    Try loading font information for U+msb on input line 39.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 44.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 39.
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) (./abstract.tex)
-(./introduction.tex
+)
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+[][][]\OT1/ptm/m/n/8 Juan Manuel Perez Rua is with Tech-ni-color R&D,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+[][][]\OT1/ptm/m/n/8 Tomas Criv-elli is with Tech-ni-color R&D,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+[][][]\OT1/ptm/m/n/8 Patrick Perez is with Tech-ni-color R&D,
+ []
+
+(./abstract.tex) (./introduction.tex
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ú in font ptmr7t!
@@ -228,12 +242,11 @@ File: images/segmentation.png Graphic file (type png)
 map}
 
 
- <./images/segmentation.png (PNG copy)>]
-<images/matches.png, id=20, 237.88875pt x 364.36125pt>
+] <images/matches.png, id=16, 237.88875pt x 364.36125pt>
 File: images/matches.png Graphic file (type png)
 
-<use images/matches.png>
-<images/matches_snowshoes.png, id=22, 317.185pt x 165.61874pt>
+<use images/matches.png> [2 <./images/segmentation.png (PNG copy)>]
+<images/matches_snowshoes.png, id=25, 317.185pt x 165.61874pt>
 File: images/matches_snowshoes.png Graphic file (type png)
 
 <use images/matches_snowshoes.png>
@@ -256,7 +269,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 189--205
 
  []
 
-[2]
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
@@ -266,7 +278,7 @@ Missing character: There is no ô in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
- <images/Sequence2.png, id=26, 579.66562pt x 1151.80313pt>
+<images/Sequence2.png, id=26, 579.66562pt x 1151.80313pt>
 File: images/Sequence2.png Graphic file (type png)
 
 <use images/Sequence2.png>
@@ -317,9 +329,9 @@ Missing character: There is no ú in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
- [3 <./images/matches.png> <./images/matches_snowshoes.png> <./images/Sequence2
-.png>]) (./conclusions.tex)
-Underfull \hbox (badness 5231) in paragraph at lines 82--83
+) (./conclusions.tex) [3 <./images/matches.png> <./images/matches_snowshoes.png
+>]
+Underfull \hbox (badness 5231) in paragraph at lines 77--78
 []\OT1/ptm/m/n/8 M. Reso and J. Jachal-sky, Tem-po-rally Con-sis-tent Su-per-pi
 x-
  []
@@ -335,29 +347,30 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[4 <./images/Compare.png>] (./superpixelflow_ieee.aux) ) 
+[4 <./images/Sequence2.png> <./images/Compare.png>] (./superpixelflow_ieee.aux)
+ ) 
 Here is how much of TeX's memory you used:
  2096 strings out of 495061
  29982 string characters out of 1182620
- 85215 words of memory out of 3000000
+ 83450 words of memory out of 3000000
  5248 multiletter control sequences out of 15000+50000
  40739 words of font info for 92 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  26i,8n,24p,366b,283s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texli
-ve/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/ams
-fonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cm
-mi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi5.pfb></u
-sr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-texlive/fonts/type1/pu
-blic/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.p
-fb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/tex
-mf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/typ
-e1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a
-.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on superpixelflow_ieee.pdf (4 pages, 5777260 bytes).
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/u
+crr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/shar
+e/texmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fon
+ts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/u
+tmri8a.pfb>
+Output written on superpixelflow_ieee.pdf (4 pages, 5777988 bytes).
 PDF statistics:
  82 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
