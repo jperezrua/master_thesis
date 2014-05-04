@@ -1,9 +1,55 @@
-\section{INTRODUCTION}
+\section{Introduction}
 \label{sec:introduction}
+
+Object tracking and optical flow are two of the main components in the
+Computer Vision toolbox, and have been focus of great research efforts, 
+leading to significant progress in the last years \cite{c16}\cite{c17}. 
+The object tracking problem consist on estimating the 
+position of the target in future frames, given an initialization. In the
+other hand, the optical flow problem consist on finding a motion vector 
+for each pixel of interest in the initial image. Even though for several
+applications a full motion-field is needed, other applications like
+human-computer interaction, object editing in video or structure-from-motion,
+may only focus on an interest object and, thus, only motion vectors within its 
+space may be of interest. 
+In such scenarions combining optical flow and object tracking in a unified 
+framework would become useful and the precision of the object motion description 
+could be enhanced.
+
+Among the state of the art segmentation methods for objects in video
+sequences, point trajectories based ones stand for its performance and 
+reliability, even when only sparse trajectories are known because of
+computational reasons. In the other hand, for the problem of extracting out a 
+preselected object in still frames, max-flow min-cut based approaches 
+have demostrated to be a powerful tool. We propose to mix these two 
+ideas for reliable object segmentation through video. Moreover, in this paper 
+we introduce the superpixel flow method for tracking of background regions, 
+rather than sparse points. We show how this extra information 
+can be used to expand the max-flow min-cut techniques for an 
+efficient foregorund-background segmentation. Experiments on 
+several video sequences demostrate the characteristics of the proposed 
+method.
+ 
+Superpixels and over segmentation techniques
+became a widely used pre-processing stage for a
+large number of machine vision applications, after the
+original concept was introduced \cite{c1}. Superpixels are
+traditionally used as performance booster for several
+other techniques. However, it is still mostly related to
+single frame processing \cite{c1}\cite{c10}\cite{c11}. In the search for
+consistency in superpixel labeling through video,
+some authors have proposed different techniques,
+which go from simple extension to supervoxels\cite{c9}\cite{c11},
+to more complicated approaches \cite{c8}. These
+approaches, nonetheless, usually require a global
+processing and knowledge of all (or several of) the
+video frames beforehand. One of the contributions of this work is a superpixel
+matching technique which assumes a flowlike
+behavior in the image sequences (natural video), and
+propose an application for improving object segmentation in videos.
+
 For some kind of video sequences and computer vision
-applications the video consistency is not well preserved (I.e
-long term tracking, moving camera videos, etc.). Usually,
-the superpixel labelling loses coherency between frames, 
+applications the superpixel labelling usually loses coherency between frames, 
 even when computed as supervoxels. 
 This means superpixel matching techniques offer some interest and can still be
 explored. Some work have been done towards a

@@ -1,5 +1,36 @@
-\section{INTRODUCTION}
+\section{Introduction}
 \label{sec:introduction}
+
+Object tracking and optical flow are two of the main components in the
+Computer Vision toolbox, and have been focus of great research efforts, 
+leading to significant progress in the last years \cite{c16}\cite{c17}. 
+The object tracking problem consist on estimating the 
+position of the target in future frames, given an initialization. In the
+other hand, the optical flow problem consist on finding a motion vector 
+for each pixel of interest in the initial image. Even though for several
+applications a full motion-field is needed, other applications like
+human-computer interaction, object editing in video or structure-from-motion,
+may only focus on an interest object and, thus, only motion vectors within its 
+space may be of interest. 
+In such scenarions combining optical flow and object tracking in a unified 
+framework would become useful and the precision of the object motion description 
+could be enhanced. For instance, even with modern optical flow approaches, 
+the long motion problem remains a challenge. 
+However, the problem is more bearable for object tracking techniques. 
+
+Among the state of the art segmentation methods for objects in video
+sequences, point trajectories based ones stand for its performance and 
+reliability, even when only sparse trajectories are known because of
+computational reasons. In the other hand, for the problem of extracting out a 
+preselected object in still frames, max-flow min-cut based approaches 
+have demostrated to be a powerful tool. We propose to mix these two 
+ideas for reliable object segmentation through video. Moreover, in this paper 
+we introduce the superpixel flow method for tracking of background regions, 
+rather than sparse points. We show how this extra information 
+can be used to expand the max-flow min-cut techniques for an 
+efficient foregorund-background segmentation. Experiments on 
+several video sequences demostrate the characteristics of the proposed 
+method. \\
 Superpixels and over segmentation techniques
 became a widely used pre-processing stage for a
 large number of machine vision applications, after the

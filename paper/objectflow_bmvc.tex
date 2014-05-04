@@ -1,0 +1,57 @@
+\documentclass{bmvc2k}
+\usepackage{amsmath,amsfonts}
+%% Enter your paper number here for the review copy
+% \bmvcreviewcopy{??}
+
+% Any macro definitions you would like to include
+% These are not defined in the style file, because they don't begin
+% with \bmva, so they might conflict with the user's own macros.
+% The \bmvaOneDot macro adds a full stop unless there is one in the
+% text already.
+\def\ie{\emph{i.e}\bmvaOneDot,}
+\def\eg{\emph{e.g}\bmvaOneDot,}
+\def\Eg{\emph{E.g}\bmvaOneDot,}
+\def\etal{\emph{et al}\bmvaOneDot}
+\def\TReg{\textsuperscript{\textregistered}}
+\def\TCop{\textsuperscript{\textcopyright}}
+\def\TTra{\textsuperscript{\texttrademark}}
+\def\Integer{\mathsf{Z\hspace{-0.4em}Z}}
+\def\Natural{\mathrm{I\!N}}
+\def\Real{\mathrm{I\!R}}
+\def\Proj{\mathrm{I\!P}}  % projective space
+\def\Hyper{\mathrm{I\!H}}  % hyperbolic space
+\def\wrt{\emph{w.r.t., }}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\title{Foreground segmentation in video by background tracking via guided superpixel flow.}
+
+% Enter the paper's authors in order
+% \addauthor{Name}{email/homepage}{INSTITUTION_CODE}
+\addauthor{Juan Perez Rua}{juanmanuel.perezrua@technicolor.com}{1}
+\addauthor{Tomas Crivelli}{tomas.crivelli@technicolor.com}{2}
+\addauthor{Patrick Perez}{patrick.perez@technicolor.com}{2}
+
+% Enter the institutions
+% \addinstitution{Name\\Address}
+\addinstitution{
+ Technicolor\\
+ Rennes, FR
+}
+
+\runninghead{Perez Rua, Crivelli, Perez}{}
+
+%------------------------------------------------------------------------- 
+% Document starts here
+\begin{document}
+
+\maketitle
+
+\input{abstract}
+%------------------------------------------------------------------------- 
+\input{introduction}
+\input{core}
+
+\input{biblio}
+
+\end{document}
