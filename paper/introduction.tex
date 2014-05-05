@@ -6,7 +6,7 @@ Computer Vision toolbox, and have been focus of great research efforts,
 leading to significant progress in the last years \cite{c16}\cite{c17}. 
 The object tracking problem consist on estimating the 
 position of the target in future frames, given an initialization. In the
-other hand, the optical flow problem consist on finding a motion vector 
+other hand, the optical flow between a pair of frames consist on finding a motion vector 
 for each pixel of interest in the initial image. Even though for several
 applications a full motion-field is needed, other applications like
 human-computer interaction, object editing in video or structure-from-motion,
@@ -15,8 +15,13 @@ space may be of interest.
 In such scenarions combining optical flow and object tracking in a unified 
 framework would become useful and the precision of the object motion description 
 could be enhanced. For instance, even with modern optical flow approaches, 
-the long motion problem remains a challenge. 
-However, the problem is more bearable for object tracking techniques. 
+the long motion problem remains a challenge. However, the problem is more 
+bearable for object tracking techniques. Moreover, even when object
+trackers and optical flow give good hints for object segmentation in video, 
+these elements are not deeply studied in the literature as a unified problem.
+We introduce the object flow problem as the computation of dense motion 
+flow fields of the set of pixels that belong to an interest object. In other words, 
+the object flow by definition copes with segmentation of the target.
 
 Among the state of the art segmentation methods for objects in video
 sequences, point trajectories based ones stand for its performance and 
@@ -24,68 +29,15 @@ reliability, even when only sparse trajectories are known because of
 computational reasons. In the other hand, for the problem of extracting out a 
 preselected object in still frames, max-flow min-cut based approaches 
 have demostrated to be a powerful tool. We propose to mix these two 
-ideas for reliable object segmentation through video. Moreover, in this paper 
-we introduce the superpixel flow method for tracking of background regions, 
-rather than sparse points. We show how this extra information 
-can be used to expand the max-flow min-cut techniques for an 
-efficient foregorund-background segmentation. Experiments on 
-several video sequences demostrate the characteristics of the proposed 
-method. \\
-Superpixels and over segmentation techniques
-became a widely used pre-processing stage for a
-large number of machine vision applications, after the
-original concept was introduced \cite{c1}. Superpixels are
-traditionally used as performance booster for several
-other techniques. However, it is still mostly related to
-single frame processing \cite{c1}\cite{c10}\cite{c11}. In the search for
-consistency in superpixel labeling through video,
-some authors have proposed different techniques,
-which go from simple extension to supervoxels\cite{c9}\cite{c11},
-to more complicated approaches \cite{c8}. These
-approaches, nonetheless, usually require a global
-processing and knowledge of all (or several of) the
-video frames beforehand. One of the contributions of this work is a superpixel
-matching technique which assumes a flowlike
-behavior in the image sequences (natural video), and
-propose an application for improving object segmentation in videos.
+ideas together with the tracking of backgorund regions via the novel concept of 
+superpixel flow for reliable object segmentation through video. 
+We show how this extra information can be used to complement the
+graph-cuts based techniques for an efficient foregorund-background segmentation.
 
-For some kind of video sequences and computer vision
-applications the superpixel labelling usually loses coherency between frames, 
-even when computed as supervoxels. 
-This means superpixel matching techniques offer some interest and can still be
-explored. Some work have been done towards a
-superpixel based image comparison using the Earth
-Mover's Distance, by taking super pixels as bins of a
-global histogram \cite{c2}. The label propagation or superpixel flow can be
-achieved with this technique by selecting the superpixel in the second frame that maximize the flow
-from each superpixel in the first frame.
-However, we look at the problem of superpixel
-propagation between a pair of frames, in terms of the
-indexes of the already computed superpixelization in
-both of them. \\
-By taking into account superpixels computed separately in images we can open the advantages of
-streaming like approaches, so the video process can be performed by processing only two frames at a time, 
-saving memory and moving towards a more time friendly approach. This propagation means finding
-the superpixel labels in the second frame that
-correspond to a given label in the first frame. This
-matching, however, has to comply with a set of
-constraints. Firstly, two correspondent superpixels
-should be similar in terms of some appearance
-feature, which most likely depends on the way the
-superpixelization was performed (color, texture,
-shape). Also, the superpixel propagation should
-maintain certain global homogeneity (at least for
-superpixels that belong to the same object). This is
-because the superpixel propagation or matching is
-not completely a one-to-one combinatorial problem,
-but more a “superpixel flow”. In this sense, it seems
-natural that the problem of superpixel propagation
-could be solved with a discrete energy minimization
-procedure. If the size compactness of the superpixels is maintained, 
-it actually seems to share some of the properties of the
-optical flow problem, with the difference that the
-smoothness is usually a very strong constraint for the
-last one. The strength of this smoothness prior relies
-not only in the nature of the problem, but also
-because it gives better cues towards an easy-to-
-minimize global approach.
+The present paper is organized as follows. We introduce the concept of superpixel flow
+in Sec. \ref{sec:suppix}. Then, a method for object segmentation in video which uses object tracker 
+information and the background segments tracking is presented in Sec. \ref{sec:segm}. In following
+sections the object flow basic approach is explained. Finally, results showing how 
+the object flow overpass state of the art optical flow methods for object motion flows 
+computation.
+
