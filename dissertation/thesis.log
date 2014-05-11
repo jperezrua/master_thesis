@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.18)  13 APR 2014 22:22
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.18)  11 MAY 2014 10:12
 entering extended mode
  %&-line parsing enabled.
 **thesis.tex
@@ -164,7 +164,14 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 large.png> <./images/logo/ubourgogne.png>]
 \openout2 = `abstract.aux'.
 
- (./abstract.tex [1
+ (./abstract.tex
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+ [1
 
 
 ] (./thesis.toc)
@@ -188,19 +195,18 @@ large.png> <./images/logo/ubourgogne.png>]
 
 ]) [4
 
-] (./intro.tex
+] (./introduction.tex
 Chapter 1.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 26.
-(/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 26.
- [1
+
+LaTeX Warning: Citation `c16' on page 1 undefined on input line 9.
 
 
-]) (./background.tex
-[2]
+LaTeX Warning: Citation `c17' on page 1 undefined on input line 9.
+
+[1
+
+
+]) (./background.tex [2]
 Chapter 2.
 
 Underfull \vbox (badness 7759) has occurred while \output is active []
@@ -210,37 +216,264 @@ Underfull \vbox (badness 7759) has occurred while \output is active []
 ]
 (images/interp.eps
 )
-[4]) (./appendix.tex [5
+[4]) (./core.tex [5
 Non-PDF special ignored!]
+Chapter 3.
+
+LaTeX Warning: Citation `c22' on page 6 undefined on input line 14.
+
+<../images/system.png, id=54, 942.52126pt x 405.76593pt>
+File: ../images/system.png Graphic file (type png)
+
+<use ../images/system.png>
+
+LaTeX Warning: Citation `c22' on page 6 undefined on input line 25.
+
+
+LaTeX Warning: Citation `c23' on page 6 undefined on input line 25.
+
+(./suppixflow.tex
+
+LaTeX Warning: Citation `c1' on page 6 undefined on input line 10.
+
+
+LaTeX Warning: Citation `c1' on page 6 undefined on input line 12.
+
+
+LaTeX Warning: Citation `c10' on page 6 undefined on input line 12.
+
+
+LaTeX Warning: Citation `c11' on page 6 undefined on input line 12.
+
+
+LaTeX Warning: Citation `c9' on page 6 undefined on input line 14.
+
+
+LaTeX Warning: Citation `c11' on page 6 undefined on input line 14.
+
+
+LaTeX Warning: Citation `c8' on page 6 undefined on input line 15.
+
+[6
+
+]
+
+LaTeX Warning: Citation `c2' on page 7 undefined on input line 22.
+
+[7 <../images/system.png>]
+
+LaTeX Warning: Citation `c9' on page 8 undefined on input line 44.
+
+
+LaTeX Warning: Citation `c10' on page 8 undefined on input line 44.
+
+
+LaTeX Warning: Citation `c9' on page 8 undefined on input line 45.
+
+
+LaTeX Warning: Citation `c7' on page 8 undefined on input line 55.
+
+
+LaTeX Warning: Citation `c12' on page 8 undefined on input line 55.
+
+
+LaTeX Warning: Citation `c13' on page 8 undefined on input line 55.
+
+
+LaTeX Warning: Citation `c7' on page 8 undefined on input line 81.
+
+
+LaTeX Warning: Citation `c5' on page 8 undefined on input line 81.
+
+[8]
+
+LaTeX Warning: Citation `c3' on page 9 undefined on input line 121.
+
+
+LaTeX Warning: Citation `c4' on page 9 undefined on input line 121.
+
+
+LaTeX Warning: Citation `c3' on page 9 undefined on input line 123.
+
+
+LaTeX Warning: Citation `c7' on page 9 undefined on input line 125.
+
+
+LaTeX Warning: Citation `c4' on page 9 undefined on input line 127.
+
+
+LaTeX Warning: Citation `c3' on page 9 undefined on input line 135.
+
+
+LaTeX Warning: Citation `c4' on page 9 undefined on input line 135.
+
+[9] <../images/matches.png, id=71, 622.57594pt x 133.24782pt>
+File: ../images/matches.png Graphic file (type png)
+
+<use ../images/matches.png>
+<../images/matches_snowshoes.png, id=72, 237.88875pt x 120.45pt>
+File: ../images/matches_snowshoes.png Graphic file (type png)
+
+<use ../images/matches_snowshoes.png>) (./segmentation.tex [10 <../images/match
+es.png> <../images/matches_snowshoes.png>]
+
+LaTeX Warning: Citation `c18' on page 11 undefined on input line 7.
+
+
+LaTeX Warning: Citation `c14' on page 11 undefined on input line 10.
+
+
+LaTeX Warning: Citation `c18' on page 11 undefined on input line 12.
+
+
+LaTeX Warning: Citation `c14' on page 11 undefined on input line 12.
+
+
+LaTeX Warning: Citation `c15' on page 11 undefined on input line 16.
+
+
+LaTeX Warning: Reference `figurelabel_entering' on page 11 undefined on input l
+ine 22.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
+
+ []
+
+<../images/tracking_points.png, id=78, 275.52937pt x 153.57375pt>
+File: ../images/tracking_points.png Graphic file (type png)
+
+<use ../images/tracking_points.png>
+
+LaTeX Warning: Reference `figurelabel_entering' on page 11 undefined on input l
+ine 33.
+
+
+LaTeX Warning: Reference `figurelabel_spflow' on page 11 undefined on input lin
+e 34.
+
+
+LaTeX Warning: Citation `c18' on page 11 undefined on input line 36.
+
+
+LaTeX Warning: Citation `c15' on page 11 undefined on input line 36.
+
+[11] <../images/suppixflow2.png, id=82, 861.2175pt x 326.21875pt>
+File: ../images/suppixflow2.png Graphic file (type png)
+
+<use ../images/suppixflow2.png>
+
+LaTeX Warning: Reference `figurelabel_walking' on page 12 undefined on input li
+ne 50.
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+<../images/Sequence2.png, id=83, 826.58812pt x 529.98pt>
+File: ../images/Sequence2.png Graphic file (type png)
+
+<use ../images/Sequence2.png>
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [12 <../images/tracking_points.png> <../images/suppixflow2.png>]
+
+LaTeX Warning: Reference `figurelabel_comp' on page 13 undefined on input line 
+67.
+
+
+LaTeX Warning: Reference `figurelabel_comp' on page 13 undefined on input line 
+68.
+
+<../images/Compare.png, id=89, 798.73407pt x 1089.31969pt>
+File: ../images/Compare.png Graphic file (type png)
+
+<use ../images/Compare.png>
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+
+
+LaTeX Warning: Float too large for page by 50.1794pt on input line 80.
+
+)) (./appendix.tex [13 <../images/Sequence2.png>] [14 <../images/Compare.png>]
 Appendix A.
-) (./thesis.bbl [6
+) (./thesis.bbl [15
 
-]) [7
+]
 
-] (./thesis.aux (./header.aux) (./abstract.aux)) ) 
+LaTeX Warning: Empty `thebibliography' environment on input line 3.
+
+) [16
+
+] (./thesis.aux (./header.aux) (./abstract.aux))
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 1643 strings out of 495061
- 20129 string characters out of 1182620
- 68886 words of memory out of 3000000
- 4773 multiletter control sequences out of 15000+50000
+ 1703 strings out of 495061
+ 21185 string characters out of 1182620
+ 69984 words of memory out of 3000000
+ 4819 multiletter control sequences out of 15000+50000
  14050 words of font info for 57 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 27i,10n,40p,228b,227s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/type1/pu
-blic/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
-ts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi1
-0.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-
-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive/font
-s/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
-/cmsl10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share
-/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on thesis.pdf (13 pages, 213560 bytes).
+ 27i,11n,40p,370b,225s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/sha
+re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-te
+xlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts
+/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/publ
+ic/amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/
+cm/cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-texliv
+e/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1
+/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfo
+nts/cm/cmsl10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on thesis.pdf (22 pages, 5696290 bytes).
 PDF statistics:
- 102 PDF objects out of 1000 (max. 8388607)
+ 152 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

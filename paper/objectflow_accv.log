@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.18)  6 MAY 2014 00:31
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.18)  11 MAY 2014 18:55
 entering extended mode
  %&-line parsing enabled.
 **objectflow_accv.tex
@@ -287,7 +287,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 23.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-) (./abstract.tex
+) (./tex/abstract.tex
 Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
 Missing character: There is no ú in font cmr9!
@@ -295,37 +295,43 @@ Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
 Missing character: There is no ù in font cmr9!
 )
-(./introduction.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+(./tex/introduction.tex [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-])
-(./suppix.tex
-Overfull \hbox (7.48814pt too wide) in paragraph at lines 5--20
-\OT1/cmr/m/n/10 Superpixels and over seg-men-ta-tion tech-niques be-came a wide
-ly used pre-processing
- []
+]) (./tex/description.tex
+<../images/system.png, id=12, 942.52126pt x 405.76593pt>
+File: ../images/system.png Graphic file (type png)
 
-[2] [3] [4] <images/matches.png, id=30, 622.57594pt x 133.24782pt>
-File: images/matches.png Graphic file (type png)
+<use ../images/system.png>) (./tex/suppix.tex
+Underfull \vbox (badness 2181) has occurred while \output is active []
 
-<use images/matches.png>
-<images/matches_snowshoes.png, id=32, 237.88875pt x 120.45pt>
-File: images/matches_snowshoes.png Graphic file (type png)
+ [2]
+[3 <../images/system.png>]
+<../images/matches_snowshoes.png, id=28, 237.88875pt x 120.45pt>
+File: ../images/matches_snowshoes.png Graphic file (type png)
 
-<use images/matches_snowshoes.png>) (./segmentation.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--17
+<use ../images/matches_snowshoes.png>) (./tex/segmentation.tex [4]
+Underfull \hbox (badness 10000) in paragraph at lines 18--21
 
  []
 
-[5 <./images/matches.png> <./images/matches_snowshoes.png>]
+<../images/tracking_points.png, id=33, 275.52937pt x 153.57375pt>
+File: ../images/tracking_points.png Graphic file (type png)
+
+<use ../images/tracking_points.png> [5 <../images/matches_snowshoes.png> <../im
+ages/tracking_points.png>]
+<../images/suppixflow2.png, id=39, 861.2175pt x 326.21875pt>
+File: ../images/suppixflow2.png Graphic file (type png)
+
+<use ../images/suppixflow2.png>
 Missing character: There is no ‚ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ô in font cmr10!
 
-<images/Sequence2.png, id=38, 579.66562pt x 1151.80313pt>
-File: images/Sequence2.png Graphic file (type png)
+<../images/Sequence2.png, id=40, 826.58812pt x 529.98pt>
+File: ../images/Sequence2.png Graphic file (type png)
 
-<use images/Sequence2.png>
+<use ../images/Sequence2.png>
 Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
 Missing character: There is no ú in font cmr9!
@@ -345,10 +351,10 @@ Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
 Missing character: There is no ô in font cmr9!
 
-<images/Compare.png, id=39, 798.73407pt x 1089.31969pt>
-File: images/Compare.png Graphic file (type png)
+<../images/Compare.png, id=41, 798.73407pt x 1089.31969pt>
+File: ../images/Compare.png Graphic file (type png)
 
-<use images/Compare.png>
+<use ../images/Compare.png>
 Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
 Missing character: There is no ú in font cmr9!
@@ -373,53 +379,57 @@ Missing character: There is no ú in font cmr9!
 Missing character: There is no ‚ in font cmr9!
 Missing character: There is no Ä in font cmr9!
 Missing character: There is no ù in font cmr9!
-) (./objectflow.tex
-<images/object_flow.png, id=40, 561.59813pt x 296.60812pt>
-File: images/object_flow.png Graphic file (type png)
+) (./tex/objectflow.tex [6 <../images/suppixflow2.png>] <../images/objectflow.p
+ng, id=46, 803.0pt x 226.8475pt>
+File: ../images/objectflow.png Graphic file (type png)
 
-<use images/object_flow.png> [6] [7 <./images/Sequence2.png>] [8 <./images/Comp
-are.png>] [9 <./images/object_flow.png>]
-<images/extrapolated.png, id=57, 733.99219pt x 158.84344pt>
-File: images/extrapolated.png Graphic file (type png)
+<use ../images/objectflow.png> [7 <../images/Sequence2.png>] [8 <../images/Comp
+are.png>] <../images/extrapolated.png, id=56, 729.47531pt x 502.12593pt>
+File: ../images/extrapolated.png Graphic file (type png)
 
-<use images/extrapolated.png> [10 <./images/extrapolated.png>]
-<images/ResultsOF.png, id=62, 350.05782pt x 624.83438pt>
-File: images/ResultsOF.png Graphic file (type png)
+<use ../images/extrapolated.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<use images/ResultsOF.png>) (./biblio.tex
+ [9 <../images/objectflow.png>] <../images/psnr.png, id=61, 791.95876pt x 430.6
+0875pt>
+File: ../images/psnr.png Graphic file (type png)
+
+<use ../images/psnr.png>) (./tex/conclusions.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <../images/extrapolated.png>]) (./tex/biblio.tex
 Underfull \hbox (badness 2205) in paragraph at lines 7--8
 []\OT1/cmr/m/n/9 S. Boltz; F. Nielsen and S. Soatto, Earth mover dis-tance on s
 u-per-pix-
  []
 
-[11] [12 <./images/ResultsOF.png>]) [13] (./objectflow_accv.aux) ) 
+[11 <../images/psnr.png>]) [12] (./objectflow_accv.aux) ) 
 Here is how much of TeX's memory you used:
- 2413 strings out of 495061
- 28649 string characters out of 1182620
- 98765 words of memory out of 3000000
- 5553 multiletter control sequences out of 15000+50000
+ 2432 strings out of 495061
+ 29171 string characters out of 1182620
+ 94795 words of memory out of 3000000
+ 5565 multiletter control sequences out of 15000+50000
  11523 words of font info for 44 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 37i,9n,29p,362b,370s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/t
-exmf-texlive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texliv
-e/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/typ
-e1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/type1/public/am
-sfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/c
-mmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi5.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/te
-xmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/
-fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss10.p
-fb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/sha
-re/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf-tex
-live/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public
-/amsfonts/cm/cmti9.pfb>
-Output written on objectflow_accv.pdf (13 pages, 6325601 bytes).
+ 37i,10n,28p,376b,368s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texmf-texl
+ive/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texmf-texlive/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-texlive/fonts/type1/public
+/amsfonts/cm/cmbx9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share
+/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/typ
+e1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/type1/public/ams
+fonts/cm/cmr9.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss
+10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr
+/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/share/texmf
+-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/pu
+blic/amsfonts/cm/cmti9.pfb>
+Output written on objectflow_accv.pdf (12 pages, 6061762 bytes).
 PDF statistics:
- 128 PDF objects out of 1000 (max. 8388607)
+ 124 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

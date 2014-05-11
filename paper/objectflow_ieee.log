@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.18)  4 MAY 2014 19:05
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.18)  9 MAY 2014 09:50
 entering extended mode
  %&-line parsing enabled.
 **objectflow_ieee.tex
@@ -235,28 +235,26 @@ Missing character: There is no ‚ in font ptmb7t!
 Missing character: There is no Ä in font ptmb7t!
 Missing character: There is no ù in font ptmb7t!
 ) (./introduction.tex
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
-) (./core.tex
-<images/segmentation.png, id=1, 175.40532pt x 232.61906pt>
+
+LaTeX Warning: Reference `sec:desc' on page 1 undefined on input line 52.
+
+) (./core.tex <images/segmentation.png, id=1, 175.40532pt x 232.61906pt>
 File: images/segmentation.png Graphic file (type png)
 
-<use images/segmentation.png>
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+<use images/segmentation.png> [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.
+map}
 
 
-] [2 <./images/segmentation.png (PNG copy)>] <images/matches.png, id=23, 237.88
-875pt x 364.36125pt>
+] <images/matches.png, id=16, 622.57594pt x 133.24782pt>
 File: images/matches.png Graphic file (type png)
 
 <use images/matches.png>
-<images/matches_snowshoes.png, id=25, 317.185pt x 165.61874pt>
+Overfull \hbox (809.0181pt too wide) in paragraph at lines 165--169
+ [][] 
+ []
+
+[2 <./images/segmentation.png (PNG copy)>]
+<images/matches_snowshoes.png, id=25, 237.88875pt x 120.45pt>
 File: images/matches_snowshoes.png Graphic file (type png)
 
 <use images/matches_snowshoes.png>
@@ -288,29 +286,32 @@ Missing character: There is no ô in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ô in font ptmr7t!
-<images/Sequence2.png, id=26, 579.66562pt x 1151.80313pt>
+<images/Sequence2.png, id=26, 826.58812pt x 529.98pt>
 File: images/Sequence2.png Graphic file (type png)
 
 <use images/Sequence2.png>
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
+Overfull \hbox (458.38602pt too wide) in paragraph at lines 237--239
+ [][] 
+ []
 
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ú in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ù in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ú in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ù in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
 <images/Compare.png, id=27, 798.73407pt x 1089.31969pt>
 File: images/Compare.png Graphic file (type png)
 
@@ -339,13 +340,14 @@ Missing character: There is no ú in font ptmr7t!
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ù in font ptmr7t!
- [3 <./images/matches.png> <./images/matches_snowshoes.png>]) (./conclusions.te
-x)
-Underfull \hbox (badness 5231) in paragraph at lines 77--78
+) (./conclusions.tex) (./biblio.tex [3 <./images/matches.png> <./images/matches
+_snowshoes.png>]
+Underfull \hbox (badness 5231) in paragraph at lines 25--26
 []\OT1/ptm/m/n/8 M. Reso and J. Jachal-sky, Tem-po-rally Con-sis-tent Su-per-pi
 x-
  []
 
+)
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -357,30 +359,33 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the US letter (8.5in X 11in) paper size.
 
-[4 <./images/Sequence2.png> <./images/Compare.png>] (./objectflow_ieee.aux) ) 
+[4 <./images/Sequence2.png> <./images/Compare.png>] (./objectflow_ieee.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 2096 strings out of 495061
- 29946 string characters out of 1182620
- 84378 words of memory out of 3000000
- 5248 multiletter control sequences out of 15000+50000
- 40739 words of font info for 92 fonts, out of 3000000 for 9000
+ 2109 strings out of 495061
+ 30030 string characters out of 1182620
+ 83410 words of memory out of 3000000
+ 5257 multiletter control sequences out of 15000+50000
+ 41846 words of font info for 93 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
  26i,8n,24p,362b,283s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/
-usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/f
-onts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/type1/
-public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsf
-onts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi
-7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-t
-exlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/publi
-c/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8
-a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/te
-xmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/t
-ype1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri
-8a.pfb>
-Output written on objectflow_ieee.pdf (4 pages, 5778609 bytes).
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
+ve/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmmi5.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
+cmmi7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></
+usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/tex
+mf-texlive/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-texlive/fo
+nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/p
+ublic/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/u
+crr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/shar
+e/texmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fon
+ts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/u
+tmri8a.pfb>
+Output written on objectflow_ieee.pdf (4 pages, 4695764 bytes).
 PDF statistics:
  82 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

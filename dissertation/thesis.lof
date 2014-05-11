@@ -2,3 +2,11 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Interpolation of corresponding coordinates}}{5}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Block diagram of the proposed pipeline.}}{7}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces The yellow lines show selected superpixel matching between pairs of consecutive frames in a video with the proposed method. The video frames go from right to left.}}{10}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces The yellow lines show selected superpixel matching between a pair of distant frames in the Snow Shoes sequence.}}{10}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Example image of points entering a tracking region (green) due to object motion in a video sequence.}}{12}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Background segments automatic labeling and propagation, the flow goes from left to right.}}{12}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Segmentation through the sequence “Walking Couple” (Yellow contour) initialized in the man’s head. The yellow box correspond to the tracker output. The labeled background superpixel are not shown for clarity.}}{13}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Face segmentation in the “Amelie Retro” and the “Snow shoes” sequences in three different frames. For each group, the Top Row: One-iteration window-based graph-cuts; and the Bottom Row: One-iteration graph-cuts initialized with superpixel tracking.}}{14}
+\addvspace {10\p@ }

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.18)  6 MAY 2014 00:14
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.18)  11 MAY 2014 17:22
 entering extended mode
  %&-line parsing enabled.
 **objectflow_bmvc.tex
@@ -528,84 +528,31 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <8> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 48.
- (./abstract.tex
+ (./tex/abstract.tex
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
 )
-(./introduction.tex
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
- BMVC cite {} {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} BMVC cite {} 
- [1
 
-]) (./suppix.tex
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 4.
- BMVC cite {}  BMVC cite {} 
-BMVC cite {}  BMVC cite {}  BMVC cite {}  BMVC cite {}  BMVC cite {} 
-BMVC cite {}  [2] BMVC cite {}  BMVC cite {}  BMVC cite {}  BMVC cite {} 
-BMVC cite {}  BMVC cite {}  BMVC cite {}  BMVC cite {}  [3] BMVC cite {} 
-BMVC cite {}  BMVC cite {}  BMVC cite {}  BMVC cite {} 
-<images/matches.png, id=115, 622.57594pt x 133.24782pt>
-File: images/matches.png Graphic file (type png)
+! LaTeX Error: File `tex/introduction.tex' not found.
 
-<use images/matches.png>
-<images/matches_snowshoes.png, id=118, 237.88875pt x 120.45pt>
-File: images/matches_snowshoes.png Graphic file (type png)
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
 
-<use images/matches_snowshoes.png>) (./segmentation.tex BMVC cite {} 
-BMVC cite {}  BMVC cite {} 
-Underfull \hbox (badness 10000) in paragraph at lines 3--17
+Enter file name: 
+! Emergency stop.
+<read *> 
+         
+l.52 \input{tex/introduction}
+                             ^^M
+*** (cannot \read from terminal in nonstop modes)
 
- []
-
-[4] <images/Sequence2.png, id=137, 579.66562pt x 1151.80313pt>
-File: images/Sequence2.png Graphic file (type png)
-
-<use images/Sequence2.png> [5 <./images/matches.png> <./images/matches_snowshoe
-s.png>] <images/Compare.png, id=145, 798.73407pt x 1089.31969pt>
-File: images/Compare.png Graphic file (type png)
-
-<use images/Compare.png>) (./objectflow.tex BMVC cite {}  BMVC cite {} 
-BMVC cite {}  <images/object_flow.png, id=156, 561.59813pt x 296.60812pt>
-File: images/object_flow.png Graphic file (type png)
-
-<use images/object_flow.png> BMVC cite {}  BMVC cite {}  BMVC cite {}  [6]
-[7 <./images/Sequence2.png>] [8 <./images/Compare.png>]
-<images/extrapolated.png, id=186, 733.99219pt x 158.84344pt>
-File: images/extrapolated.png Graphic file (type png)
-
-<use images/extrapolated.png> [9 <./images/object_flow.png> <./images/extrapola
-ted.png>] BMVC cite {} 
-<images/ResultsOF.png, id=200, 350.05782pt x 624.83438pt>
-File: images/ResultsOF.png Graphic file (type png)
-
-<use images/ResultsOF.png>) (./biblio.tex [10] [11 <./images/ResultsOF.png>])
-[12] (./objectflow_bmvc.aux) ) 
+ 
 Here is how much of TeX's memory you used:
- 6442 strings out of 495061
- 89247 string characters out of 1182620
- 172227 words of memory out of 3000000
- 9375 multiletter control sequences out of 15000+50000
- 78066 words of font info for 123 fonts, out of 3000000 for 9000
+ 6238 strings out of 495061
+ 86838 string characters out of 1182620
+ 162227 words of memory out of 3000000
+ 9286 multiletter control sequences out of 15000+50000
+ 46297 words of font info for 85 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 45i,13n,35p,372b,466s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r
-.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/
-share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf
--texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/pu
-blic/amsfonts/cm/cmsy7.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfont
-s/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></
-usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-t
-exlive/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-texlive/fonts/type1/ur
-w/symbol/usyr.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></
-usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texl
-ive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/
-times/utmri8a.pfb>
-Output written on objectflow_bmvc.pdf (12 pages, 6274496 bytes).
-PDF statistics:
- 296 PDF objects out of 1000 (max. 8388607)
- 56 named destinations out of 1000 (max. 500000)
- 234 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 45i,7n,32p,354b,274s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!
