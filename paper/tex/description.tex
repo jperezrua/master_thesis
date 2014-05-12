@@ -17,5 +17,6 @@ thus the tracker and motion flow algorithm can work for mutual enhancement.
 
 The first step in the object flow pipeline can be selected according to specific need for a given application. We prefer, in general, tracking-by-detection methods 
 like $Struck$ \cite{c22} or $MIL$ \cite{c23}, but other approaches could be followed. In the second place, for the object segmentation in video we propose the use 
-of labelled background regions through the concept of superpixel flow, which is explained in the next section.
+of labelled background regions through the concept of superpixel flow, which is explained in the next section. Finally, the flow motion field is computed within the segmentation boundaries and long term dense 
+point trajectories may be extracted from this.
 

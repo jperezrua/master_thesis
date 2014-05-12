@@ -35,12 +35,12 @@ The strength of this smoothness prior relies not only in the nature of the probl
 because it gives better cues towards an easier-to-minimize global approach.
 
 The objective of the superpixel flow is therefore to find the best labeling $l$ for every superpixel $p$
-(with $l_p \in {0,1,...N-1}$) between a pair of frames ($I_{0}$,$I_{1}$), but holding a flow-like behavior.
+(with $l_p \in {0,1,...N-1}$) between a pair of frames ($I_{0}$,$I_{1}$), but holding a flow-like behaviour.
 
-Thus, the superpixelization should maintain certain size homegenity within a single frame. Some super
+Thus, the superpixelization should maintain certain size homogeneity within a single frame. Some super
 pixel techniques can cope with this requirement \cite{c9}\cite{c10}. For the experiments presented 
 in this work, we prefer the SLIC method \cite{c9}, which usually gives
-good results in terms of homegenity of the superpixelization across the sequence. 
+good results in terms of size homogeneity and compactness of the superpixelization. 
 %The proposed steps to solve the propagation problem assume this requirement is hold. 
 %For other kind of the techniques, other approaches should be followed.
 
@@ -50,7 +50,7 @@ good results in terms of homegenity of the superpixelization across the sequence
 %\subsection{Energy Formulation}
 
 Inspired by a large number of optical flow and stereo techniques \cite{c7}\cite{c12}\cite{c13}, 
-the superpixel flow can be modeled with pairwise Markov Random Fields. If
+the superpixel flow can be modelled with pairwise Markov Random Fields. If
 %the matching is performed with MAP inference, its posterior probability is: 
 the matching is performed with MAP inference, its energy function extracted from the posterior probability is: 
 %\begin{equation}
@@ -74,7 +74,7 @@ E(l) = \displaystyle \sum_{p \in \Omega} D_p(L_p;I_0,I_1) +
 
 With $l$ the set of labels of the super pixels in $I_0$,
 that match with those in $I_1$.
-$ \mathcal{N} $ is a neighborhood of the
+$ \mathcal{N} $ is a neighbourhood of the
 superpixel $p$, which defines its adjacency. Given this posterior probability,
 the equivalent energy function can be directly obtained
 by extracting the negative logarithm of the posterior,
@@ -83,7 +83,7 @@ The terms $D$, and $S$ in (\ref{eq_energy}) stand for data term and spatial smoo
 are popularly known in the MRF literature. The first one determines how accurate is the labeling in terms
 of consistency of the measured data (color, shape,etc.). In the classical optical flow formulation of this equation,
 the data term corresponds to the pixel brightness conservation\cite{c7}\cite{c5}. However, as superpixels are a set
-of similar (or somehow homogenous) pixels, an adequate color based feature can be a low dimensional
+of similar (or somehow homogeneous) pixels, an adequate color based feature can be a low dimensional
 color histogram. So $D$ can be written more precisely as the Hellinger distance between the histograms:
 
 \begin{equation}
@@ -111,7 +111,7 @@ S_{p,q}(l_p, l_q) = \lambda(p)
 
 In (\ref{eq_Spq}) the operator $\rho$ is the Hellinger distance as used in the
 data term (\ref{eq_Dp}). The histogram distance is nonetheless computed between superpixels $p$ and $q$, 
-which belong to the same neighborhood. The superpixels centroids are noted as $q_c$ and $p_c$, 
+which belong to the same neighbourhood. The superpixels centroids are noted as $q_c$ and $p_c$, 
 and $u$ and $v$ are the horizontal and vertical changes between centroids.
 This term is usual in the MRF formulation and has a smoothing effect in superpixels that belong to the
 same object. It has to be observed that when two close superpixels are different, thus, more probable to
@@ -139,7 +139,7 @@ by merging a set of candidate matches for every superpixel in the first frame.
 %In a more generic sense, other assumptions can be made towards candidate generation. 
 For instance, for a given superpixel in the initial frame, the corresponding 
 matching would be the most similar one in terms of color, shape, or the spatial distance. More candidate solutions can be added by defining a
-neighborhood in the second frame and select random pairs from every neighborhood of every superpixel
+neighbourhood in the second frame and select random pairs from every neighbourhood of every superpixel
 in the first frame. %This is more suitable for problems where the images are extracted from the same video
 %sequence. 
 %To speed-up the minimization procedure, the QBPO properties can be exploted. For instance, the fusion of the
@@ -176,5 +176,5 @@ in the first frame. %This is more suitable for problems where the images are ext
 The Fig. \ref{figurelabel_matchessnow} shows
  results for large separations between frames. % without tweaking or adjusting any parameters. 
 For this case, however, the matches in the textureless part of the scene
- are mostly invalids. Though this is expected because because of the aperture problem and
+ are mostly invalids. Though this is expected because of the aperture problem and
  heavy occlusions.
