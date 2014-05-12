@@ -43,8 +43,7 @@ implementation. However, direct modifications in other optical flow methods can 
 minimization approaches, the regularity constraints can be precisely targeted by disconnecting foreground pixels from background ones.
 
 \section{Experimental results}
-
-   \begin{figure}[thpb]
+   \begin{figure}[th]
       \centering
       \includegraphics[width=1.00\textwidth]{../images/extrapolated.png}
       \caption{Extrapolation results from integrated flow in 4 sequences. In descending order: Amelia Retro, Boy, Walking, Puppy. From Left to Right: Annotated object, Backward object flow, Backward optical flow, Forward object flow, Backward optical flow.}
@@ -55,17 +54,42 @@ minimization approaches, the regularity constraints can be precisely targeted by
 To evaluate the performance of the object flow in comparison with optical flow techniques, we performed 
 a number of experiments on several video sequences. We annotated an initial bounding box for the videos, 
 and a segmentation contour of the interest object for every frame. The experiment measures the ability of the method to 
-extrapolate an image from the initial frame and the integrated flow. For every pair of frames the PSNR between the annotated
-current state of the object and the extrapolated images is computed. The Fig. \ref{sample} is a sample of the performed experiment, each column is an image generated from the given flow.
+extrapolate an image from the initial frame and the integrated flow. For every pair of frames the video sequence, the PSNR between the annotated
+current state of the object and the extrapolated images is computed. The Fig. \ref{sample} is a sample of the performed experiment, each column is an image generated from the given flow. 
+Two types integration are evaluated, $From-the-reference$, or forward integration, and $To-the-reference$, or backward integration, as discused in \cite{c20}. So, for each row in the Fig. \ref{sample}, two columns correspond to the object flow, and two columns correspond to optical flow, with both types of integration.
 
-The Fig. \ref{of_res} shows PSNR graphics for 4 different sequences. For every pair of frames an image is extrapolated, and the PSNR is computed.
-The measure is computed using Euler integration (Labelled as $forward$ in the figs.) of the used flow (object or optical flows), 
-and using the integration method described in \cite{c20}, labeled as $backward$ in the figures.
+The Fig. \ref{of_res} shows PSNR graphics for 4 different sequences. For every pair of frames an image is extrapolated, and the PSNR with the ground-truth object is computed.
+The results are shown with both, Euler integration (Labelled as $forward$ in the figs.) of the used flow, 
+and using the integration method described in \cite{c20}, labeled as $backward$ in the figures. The results show that the object flow methods are generally more precise than its optical flow 
+counterparts. Moreover, the object flow method with backward integration usually performs much better than any other combination of techniques. For this experiment, the object flow is compared with the simple-flow optical-flow method.
 
-   \begin{figure}[thpb]
+   \begin{figure}[hb]
       \centering
       \includegraphics[width=1.0\textwidth]{../images/psnr.png}
       \caption{PSNR graphs for extrapolated images using Object flow and the Simple Optical Flow for 4 sequences. In descendent order: Puppy Seq.; Amelie Retro Seq.; Boy Seq.; Walking Seq.}
       \label{of_res}
+   \end{figure}
+	\setlength{\belowcaptionskip}{-10pt}
+
+The Fig. \ref{compare2} presents a visual comparison between the object flow and several optical flow techniques in the Amelia sequence for object extrapolation, and the involved frames (the first and last used frames in the sequence). The Fig. \ref{of_res2} shows the PSNR results for every extrapolated frame in the full sequence, the object flow performs better 
+than all the studied optical flow techniques.
+
+   \begin{figure}[t]
+      \centering
+      \includegraphics[width=1.0\textwidth]{../images/compare2.png}
+      \caption{Top: Comparison between extrapolated objects using several methods: Groundtruth object, Object flow, TVL1, Block Matching, Brox, Farneback and Simple Flow. 
+		Bottom: First and current frame. The extrapolation is performed using backward accumulation of the flow.}
+      \label{compare2}
+   \end{figure}
+	\setlength{\belowcaptionskip}{-10pt}
+
+Observe that the object details are lost in comparison with the groundtruth object image (Fig. \ref{compare2}). For example, the closed eyes detail is missing in the most of the optical 
+flow methods. Furthermore, several of the methods lost any significance, and the output barely holds any resemblance with the original image.
+
+   \begin{figure}[th]
+      \centering
+      \includegraphics[width=1.0\textwidth]{../images/psnr2.png}
+      \caption{PSNR graphs for extrapolated images using Object flow and the different Optical Flow techniques for the Amelia sequence. }
+      \label{of_res2}
    \end{figure}
 	\setlength{\belowcaptionskip}{-10pt}

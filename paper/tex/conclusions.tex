@@ -3,15 +3,15 @@
 A framework to combine tracking and optical flow methods to improve 
 object based dense motion description is presented. The pipeline is 
 composed of three main steps, object tracking, segmentation and 
-flow estimation. For the segmentation step a new video object 
-segmentation algorithm was proposed and some results are shown. 
-The last step, flow estimation is a modification of the simple-flow method to use 
-the obtained segmentation mask.
-The experiments showed that the object flow improves the dense motion 
+flow estimation. For the segmentation step a new promising video object 
+segmentation algorithm was proposed, and, to the best of our knowledge, 
+the introduced superpixel flow is the first energy based algorithm for superpixel matching.
+For the last step, we presented a flow estimation method based on a modification of the simple-flow method to use 
+the obtained segmentation mask. The experiments showed that this object based flow estimation improves the dense motion 
 estimation in comparisson to optical flow techniques.
-Future work includes the use of different optical flow techniques as base of the object flow. Also, 
-applications of the object flow in the structure-from-motion pipeline, or for automatic video edition can be 
-more deeply studied.
+Future work can be further explored in the use of the object flow as feedback hint for tracking-by-detection methods. Also, 
+several kind of applications of the object flow can be more deeply approached. For instance, 
+in the structure-from-motion pipeline, video based rendering, automatic video edition, and video inpainting  among others.
 
 
 
