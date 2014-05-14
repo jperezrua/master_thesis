@@ -13,6 +13,7 @@
 \usepackage{epsf,graphicx}
 \usepackage{latexsym,amssymb}
 \usepackage{setspace,cite}
+\usepackage{etoolbox}
 
 \overrideIEEEmargins
 % See the \addtolength command later in the file to balance the column lengths
@@ -41,14 +42,17 @@ Juan Manuel Perez Rua, Tomas Crivelli and Patrick Perez% <-this % stops a space
 \pagestyle{empty}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{abstract}
-\input{introduction}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{core}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{conclusions}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\input{biblio}
+%===========================================================
+\input{tex/abstract}
+\input{tex/introduction}
+\input{tex/description}
+\input{tex/suppix}
+\input{tex/segmentation}
+\input{tex/objectflow}
+\input{tex/conclusions}
+%===========================================================
+\bibliographystyle{splncs}
+\input{tex/biblio}
+%===========================================================
 
 \end{document}

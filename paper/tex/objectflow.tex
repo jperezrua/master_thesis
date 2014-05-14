@@ -18,12 +18,22 @@ this is a difficult concept to define. Most of these smoothness terms rely in ap
 All these meaning that, unavoidably, some methods may be more reliable for some cases but weaker for others. 
 It can be argued that this behaviour may be caused because most of the techniques do not count with a way to identify 
 firmly where exactly this smoothness prior can be applied. 
+
+\ifcsdef{r@accv_format}{
    \begin{figure}[thpb]
       \centering
       \includegraphics[width=1.0\textwidth]{../images/objectflow.png}
       \caption{Object flow with the color code of \cite{c17} (bottom) for frames in the Puppy sequence (up). }
       \label{of}
    \end{figure}
+}{
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=0.5\textwidth]{../images/objectflow.png}
+      \caption{Object flow with the color code of \cite{c17} (bottom) for frames in the Puppy sequence (up). }
+      \label{of}
+   \end{figure}
+}
 The main idea behind the object flow is that given the availability of several robust tracking techniques, and the proposed
 segmentation method for video, the optical flow computation can be refined by computing it successively between pairs
 of tracked windows. The basic proposal to perform this refinement consist on considering the segmentation limits  as reliable smoothness boundaries. 
@@ -43,6 +53,7 @@ implementation. However, direct modifications in other optical flow methods can 
 minimization approaches, the regularity constraints can be precisely targeted by disconnecting foreground pixels from background ones.
 
 \section{Experimental results}
+\ifcsdef{r@accv_format}{
    \begin{figure}[th]
       \centering
       \includegraphics[width=1.00\textwidth]{../images/extrapolated.png}
@@ -50,7 +61,15 @@ minimization approaches, the regularity constraints can be precisely targeted by
       \label{sample}
    \end{figure}
 	\setlength{\belowcaptionskip}{-10pt}
-
+}{
+   \begin{figure}[th]
+      \centering
+      \includegraphics[width=0.5\textwidth]{../images/extrapolated.png}
+      \caption{Extrapolation results from integrated flow in 4 sequences. In descending order: Amelia Retro, Boy, Walking, Puppy. From Left to Right: Annotated object, Backward object flow, Backward optical flow, Forward object flow, Backward optical flow.}
+      \label{sample}
+   \end{figure}
+	\setlength{\belowcaptionskip}{-10pt}
+}
 To evaluate the performance of the object flow in comparison with optical flow techniques, we performed 
 a number of experiments on several video sequences. We annotated an initial bounding box for the videos, 
 and a segmentation contour of the interest object for every frame. The experiment measures the ability of the method to 
@@ -63,6 +82,7 @@ The results are shown with both, Euler integration (Labelled as $forward$ in the
 and using the integration method described in \cite{c20}, labeled as $backward$ in the figures. The results show that the object flow methods are generally more precise than its optical flow 
 counterparts. Moreover, the object flow method with backward integration usually performs much better than any other combination of techniques. For this experiment, the object flow is compared with the simple-flow optical-flow method.
 
+\ifcsdef{r@accv_format}{
    \begin{figure}[hb]
       \centering
       \includegraphics[width=1.0\textwidth]{../images/psnr.png}
@@ -70,10 +90,20 @@ counterparts. Moreover, the object flow method with backward integration usually
       \label{of_res}
    \end{figure}
 	\setlength{\belowcaptionskip}{-10pt}
+}{
+   \begin{figure}[hb]
+      \centering
+      \includegraphics[width=0.5\textwidth]{../images/psnr.png}
+      \caption{PSNR graphs for extrapolated images using Object flow and the Simple Optical Flow for 4 sequences. In descendent order: Puppy Seq.; Amelie Retro Seq.; Boy Seq.; Walking Seq.}
+      \label{of_res}
+   \end{figure}
+	\setlength{\belowcaptionskip}{-10pt}
+}
 
 The Fig. \ref{compare2} presents a visual comparison between the object flow and several optical flow techniques in the Amelia sequence for object extrapolation, and the involved frames (the first and last used frames in the sequence). The Fig. \ref{of_res2} shows the PSNR results for every extrapolated frame in the full sequence, the object flow performs better 
 than all the studied optical flow techniques.
 
+\ifcsdef{r@accv_format}{
    \begin{figure}[t]
       \centering
       \includegraphics[width=1.0\textwidth]{../images/compare2.png}
@@ -82,10 +112,21 @@ than all the studied optical flow techniques.
       \label{compare2}
    \end{figure}
 	\setlength{\belowcaptionskip}{-10pt}
+}{
+   \begin{figure}[t]
+      \centering
+      \includegraphics[width=0.5\textwidth]{../images/compare2.png}
+      \caption{Top: Comparison between extrapolated objects using several methods: Groundtruth object, Object flow, TVL1, Block Matching, Brox, Farneback and Simple Flow. 
+		Bottom: First and current frame. The extrapolation is performed using backward accumulation of the flow.}
+      \label{compare2}
+   \end{figure}
+	\setlength{\belowcaptionskip}{-10pt}
+}
 
 Observe that the object details are lost in comparison with the ground-truth object image (Fig. \ref{compare2}). For example, the closed eyes detail is missing in the most of the optical 
 flow methods. Furthermore, several of the methods lost any significance, and the output barely holds any resemblance with the original image.
 
+\ifcsdef{r@accv_format}{
    \begin{figure}[th]
       \centering
       \includegraphics[width=1.0\textwidth]{../images/psnr2.png}
@@ -93,3 +134,12 @@ flow methods. Furthermore, several of the methods lost any significance, and the
       \label{of_res2}
    \end{figure}
 	\setlength{\belowcaptionskip}{-10pt}
+}{
+   \begin{figure}[th]
+      \centering
+      \includegraphics[width=0.5\textwidth]{../images/psnr2.png}
+      \caption{PSNR graphs for extrapolated images using Object flow and the different Optical Flow techniques for the Amelia sequence. }
+      \label{of_res2}
+   \end{figure}
+	\setlength{\belowcaptionskip}{-10pt}
+}

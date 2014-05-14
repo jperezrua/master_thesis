@@ -1,16 +1,24 @@
-\contentsline {chapter}{\numberline {Acknowledgments\hspace {-96pt}}}{iv}
 \contentsline {chapter}{\numberline {1}Introduction}{1}
-\contentsline {chapter}{\numberline {2}Background}{3}
-\contentsline {section}{\numberline {2.1}Introduction}{3}
-\contentsline {subsection}{\numberline {2.1.1}Interpolation}{4}
-\contentsline {chapter}{\numberline {3}Object Flow Pipeline}{6}
-\contentsline {section}{\numberline {3.1}Algorithm description}{6}
-\contentsline {section}{\numberline {3.2}Superpixel flow}{6}
-\contentsline {subsection}{\numberline {3.2.1}Problem definition}{6}
-\contentsline {subsection}{\numberline {3.2.2}Energy Formulation}{8}
-\contentsline {subsection}{\numberline {3.2.3}Energy Minimization}{9}
-\contentsline {subsection}{\numberline {3.2.4}Matching Results}{10}
-\contentsline {section}{\numberline {3.3}Background regions tracking and segmentation}{11}
-\contentsline {subsection}{\numberline {3.3.1}Segmentation results}{12}
-\contentsline {chapter}{\numberline {A}The first appendix}{15}
-\contentsline {chapter}{\numberline {Bibliography\hspace {-96pt}}}{16}
+\contentsline {section}{\numberline {1.1}Problem definition}{1}
+\contentsline {section}{\numberline {1.2}Objectives}{2}
+\contentsline {section}{\numberline {1.3}Document organization}{3}
+\contentsline {chapter}{\numberline {2}Background and Related Work}{4}
+\contentsline {section}{\numberline {2.1}Introduction}{4}
+\contentsline {section}{\numberline {2.2}Object Tracking}{4}
+\contentsline {section}{\numberline {2.3}Optical Flow}{6}
+\contentsline {section}{\numberline {2.4}Object segmentation in video}{7}
+\contentsline {section}{\numberline {2.5}Related work}{8}
+\contentsline {section}{\numberline {2.6}Simple Flow}{9}
+\contentsline {chapter}{\numberline {3}Object Flow Pipeline}{12}
+\contentsline {section}{\numberline {3.1}Algorithm description}{12}
+\contentsline {section}{\numberline {3.2}Superpixel flow}{12}
+\contentsline {subsection}{\numberline {3.2.1}Problem definition}{12}
+\contentsline {subsection}{\numberline {3.2.2}Energy Formulation}{14}
+\contentsline {subsection}{\numberline {3.2.3}Energy Minimization}{15}
+\contentsline {subsection}{\numberline {3.2.4}Matching Results}{16}
+\contentsline {section}{\numberline {3.3}Background regions tracking and segmentation}{17}
+\contentsline {subsection}{\numberline {3.3.1}Segmentation results}{18}
+\contentsline {section}{\numberline {3.4}Flow estimation}{19}
+\contentsline {chapter}{\numberline {4}Results and Implementation Details}{23}
+\contentsline {chapter}{\numberline {5}Conclusions}{27}
+\contentsline {chapter}{\numberline {Bibliography\hspace {-96pt}}}{31}

@@ -13,10 +13,6 @@
 %does the headers on the pages - keep in
 \usepackage{fancyhdr}
 
-%omitting any of these makes the thesis compile without the omitted
-%chapter - good for editing single chapters.
-\includeonly{header,abstract,intro,background,appendix}
-
 \begin{document}
 \newpage
 
@@ -28,33 +24,53 @@
 \ \thechapter:\,\ #1}{}}
 \renewcommand{\sectionmark}[1]{\markright{\thesection\,\ #1}}
 
-%DEFINES TITLE PAGE, and contains abstract, acknowledgements, etc.
+% ===================================================
+\include{tex/header}
+\include{tex/abstract}
+% ===================================================
+\doublespacing
 
-\include{header}
-\include{abstract}
+%\pagestyle{empty}
+\pagenumbering{roman}
+\setcounter{page}{1} \pagestyle{plain}
+
+
+\tableofcontents
+\listoffigures
+%\listoftables
+
+%\chapter*{Acknowledgments}
+%\addcontentsline{toc}{chapter}
+%         {\protect\numberline{Acknowledgments\hspace{-96pt}}}
+%
+
+\pagestyle{fancy}
+% ===================================================
 
 \newpage
 
-%sets up headers for lefthand and righthand pages. To alter, edit
-%these lines and the chaptermark/sectionmark lines above
 \addtolength{\headheight}{3pt} \fancyhead{}
 \fancyhead[LE]{\sl\leftmark} \fancyhead[LO,RE]{\rm\thepage}
 \fancyhead[RO]{\sl\rightmark} \fancyfoot[C,L,E]{}
 \pagenumbering{arabic}
 
+% ===================================================
 %\singlespacing
 %\doublespacing
 \onehalfspacing
-\input{introduction}
-\input{background}
-\input{core}
-\appendix
-\input{appendix}
+\input{tex/introduction}
+\input{tex/background}
+\input{tex/core}
+\input{tex/results}
+\input{tex/conclusions}
+%\appendix
+%\input{tex/appendix}
 
-%   this is for BibTeX.  remove if you plan to write the references in the document
+% ===================================================
+
 \bibliographystyle{plain}
-\bibliography{refs}
-
+%\bibliography{tex/refs}
+\input{tex/biblio}
 
 %adds the bibliography to the table of contents
 \addcontentsline{toc}{chapter}

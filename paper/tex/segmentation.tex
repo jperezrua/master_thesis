@@ -19,6 +19,7 @@ The main idea to perform object segmentation consist in tracking (or more exactl
 can be propagated through the sequence, and if they fall into the window on a subsequent frame, they
 can be safely labeled as background (Fig.  \ref{figurelabel_entering}). \\
 
+\ifcsdef{r@accv_format}{
    \begin{figure}[thpb]
       \centering
       \includegraphics[height=0.25\textheight]{../images/tracking_points.png}
@@ -26,6 +27,15 @@ can be safely labeled as background (Fig.  \ref{figurelabel_entering}). \\
       \label{figurelabel_entering}
    \end{figure}
 \setlength{\belowcaptionskip}{-10pt}
+}{
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=0.5\textwidth]{../images/tracking_points.png}
+      \caption{Example image of points entering a tracking region (green) due to object motion in a video sequence.}
+      \label{figurelabel_entering}
+   \end{figure}
+\setlength{\belowcaptionskip}{-10pt}
+}
 
 To save computational power, the tracked superpixels are 
 limited to the ones that fall inside a control region (red box in the Fig.  \ref{figurelabel_entering}). Usually, after several frames, 
@@ -36,12 +46,21 @@ At this point, some generic segmentation technique can be connected to the pipel
 %user interaction would only be the initial bounding box. Moreover, a fully automatic approach can be
 %obtained if a reliable object detector is available.
 
+\ifcsdef{r@accv_format}{
    \begin{figure}[thpb]
       \centering
       \includegraphics[width=1\textwidth]{../images/suppixflow2.png}
       \caption{Background segments automatic labeling and propagation, the flow goes from left to right.}
       \label{figurelabel_spflow}
    \end{figure}
+}{
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=0.5\textwidth]{../images/suppixflow2.png}
+      \caption{Background segments automatic labeling and propagation, the flow goes from left to right.}
+      \label{figurelabel_spflow}
+   \end{figure}
+}
 
 \subsection{Segmentation results}
 
@@ -52,6 +71,8 @@ propagation of the segmentation. The method is tested in the Walking Couple sequ
 graph based segmentation. Observe how the contour in the man's head is correctly delineated when
 another person's head occludes part of it. In this case, the superpixels that belong to the woman’s face
 were correctly propagated and thus, labeled as background. \\
+
+\ifcsdef{r@accv_format}{
    \begin{figure}[thpb]
       \centering
       \includegraphics[width=1.0\textwidth]{../images/Sequence2.png}
@@ -60,6 +81,16 @@ were correctly propagated and thus, labeled as background. \\
 	        The labeled background superpixel are not shown for clarity.}
       \label{figurelabel_walking}
    \end{figure}
+}{
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=0.5\textwidth]{../images/Sequence.png}
+      \caption{Segmentation through the sequence “Walking
+	       Couple” (Yellow contour) initialized in the man’s head. The yellow box correspond to the tracker output.
+	        The labeled background superpixel are not shown for clarity.}
+      \label{figurelabel_walking}
+   \end{figure}
+}
 
 In order to understand the effect of including superpixel propagation in a video sequence for object
 segmentation, some results are shown in the Fig. \ref{figurelabel_comp}. For these experiments only one iteration is
@@ -67,6 +98,7 @@ allowed in the graph-cut based methods. The top row frames (Fig. \ref{figurelabe
 and the bottom row was initialized with the superpixel tracking technique. 
 Observe that in general, the contour delineated is usually better in terms of precision and
 stability for the later one.
+\ifcsdef{r@accv_format}{
    \begin{figure}[thpb]
       \centering
       \includegraphics[width=1.0\textwidth]{../images/Compare.png}
@@ -76,3 +108,14 @@ stability for the later one.
 	       and the Bottom Row: One-iteration graph-cuts initialized with superpixel tracking.}
       \label{figurelabel_comp}
    \end{figure}
+}{
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=0.5\textwidth]{../images/Compare.png}
+      \caption{Face segmentation in the “Amelie Retro” and the
+	      “Snow shoes” sequences in three different frames. For each
+	       group, the Top Row: One-iteration window-based graph-cuts;
+	       and the Bottom Row: One-iteration graph-cuts initialized with superpixel tracking.}
+      \label{figurelabel_comp}
+   \end{figure}
+}

@@ -1,0 +1,48 @@
+\section{Flow estimation}
+%\subsection{Flow estimation}
+\label{sec:core}
+
+The object flow consist on computing the motion field for an object of interest through an image
+sequence. The most usual approach to solve a problem like this is to implement some of the available
+optical flow techniques through the complete sequence and perform the flow integration. 
+However, this process results in high levels of motion drift \cite{c18}\cite{c19} and usually the motion of the interest
+object is affected by a global regularization. In some extreme cases, the interest object motion
+may be totally blurred and other techniques have to be incorporated. Moreover, the diversity
+of natural video sequences makes difficult the choice of one technique over another, even when specialized
+databases are at hand \cite{c17}, because currently no single method can achieve a strong 
+performance in every of the available datasets. Most of these methods consist in the minimization 
+of an energy function with two terms (As was previously mentioned in the Sec. \ref{sec:suppix}). The data
+term is mostly shared between different approaches, but the prior or spatial term is different, and basically states 
+under what conditions the optical flow smoothness should be maintained or not. In a global approach, however,
+this is a difficult concept to define. Most of these smoothness terms rely in appearance differences or gradients.
+All these meaning that, unavoidably, some methods may be more reliable for some cases but weaker for others. 
+It can be argued that this behaviour may be caused because most of the techniques do not count with a way to identify 
+firmly where exactly this smoothness prior can be applied. 
+
+
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=1.0\textwidth]{../images/objectflow.png}
+      \caption{Object flow with the color code of \cite{c17} (bottom) for frames in the Puppy sequence (up). }
+      \label{of}
+   \end{figure}
+
+The main idea behind the object flow is that given the availability of several robust tracking techniques, and the proposed
+segmentation method for video, the optical flow computation can be refined by computing it successively between pairs
+of tracked windows. The basic proposal to perform this refinement consist on considering the segmentation limits  as reliable smoothness boundaries. 
+This is, of course, under the assumption that the motion is indeed smooth within the object region. 
+This is assumption is not far from reality in most scenes with an interest object. 
+Naturally, as the object tracker is included, is expected that the object flow should be more robust to rapid motions than the
+optical flow. 
+Thus, the full motion is split in two, the long range motion, given by the tracker window, and the precision part, given by the targeted optical flow. The Fig. \ref{of} shows 
+the object flow for a frame in the Puppy sequence. Observe the motion vectors are computed only inside the object of interest, preserving a strong smoothing prior, but 
+also allowing internal variations in the flow. 
+
+As a first approximation to the object flow, the Simple Flow technique \cite{c21} is taken as core base. This is because of its scalability 
+to higher resolutions and because its specialization to the concept of object flow is only natural. This is because in the Simple Flow pipeline 
+the smoothness localization can be easily specified through computation masks. More specifically, the initial computation mask is derived from 
+the segmentation performed as prior step. The resulting flow is then filtered only inside the mask limits to enhance precision and fastening the 
+implementation. However, direct modifications in other optical flow methods can be further studied. For instance, in graph-cut based 
+minimization approaches, the regularity constraints can be precisely targeted by disconnecting foreground pixels from background ones.
+
+

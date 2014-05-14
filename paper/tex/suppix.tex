@@ -157,6 +157,8 @@ in the first frame. %This is more suitable for problems where the images are ext
 %   \end{figure}
 
 %\subsection{Matching results}
+
+\ifcsdef{r@accv_format}{
    \begin{figure}[thpb]
       \centering
       \includegraphics[width=0.70\textwidth]{../images/matches_snowshoes.png}
@@ -165,6 +167,17 @@ in the first frame. %This is more suitable for problems where the images are ext
       \label{figurelabel_matchessnow}
    \end{figure}   
 	\setlength{\belowcaptionskip}{-10pt}
+}{
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=0.5\textwidth]{../images/matches_snowshoes.png}
+      \caption{The yellow lines show selected superpixel
+		matching between a pair of distant frames in the Snow Shoes sequence.}
+      \label{figurelabel_matchessnow}
+   \end{figure}   
+	\setlength{\belowcaptionskip}{-10pt}
+}
+
 %The Fig. \ref{figurelabel_matches} shows some examples of superpixel matching with the presented method. 
 %It can be seen that the matching performs well even in difficult cases, like the hands in the top row. It has to be noted
 %as well that even in superpixels where there is a lack of texture, there is correct matching. This seems to be

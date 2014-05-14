@@ -1,12 +1,25 @@
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Object flow definition diagram. }}{2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Interpolation of corresponding coordinates}}{5}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Sequences used to evaluate object trackers in \cite {c16}. }}{5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Performance summary for the top 15 trackers benchmarked in \cite {c16}, initialized with different size of bounding box. }}{5}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Frame pairs used to evaluate optical flow methods in \cite {c17}, Ground truth flow coded with the proposed flow coding. }}{6}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Performance summary for the top 15 opt. flow methods benchmarked in \cite {c17} by interpolation error. }}{7}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Sparse motion trajectories for segmentation. Results in several datasets \cite {c34}. }}{7}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Results of the Simple Flow method in several datasets. }}{9}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Results of the Simple Flow method in several datasets. }}{10}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Block diagram of the proposed pipeline.}}{7}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces The yellow lines show selected superpixel matching between pairs of consecutive frames in a video with the proposed method. The video frames go from right to left.}}{10}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces The yellow lines show selected superpixel matching between a pair of distant frames in the Snow Shoes sequence.}}{10}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Example image of points entering a tracking region (green) due to object motion in a video sequence.}}{12}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Background segments automatic labeling and propagation, the flow goes from left to right.}}{12}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Segmentation through the sequence “Walking Couple” (Yellow contour) initialized in the man’s head. The yellow box correspond to the tracker output. The labeled background superpixel are not shown for clarity.}}{13}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Face segmentation in the “Amelie Retro” and the “Snow shoes” sequences in three different frames. For each group, the Top Row: One-iteration window-based graph-cuts; and the Bottom Row: One-iteration graph-cuts initialized with superpixel tracking.}}{14}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Block diagram of the proposed pipeline.}}{13}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces The yellow lines show selected superpixel matching between pairs of consecutive frames in a video with the proposed method. The video frames go from right to left.}}{16}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces The yellow lines show selected superpixel matching between a pair of distant frames in the Snow Shoes sequence.}}{16}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Example image of points entering a tracking region (green) due to object motion in a video sequence.}}{18}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Background segments automatic labeling and propagation, the flow goes from left to right.}}{18}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Segmentation through the sequence “Walking Couple” (Yellow contour) initialized in the man’s head. The yellow box correspond to the tracker output. The labeled background superpixel are not shown for clarity.}}{19}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Face segmentation in the “Amelie Retro” and the “Snow shoes” sequences in three different frames. For each group, the Top Row: One-iteration window-based graph-cuts; and the Bottom Row: One-iteration graph-cuts initialized with superpixel tracking.}}{20}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Object flow with the color code of \cite {c17} (bottom) for frames in the Puppy sequence (up). }}{21}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Extrapolation results from integrated flow in 4 sequences. In descending order: Amelia Retro, Boy, Walking, Puppy. From Left to Right: Annotated object, Backward object flow, Backward optical flow, Forward object flow, Backward optical flow.}}{24}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces PSNR graphs for extrapolated images using Object flow and the Simple Optical Flow for 4 sequences. From left to right and up to bottom: Puppy Seq.; Amelie Retro Seq.; Boy Seq.; Walking Seq.}}{25}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Top: The first frame and the accumulated flows are used to extrapolate objects in the frame number 30. The used methods from left to right: Groundtruth object, Object flow, TVL1, Block Matching, Brox, Farneback and Simple Flow. Bottom: First and frame\#30. The extrapolations are performed using backward accumulation of the flows.}}{26}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces PSNR graphs for extrapolated images using Object flow and the different Optical Flow techniques for the Amelia sequence. }}{26}
 \addvspace {10\p@ }
