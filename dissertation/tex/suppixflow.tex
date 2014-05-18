@@ -58,20 +58,20 @@ the matching is performed with MAP inference, its posterior probability is:
 %the matching is performed with MAP inference, its energy function extracted from the posterior probability is: 
 \begin{equation}
 P(l|I_0,I_1) = \displaystyle \prod_{p \in \Omega} \mathrm{e}^{-D_p(l_p;I_0,I_1)} 
-\prod_{p,q \in \mathcal{N}} \mathrm{e}^{-S_{p,q}(L_p;L_q)} 
+\prod_{p,q \in \mathcal{N}} \mathrm{e}^{-S_{p,q}(l_p;l_q)} 
 \label{eq_prob}
 \end{equation}
 
 With $l$ the set of labels of the super pixels in $I_0$,
 that match with those in $I_1$.
-$ \mathcal{N} $ is a neighborhood of the
+$ \mathcal{N} $ is a neighbourhood of the
 superpixel $p$, which defines its adjacency. Given this posterior probability,
 the equivalent energy function can be directly obtained
 by extracting the negative logarithm of the posterior,
 
 \begin{equation}
-E(l) = \displaystyle \sum_{p \in \Omega} D_p(L_p;I_0,I_1) +
-\sum_{p,q \in \mathcal{N}} S_{p,q}(L_p,L_q)
+E(l) = \displaystyle \sum_{p \in \Omega} D_p(l_p;I_0,I_1) +
+\sum_{p,q \in \mathcal{N}} S_{p,q}(l_p,l_q)
 \label{eq_energy}
 \end{equation}
 
@@ -107,7 +107,7 @@ S_{p,q}(l_p, l_q) = \lambda(p)
 
 In (\ref{eq_Spq}) the operator $\rho$ is the Hellinger distance as used in the
 data term (\ref{eq_Dp}). The histogram distance is nonetheless computed between superpixels $p$ and $q$, 
-which belong to the same neighborhood. The superpixels centroids are noted as $q_c$ and $p_c$, 
+which belong to the same neighbourhood. The superpixels centroids are noted as $q_c$ and $p_c$, 
 and $u$ and $v$ are the horizontal and vertical changes between centroids.
 This term is usual in the MRF formulation and has a smoothing effect in superpixels that belong to the
 same object. It has to be observed that when two close superpixels are different, thus, more probable to
@@ -124,7 +124,7 @@ limitations in the number of labels \cite{c3}.
 Because of the high amount of possible labels for  each superpixel in the proposed approach, the use of the
 Fusion Moves \cite{c7} technique seems to be well suited.
 This algorithm employs the Quadratic Pseudo-Boolean Optimization (QPBO), to combine
-incremental sets of proposal labelings, resulting in a semi-globally-optimal solution \cite{c4}.
+incremental sets of proposal labellings, resulting in a semi-globally-optimal solution \cite{c4}.
 Thus, the minimization starts by proposing a set of possible solutions, and iteratively merges them with
 the QPBO technique. 
 

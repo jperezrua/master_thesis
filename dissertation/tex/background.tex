@@ -4,7 +4,7 @@
 
 The background of the object flow concept is mainly related to object tracker techniques and optical flow methods. A short state of the art review is presented in 
 following sections, without going too deeply in any specific approach, since those are widely diverse. Of course, another important point is the object based segmentation in videos problem. Several works have involved this or similar problem in 
-the state of the art, and only the more related approaches are presented. In the other hand, as the object flow itself is a novel method, the related work is not large.
+the state of the art, and only the more related approaches are presented. On the other hand, as the object flow itself is a novel method, the related work is not large.
  However, as, in terms of applications, some works have done towards specific oncomings to this concept. Some of these works are superficially explained.
 
 \section{Object Tracking}
@@ -24,7 +24,7 @@ better tracking methods. Some kind of modelling of the background should be an i
 step in the tracking pipeline. Whether this background modelling is implicit like in \cite{c23} or 
 explicit like in \cite{c22}, where is used as context, is just matter of design. Of course, this 
 background modelling have to be accompanied with local model to account with variations (occlusions, deformations) in the interest object. 
-It seems that these two are the reasons why tracking by detection and learning approaches are among the most sucesful ones. Usually, 
+It seems that these two are the reasons why tracking by detection and learning approaches are among the most successful ones. Usually, 
 these methods account with local and background modelling (\cite{c22}\cite{c23}\cite{c24}\cite{c25}\cite{c26}). 
 However, even when motion or dynamical models is crucial for object tracking, very few of the last state of the art techniques focus on this 
 element. The Fig. \ref{tr_per} shows results for the top 15 state of the art trackers as presented in \cite{c16}, taking into account 
@@ -48,11 +48,11 @@ The Struck tracker \cite{c23}, for instance, seems to hold the higher position w
       \label{tr_db}
    \end{figure}
 
-Optical flow is another traditional problem in computer vision, and it may be argued that its underdetermined nature makes it one of the most difficult ones. 
+Optical flow is another traditional problem in computer vision, and it may be argued that its under-determined nature makes it one of the most difficult ones. 
 Several well known databases and benchmarks have been proposed to account for the different intrinsic complications of the problem. The last and larger benchmarking 
 work for this problem may be Baker et al. \cite{c17}, but other useful studies are available \cite{c27}. 
 These works reveal that most of the existing methods establish the problem as the optimization of an energy function that takes into account two terms. The first one, $E_{data}$ 
-measures data consistency over input frames, and $E_{prior}$ which favors flow with certain characteristics, e.g. smoothness in the flow. It seems that one of the major 
+measures data consistency over input frames, and $E_{prior}$ which favours flow with certain characteristics, e.g. smoothness in the flow. It seems that one of the major 
 challenges remains to be the best pair of objective function and optimization method. A number of combinations have been proposed \cite{c29}\cite{c30}\cite{c32}. However, 
 totally different approaches had been also proposed, e.g. by using polynomial expansions \cite{c28}.
 
@@ -61,7 +61,7 @@ E_{global} = E_{data} + \lambda E_{prior}
 \label{eq_ener}
 \end{equation}
 
-According to the update of 2011 of the work in \cite{c17}, the first 15 optical flow method by interpolation error are shown in the Fig. \ref{of_per}. It has to be noted that the performance in several of the dataset is already very good for the most of these methods.
+According to the update of 2011 of the work in \cite{c17}, the first 15 optical flow methods by interpolation error are shown in the Fig. \ref{of_per}. It has to be noted that the performance in several of the dataset is already very good for the most of these methods.
 
    \begin{figure}[thpb]
       \centering
@@ -96,7 +96,7 @@ of using background point trajectories. However, the sparsity of point trajector
 overcame by using superpixels. Therefore, instead of tracking points, background regions are tracked via the novel concept of 
 superpixel flow. 
 We show in future sections how this extra information can be used to complement the
-graph-cuts based techniques for an efficient foregorund-background segmentation. 
+graph-cuts based techniques for an efficient foreground-background segmentation. 
 
 \section{Related work}
 
@@ -115,8 +115,8 @@ of applications.
 From other point of view, the use of superpixels seems to provide a reliable hint for large displacement optical flow. The work presented in \cite{c39} 
 provide an interesting method to combine the idea of optical flow with superpixels, to obtain an optical flow method which can perform well in difficult datasets \cite{c27}. 
 The full set of these ideas can lead to some conclusions towards the object flow pipeline proposal. For instance, authors have already exploited the optical flow 
-to improve tracking methods. It remaines unexplored to complete the cycle by improving the optical flow with the state of the tracker. Moreover, the use of superpixels 
-can be combined with motion estimation to obtain both an object based segmentation and the enhacement of the motion itself.
+to improve tracking methods. It remains unexplored to complete the cycle by improving the optical flow with the state of the tracker. Moreover, the use of superpixels 
+can be combined with motion estimation to obtain both an object based segmentation and the enhancement of the motion itself.
 
 \section{Simple Flow}
 
@@ -125,8 +125,8 @@ object flow method, it is presented in more detail.
 The main characteristic of this method is its efficient approach, which tries to concentrate in the zones where there is evidence of motion, and use linear 
 interpolation for excluded zones. 
 Moreover, the problem is not solved in the usual way by minimizing a variation of (\ref{eq_ener}), but using a simpler likelihood model that 
-follows the constant-color assumption, without including explicitely the pairwise terms that account for smoothing. The smoothness prior it is taken into 
-account, however, by implementation of local filters that uses pixel weightening to take into account pixel proximity ($w_d$) and color similarity ($w_c$)., leading to a equation 
+follows the constant-color assumption, without including explicitly the pairwise terms that account for smoothing. The smoothness prior it is taken into 
+account, however, by implementation of local filters that uses pixel weighting to take into account pixel proximity ($w_d$) and color similarity ($w_c$)., leading to a equation 
 of the type: 
 
 \begin{equation}
@@ -149,7 +149,7 @@ E(x_0, y_0, u, v) = \sum_{(x,y) \in \mathcal{N}_{0}} w_{d}w_{c}||  I_{0}(x,y) - 
    \end{figure}
 
 The practical implementation of this equation requires a cross-bilateral filter to compute $E$, as it takes into account 
-pixel $(x_0,y_0)$ centered $nxn$ windows between $I_0$ and $I_1$, producing $n^2$-dimensional vector for each pixel. 
+pixel $(x_0,y_0)$ centred $nxn$ windows between $I_0$ and $I_1$, producing $n^2$-dimensional vector for each pixel. 
 The flow is the vector $(u_0, v_0)$ that minimized $E$, producing an integer value. The precision can be enhanced by fitting 
 parabolas at  $(u_0, v_0)$ and extracting the minimum. A final bilateral filtering is applied to the flow field, discarding 
 occluded pixels (determined by cross-matching using the computed forward and backward flows). 

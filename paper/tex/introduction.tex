@@ -4,50 +4,38 @@
 Object tracking and optical flow are two of the main components in the
 computer vision toolbox, and have been focus of great research efforts, 
 leading to significant progress in the last years \cite{c16}\cite{c17}. 
-The object tracking problem consist on estimating the 
-position of the target in future frames, given an initialization. In the
-other hand, the optical flow between a pair of frames consist on finding a motion vector 
-for each pixel of interest in the initial image. Even though for several
-applications a full motion-field is needed, other applications like
+The object tracking problem in videos consists on estimating the 
+position of a target in every frame, given an initial position. On the
+other hand, the optical flow between a pair of frames consists on finding a displacement vector 
+for each pixel of the first image, namely a {\it dense motion  or displacement field}. Even though for several
+applications a complete (i.e. for every pixel) motion-field is needed, other applications like
 human-computer interaction, object editing in video or structure-from-motion,
-may only focus on an interest object and, thus, only motion vectors within its 
-space may be of interest. 
+may only focus on an interest object and thus, only a subset of motion vectors is required. 
 In such scenarios combining optical flow and object tracking in a unified 
-framework would become useful and the precision of the object motion description 
+framework appears useful and the precision of the object motion description 
 could be enhanced. For instance, even with modern optical flow approaches, 
-the long term motion problem remains a challenge. However, the problem is more 
-bearable for object tracking techniques. In contrast, object trackers are more global 
-in motion description, and its information can be completed by optical flow sub-pixel 
-precision. Moreover,  even when object
-trackers and optical flow could give good hints for object segmentation in video, 
-these elements are not deeply studied in the literature as a unified problem.
-We introduce the object flow problem as the computation of dense motion 
-flow fields of the set of pixels that belong to an interest object. In other words, 
-the object flow by definition induces the segmentation of the target and its motion field.
+the long term dense motion estimation remains a challenge \cite{c20}\cite{c22}.  At large, object trackers provide a more robust, 
+longer term motion estimation featuring a global description of an object, specially after recent works based on tracking-by-detection approaches \cite{c16}\cite{c23}\cite{c24}. 
+On the other side, they lack the (sub) pixel precision of dense optical flow estimators, as well as a deeper use of contextual information for bundle motion 
+vector estimation. 
+Even more,  object trackers and optical flow give precious hints for other fundamental tools such as 
+object segmentation in video. Nevertheless,
+these two techniques were not deeply studied in the literature as a unified problem. Though optical flow has been widely used as a motion 
+feature for object tracking \cite{c25}, feeding a dense motion estimator with tracking information is not being fully exploited.
+This being said, we introduce  a new problem which we call object flow. Thus, for a given object of interest, 
+the object flow is the set of displacement vectors for every pixel that belong to the target in a first frame, 
+towards another frame of the sequence. In other words, a dense displacement  field constrained to the spatial support of the object. 
+Note that by definition this induces a segmentation of the target and of the motion field.
 
-We can define more precisely the object flow by starting with an image sequence and an initial 
-position of the interest object in the first frame of this sequence, and letting $\mathcal{R}$ be the region corresponding to the support of the object in 2D, such that 
-$\mathcal{R} \subset \Omega$. If $\Omega$ is the set of all the possible grid positions, 
-the object flow problem consist in finding the displacement vector $d_{0,t}(x)$ from the image $I_{0}$ to $I_{t}$, $\forall x \in \mathcal{R}$.
+We can define more precisely the object flow by starting with an image sequence, say $I_t, t:0..N-1$, and an initial 
+position of the interest object in the first frame of this sequence. Let $\mathcal{R} \in \Omega$ be the region corresponding to the support of the object in the
+bi-dimensional grid $\Omega$. Then, the object flow is $\mathcal{O}(x) = d_{0,t}(x), \forall x \in \mathcal{R}$.
 
-A straightforward solution to this problem would be to compute the optical flow motion field, and apply 
+A straightforward solution to this problem would be to compute the optical flow field between a pair of frames, and to apply 
 a segmentation mask to recover the desired motion vectors. Nevertheless, this approach carries several 
 problems. For example, a globally computed optical flow method can affect small objects motion, because of 
-the common use of heavy regularization priors. Moreover, even if the segmentation mask is extracted from a 
-tracker position by a graph-cut based method, is likely that this mask is not going to be well suited for the 
-interest object and some extra user interaction would be needed to refine this process. We propose an approach 
-to reduce these problems.
-
-%Among the state of the art segmentation methods for objects in video
-%sequences, point trajectories based ones stand for its performance and 
-%reliability, even when only sparse trajectories are known because of
-%computational reasons. In the other hand, for the problem of extracting out a 
-%preselected object in still frames, max-flow min-cut based approaches 
-%have demostrated to be a powerful tool. We propose to mix these two 
-%ideas together with the tracking of backgro und regions via the novel concept of 
-%superpixel flow for reliable object segmentation through video. 
-%We show how this extra information can be used to complement the
-%graph-cuts based techniques for an efficient foregorund-background segmentation.
+the common use of heavy regularization prior. Moreover, finding the pixels that belong to the interest object in several frames is a difficult problem. 
+We propose an approach to reduce these problems.
 
 The present paper is organized as follows. We describe our pipeline for object flow, including the novel concept of superpixel flow
 in Sec. \ref{sec:desc} and its use in object segmentation in videos. In following

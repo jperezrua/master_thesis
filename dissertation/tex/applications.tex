@@ -1,0 +1,60 @@
+\chapter{Applications} \label{chap:apps}
+
+A couple of applications for the object flow are presented. Firstly, 
+in complex video edition and augmented reality, and secondly as part 
+of the object-based structure-from-motion. Only visual results are provided 
+in both cases.
+
+\section{Video edition}
+
+The video edition that is approached here is the insertion or modification of 
+an element in a sequence. For instance, during post-production it is possible that 
+an element of a sequence presents inadequate content for the expected audience, and usually 
+removing these elements require a hard manual art-edition work. The object flow 
+can be exploited in order to reduce drastically the amount of manual work that has to be done. 
+
+The proposed approach is to edit manually the initial frame. The elements of this edition 
+can be propagated  through a number of subsequent frames with the object flow. Moreover, 
+for complex scenes, with heavy occlusions and sudden illumination changes, several instances 
+of the object flow can be used, to take into account the difficult cases. Thus, the overall edition 
+work is greatly reduced.
+
+
+
+\section{Structure from motion}
+
+The idea of the structure from motion problem ({\it SfM}) is to 
+recover the shape of objects or scenes from a sequence of images obtained from a camera that follows certain motion. Usually, it is assumed that 
+the scene contains rigid objects undergoing an 
+Euclidean motion.
+
+The most common way to solve the {\it SfM} is to 
+find a set of correspondences between the acquired 
+frames by using a feature matching method, and use the epipolar geometry constraint for two images 
+($x_1^T E x_2 = 0$). Usually, the {\it 8 points algorithm} is used to obtain a relative rotation 
+and translation of the camera by factorizing the 
+essential matrix ($E$). However, given the simplicity of the approach, the algorithm is very sensitive to noise and several other approaches have 
+been proposed. One of the major weakness of such 
+methods is still the feature matching (w.r.t precision and sparsity). 
+
+When matching is replaced by optical flow, the 
+scene structure and the camera motion are tied 
+together by the equation:
+
+\begin{equation}
+\textbf{u}(x) = A(x)\textbf{v}/Z + B(x)\omega   
+\label{eq_dfc}
+\end{equation}
+\begin{center}
+ where, $ A =  \left[ {\begin{array}{ccc} 1 & 0 & -x\\ 0 & 1 & -y \end{array} } \right]$ \\
+ and, $ B =  \left[ {\begin{array}{ccc} -xy & (1+x^2) & -y\\ -(1+y^2) & xy & x \end{array} } \right]$
+\end{center}
+
+The optical flow, however, has been traditionally 
+inaccurate for long term point tracking, and due to the fact that a least square optimal structure can 
+be obtained from camera velocities, the research was 
+mainly focused on capturing camera ego-motion. 
+
+As it has been demonstrated that the object flow 
+increases accuracy of the point trajectories estimation, it can be connected to a {\it SfM} 
+pipeline. Some results can be appreciated in following images.
