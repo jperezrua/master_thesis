@@ -1,7 +1,6 @@
 %\section{Object flow}
-\subsection{Flow estimation}
+%\subsection{Flow estimation}
 \label{sec:core}
-
 The object flow consist on computing the motion field for an object of interest through an image
 sequence. The most usual approach to solve a problem like this is to implement some of the available
 optical flow techniques through the complete sequence and perform the flow integration. 
@@ -10,9 +9,9 @@ object is affected by a global regularization. In some extreme cases, the intere
 may be totally blurred and other techniques have to be incorporated. Moreover, the diversity
 of natural video sequences makes difficult the choice of one technique over another, even when specialized
 databases are at hand \cite{c17}, because currently no single method can achieve a strong 
-performance in every of the available datasets. Most of these methods consist in the minimization 
-of an energy function with two terms (As was previously mentioned in the Sec. \ref{sec:suppix}). The data
-term is mostly shared between different approaches, but the prior or spatial term is different, and basically states 
+performance in all of the available datasets. Most of these methods consist in the minimization 
+of an energy function with two terms (As was previously mentioned in this section). The data
+term is mostly shared between different approaches, but the prior or spatial term is different, and it basically states 
 under what conditions the optical flow smoothness should be maintained or not. In a global approach, however,
 this is a difficult concept to define. Most of these smoothness terms rely in appearance differences or gradients.
 All these meaning that, unavoidably, some methods may be more reliable for some cases but weaker for others. 
@@ -35,8 +34,8 @@ firmly where exactly this smoothness prior can be applied.
    \end{figure}
 }
 The main idea behind the object flow is that given the availability of several robust tracking techniques, and the proposed
-segmentation method for video, the optical flow computation can be refined by computing it successively between pairs
-of tracked windows. The basic proposal to perform this refinement consist on considering the segmentation limits  as reliable smoothness boundaries. 
+segmentation method for video, the optical flow computation can be refined by taking into account the segmentation mask within the tracked windows. 
+The basic proposal to perform this refinement consist on considering the segmentation limits  as reliable smoothness boundaries. 
 This is, of course, under the assumption that the motion is indeed smooth within the object region. 
 This is assumption is not far from reality in most scenes with an interest object. 
 Naturally, as the object tracker is included, is expected that the object flow should be more robust to rapid motions than the
@@ -53,10 +52,11 @@ implementation. However, direct modifications in other optical flow methods can 
 minimization approaches, the regularity constraints can be precisely targeted by disconnecting foreground pixels from background ones.
 
 \section{Experimental results}
+   \vspace*{-0.5cm}
 \ifcsdef{r@accv_format}{
    \begin{figure}[th]
       \centering
-      \includegraphics[width=1.00\textwidth]{../images/extrapolated.png}
+      \includegraphics[width=0.95\textwidth]{../images/extrapolated.png}
       \caption{Extrapolation results from integrated flow in 4 sequences. In descending order: Amelia Retro, Boy, Walking, Puppy. From Left to Right: Annotated object, Backward object flow, Backward optical flow, Forward object flow, Backward optical flow.}
       \label{sample}
    \end{figure}
@@ -75,14 +75,16 @@ a number of experiments on several video sequences. We annotated an initial boun
 and a segmentation contour of the interest object for every frame. The experiment measures the ability of the method to 
 extrapolate an image from the initial frame and the integrated flow. For every pair of frames the video sequence, the PSNR between the annotated
 current state of the object and the extrapolated images is computed. The Fig. \ref{sample} is a sample of the performed experiment, each column is an image generated from the given flow. 
-Two types integration are evaluated, $From-the-reference$, or forward integration, and $To-the-reference$, or backward integration, as discused in \cite{c20}. So, for each row in the Fig. \ref{sample}, two columns correspond to the object flow, and two columns correspond to optical flow, with both types of integration.
+Two types integration are evaluated, {\it From-the-reference}, or forward integration, and {\it To-the-reference}, or backward integration, as discused in \cite{c20}. So, for each row in the Fig. \ref{sample}, 
+two columns correspond to the object flow, and two columns correspond to optical flow, with both types of integration.
 
 The Fig. \ref{of_res} shows PSNR graphics for 4 different sequences. For every pair of frames an image is extrapolated, and the PSNR with the ground-truth object is computed.
-The results are shown with both, Euler integration (Labelled as $forward$ in the figs.) of the used flow, 
-and using the integration method described in \cite{c20}, labeled as $backward$ in the figures. The results show that the object flow methods are generally more precise than its optical flow 
+The results are shown with both, Euler integration (Labelled as {\it forward} in the figs.) of the used flow, 
+and using the integration method described in \cite{c20}, labeled as {\it backward} in the figures. The results show that the object flow methods are generally more precise than its optical flow 
 counterparts. Moreover, the object flow method with backward integration usually performs much better than any other combination of techniques. For this experiment, the object flow is compared with the simple-flow optical-flow method.
 
 \ifcsdef{r@accv_format}{
+   \vspace*{-0.66cm}
    \begin{figure}[hb]
       \centering
       \includegraphics[width=1.0\textwidth]{../images/psnr.png}
@@ -106,7 +108,7 @@ than all the studied optical flow techniques.
 \ifcsdef{r@accv_format}{
    \begin{figure}[t]
       \centering
-      \includegraphics[width=1.0\textwidth]{../images/compare2.png}
+      \includegraphics[width=0.9\textwidth]{../images/compare2.png}
       \caption{Top: Comparison between extrapolated objects using several methods: Groundtruth object, Object flow, TVL1, Block Matching, Brox, Farneback and Simple Flow. 
 		Bottom: First and current frame. The extrapolation is performed using backward accumulation of the flow.}
       \label{compare2}
@@ -115,12 +117,12 @@ than all the studied optical flow techniques.
 }{
    \begin{figure}[t]
       \centering
-      \includegraphics[width=0.5\textwidth]{../images/compare2.png}
+      \includegraphics[width=0.45\textwidth]{../images/compare2.png}
       \caption{Top: Comparison between extrapolated objects using several methods: Groundtruth object, Object flow, TVL1, Block Matching, Brox, Farneback and Simple Flow. 
 		Bottom: First and current frame. The extrapolation is performed using backward accumulation of the flow.}
       \label{compare2}
    \end{figure}
-	\setlength{\belowcaptionskip}{-10pt}
+	%\setlength{\belowcaptionskip}{-10pt}
 }
 
 Observe that the object details are lost in comparison with the ground-truth object image (Fig. \ref{compare2}). For example, the closed eyes detail is missing in the most of the optical 
@@ -129,7 +131,7 @@ flow methods. Furthermore, several of the methods lost any significance, and the
 \ifcsdef{r@accv_format}{
    \begin{figure}[th]
       \centering
-      \includegraphics[width=1.0\textwidth]{../images/psnr2.png}
+      \includegraphics[width=0.9\textwidth]{../images/psnr2.png}
       \caption{PSNR graphs for extrapolated images using Object flow and the different Optical Flow techniques for the Amelia sequence. }
       \label{of_res2}
    \end{figure}
@@ -140,6 +142,33 @@ flow methods. Furthermore, several of the methods lost any significance, and the
       \includegraphics[width=0.5\textwidth]{../images/psnr2.png}
       \caption{PSNR graphs for extrapolated images using Object flow and the different Optical Flow techniques for the Amelia sequence. }
       \label{of_res2}
+   \end{figure}
+	%\setlength{\belowcaptionskip}{-10pt}
+}
+
+\subsection{Object flow for video edition}
+
+Patch replacement is a common task in video post-production, and it usually requires 
+am exhausting and time consuming frame-by-frame edition. The time to make such modification can be 
+widely reduced by implementing the object flow, and taking the interest zone as the target object. The edition can be done 
+only in a couple of keyframes, and then, an automatic expansion to the rest of the frames can be performed. Fig. \ref{of_app} 
+shows the proposed method. The top row contains the automatically edited frames (logo insertion), and the bottom row shows the 
+original frames. Pay attention to the difficult non-rigid transformations.
+
+\ifcsdef{r@accv_format}{
+   \begin{figure}[bh]
+      \centering
+      \includegraphics[width=0.9\textwidth]{../images/videoedition.png}
+      \caption{An application of the object flow for augmented reality/video edition. }
+      \label{of_app}
+   \end{figure}
+	\setlength{\belowcaptionskip}{-10pt}
+}{
+   \begin{figure}[th]
+      \centering
+      \includegraphics[width=0.5\textwidth]{../images/videoedition.png}
+      \caption{An application of the object flow for augmented reality/video edition. }
+      \label{of_app}
    \end{figure}
 	\setlength{\belowcaptionskip}{-10pt}
 }

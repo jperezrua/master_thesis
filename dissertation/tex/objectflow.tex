@@ -39,10 +39,22 @@ the object flow for a frame in the Puppy sequence. Observe the motion vectors ar
 also allowing internal variations in the flow. 
 
 As a first approximation to the object flow, the Simple Flow technique \cite{c21} is taken as core base. This is because of its scalability 
-to higher resolutions and because its specialization to the concept of object flow is only natural. This is because in the Simple Flow pipeline 
+to higher resolutions and because its specialization to the concept of object flow is only natural. The reason behind this is that in the Simple Flow pipeline 
 the smoothness localization can be easily specified through computation masks. More specifically, the initial computation mask is derived from 
 the segmentation performed as prior step. The resulting flow is then filtered only inside the mask limits to enhance precision and fastening the 
 implementation. However, direct modifications in other optical flow methods can be further studied. For instance, in graph-cut based 
 minimization approaches, the regularity constraints can be precisely targeted by disconnecting foreground pixels from background ones.
 
+The object flow concept is valid, however, for those cases where there is not a separable object, and the segmentation is not valid or possible to extract. 
+In order to show this and the fact that only combining the tracker information with a locally computed optical flow is already an improvement to a global 
+optical flow, the Fig. \ref{of_nose} shows an experiment where a patch from a dress is extrapolated by using the most basic object flow definition (no segmentation) 
+and by a globally computed optical flow. It can be seen that the results are better for the first method.
+
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=0.5\textwidth]{../images/objectflow_nosegm.png}
+      \caption{Top row: First and last frames used from the Amelia sequence. Bottom row: From left to right: Groundtruth patch; patch generated with the 
+basic object flow combining the {\it Struck} Tracker and the {\it TVL1} optical flow; and patch generated with the globally computed  {\it TVL1} optical flow.}
+      \label{of_nose}
+   \end{figure}
 

@@ -19,7 +19,12 @@ for complex scenes, with heavy occlusions and sudden illumination changes, sever
 of the object flow can be used, to take into account the difficult cases. Thus, the overall edition 
 work is greatly reduced.
 
-
+   \begin{figure}[tpbh]
+      \centering
+      \includegraphics[width=0.95\textwidth]{../images/videoedition.png}
+      \caption{  Selected frames in the test Dmitry test sequence for video edition. Top: Inserted logo. Bottom: original frames}
+      \label{pt_seg}
+   \end{figure}
 
 \section{Structure from motion}
 
@@ -51,10 +56,26 @@ together by the equation:
 \end{center}
 
 The optical flow, however, has been traditionally 
-inaccurate for long term point tracking, and due to the fact that a least square optimal structure can 
-be obtained from camera velocities, the research was 
+inaccurate for long term point tracking, and due to the fact that an optimal structure in the least square sense can 
+be obtained from camera velocities (which are more accurately extracted from the flow), the research was 
 mainly focused on capturing camera ego-motion. 
 
 As it has been demonstrated that the object flow 
 increases accuracy of the point trajectories estimation, it can be connected to a {\it SfM} 
-pipeline. Some results can be appreciated in following images.
+pipeline as point matching method. Some results can be appreciated in Fig. \ref{sfm1}. These results are generated 
+by using the Changchang Wu's public tools based on his work on Linear-Time Incremental Structure From Motion, and the Furukawa's 
+Clustering Views for Multi-view Stereo for merging the computed structures.
+
+   \begin{figure}[t]
+      \centering
+      \includegraphics[width=0.95\textwidth]{../images/SFM.png}
+      \caption{ SFM based on the object flow matches in the Crazyhorse dataset. Top: views of the computed structure. Bottom: Used frames. }
+      \label{sfm1}
+   \end{figure}
+
+   \begin{figure}[t]
+      \centering
+      \includegraphics[width=0.95\textwidth]{../images/SFM2.png}
+      \caption{ SFM based on the object flow matches in the Puppy dataset. Top: views of the computed structure. Bottom: Used frames. }
+      \label{sfm1}
+   \end{figure}

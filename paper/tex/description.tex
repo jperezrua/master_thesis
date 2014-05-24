@@ -25,6 +25,12 @@ the tracker and motion flow algorithm can work for mutual enhancement.
    \end{figure}
 }
 
-Object tracking in the object flow pipeline can be selected according to a specific need for a given application. Here we prefer recent methods based on tracking-by-detection given 
-that they are in the top of modern benchmarks for object tracking \cite{c16} in terms of accuracy and stability to initialization changes.
 
+\textbf{Tracking.} The object tracking in the object flow pipeline can be selected according to a specific need for a given application. Here we prefer recent methods based on tracking-by-detection given that they are in the top of modern benchmarks for object tracking \cite{c16} in terms of accuracy and stability to initialization changes. Even more, as previously mentioned 
+tracking-by-detection techniques ca benefit from the background-foreground separation of the next stage in the object flow pipeline. For instance, the sampling process in the {\it Struck} 
+tracker can be improved by selecting positive samples only inside the region of the target object.
+
+
+\textbf{Object Support Extraction.} \input{tex/segmentation}
+
+\textbf{Flow estimation.} \input{tex/objectflow}

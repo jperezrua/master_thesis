@@ -1,5 +1,6 @@
 \chapter{Results and Implementation Details} \label{chap:results}
 
+\section{Experiments}
 
    \begin{figure}[th]
       \centering
@@ -60,3 +61,47 @@ good delimitation to establish this prior).
       \label{of_res2}
    \end{figure}
 	\setlength{\belowcaptionskip}{-10pt}
+
+\section{Implementation details}
+
+A framework to combine state-of-the-art optical flow and tracking methods was implemented in C++, and using the OpenCV 3.0 and Eigen 3 libraries. 
+The framework consists on 3 main virtual classes: Tracker, 
+OpticalFlow and ObjectFlow. The function of these base classes is to define the interfaces for several implementations of each algorithm. For instance, 
+the implemented or adopted tracking methods are:
+
+\begin{itemize}
+  \item Color Histograms Mean-Shift,
+  \item Color Spatiograms Mean-Shift,
+  \item Color Spatiograms Based Particle Filter,
+  \item Color Histogram Cam-Shift,
+  \item Multiple Instance Learning Tracker,
+  \item Boosting Tracker,
+  \item Struck Tracker,
+  \item TLD Tracker.
+\end{itemize}
+
+And the used optical flow methods are:
+
+\begin{itemize}
+  \item Lucas-Kanade,
+  \item Horn,
+  \item TV-L1,
+  \item Fast Block Matching, 
+  \item Simple Flow,
+  \item Farneback,
+  \item Affine Transformation based on Keypoint matching,
+  \item Thin Plate Spline Transformation based on Keypoint matching,
+  \item Brox method.
+\end{itemize}
+
+The Fig. \ref{class} shows a simplified class diagram for the implemented framework. It can be appreciated that all major interfaces inherit from the {\it cv::Algorithm} class to provide 
+implementation flexibilities through instantation by smart pointers ({\it cv::Ptr}) and to mantain organization in the interfaces. 
+
+   \begin{figure}[thbp]
+      \centering
+      \includegraphics[width=0.925\textwidth]{../images/ClassDiagram.png}
+      \caption{Simplified class diagram for the implemented workflow.}
+      \label{class}
+   \end{figure}
+	\setlength{\belowcaptionskip}{-10pt}
+

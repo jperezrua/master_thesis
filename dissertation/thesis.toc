@@ -18,10 +18,12 @@
 \contentsline {subsection}{\numberline {3.2.4}Matching Results}{16}
 \contentsline {section}{\numberline {3.3}Background regions tracking and segmentation}{17}
 \contentsline {subsection}{\numberline {3.3.1}Segmentation results}{18}
-\contentsline {section}{\numberline {3.4}Flow estimation}{19}
+\contentsline {section}{\numberline {3.4}Flow estimation}{21}
 \contentsline {chapter}{\numberline {4}Results and Implementation Details}{23}
-\contentsline {chapter}{\numberline {5}Applications}{27}
-\contentsline {section}{\numberline {5.1}Video edition}{27}
-\contentsline {section}{\numberline {5.2}Structure from motion}{27}
-\contentsline {chapter}{\numberline {6}Conclusions}{29}
-\contentsline {chapter}{\numberline {Bibliography\hspace {-96pt}}}{33}
+\contentsline {section}{\numberline {4.1}Experiments}{23}
+\contentsline {section}{\numberline {4.2}Implementation details}{25}
+\contentsline {chapter}{\numberline {5}Applications}{29}
+\contentsline {section}{\numberline {5.1}Video edition}{29}
+\contentsline {section}{\numberline {5.2}Structure from motion}{29}
+\contentsline {chapter}{\numberline {6}Conclusions}{32}
+\contentsline {chapter}{\numberline {Bibliography\hspace {-96pt}}}{36}

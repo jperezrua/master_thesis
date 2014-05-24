@@ -29,7 +29,7 @@ Note that by definition this induces a segmentation of the target and of the mot
 
 We can define more precisely the object flow by starting with an image sequence, say $I_t, t:0..N-1$, and an initial 
 position of the interest object in the first frame of this sequence. Let $\mathcal{R} \in \Omega$ be the region corresponding to the support of the object in the
-bi-dimensional grid $\Omega$. Then, the object flow is $\mathcal{O}(x) = d_{0,t}(x), \forall x \in \mathcal{R}$.
+bi-dimensional grid $\Omega$. Then, the object flow, $\mathcal{O}(x)$,  is defined as $\mathcal{O}(x) = d_{0,t}(x), \forall x \in \mathcal{R}$.
 
 A straightforward solution to this problem would be to compute the optical flow field between a pair of frames, and to apply 
 a segmentation mask to recover the desired motion vectors. Nevertheless, this approach carries several 
@@ -37,9 +37,9 @@ problems. For example, a globally computed optical flow method can affect small 
 the common use of heavy regularization prior. Moreover, finding the pixels that belong to the interest object in several frames is a difficult problem. 
 We propose an approach to reduce these problems.
 
-The present paper is organized as follows. We describe our pipeline for object flow, including the novel concept of superpixel flow
-in Sec. \ref{sec:desc} and its use in object segmentation in videos. In following
-sections some results showing how 
-the object flow overpass state of the art optical flow methods for object motion flows 
-estimation are discussed. Finally, some insights and conclusions are given.
+%The present paper is organized as follows. We describe our pipeline for object flow, including the novel concept of superpixel flow
+%in Sec. \ref{sec:desc} and its use in object segmentation in videos. In following
+%sections some results showing how 
+%the object flow overpass state of the art optical flow methods for object motion flows 
+%estimation are discussed. Finally, some insights and conclusions are given.
 

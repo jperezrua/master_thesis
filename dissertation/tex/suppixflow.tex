@@ -53,25 +53,25 @@ For other kind of the techniques, other approaches should be followed.
 \subsection{Energy Formulation}
 
 Inspired by a large number of optical flow and stereo techniques \cite{c7}\cite{c12}\cite{c13}, 
-the superpixel flow can be modeled with pairwise Markov Random Fields. If
+the superpixel flow can be modeled with a pairwise Markov Random Field. If
 the matching is performed with MAP inference, its posterior probability is: 
-%the matching is performed with MAP inference, its energy function extracted from the posterior probability is: 
+
 \begin{equation}
 P(l|I_0,I_1) = \displaystyle \prod_{p \in \Omega} \mathrm{e}^{-D_p(l_p;I_0,I_1)} 
-\prod_{p,q \in \mathcal{N}} \mathrm{e}^{-S_{p,q}(l_p;l_q)} 
+\prod_{p,q \in \mathcal{N}_r} \mathrm{e}^{-S_{p,q}(l_p;l_q)} ,
 \label{eq_prob}
 \end{equation}
 
 With $l$ the set of labels of the super pixels in $I_0$,
 that match with those in $I_1$.
-$ \mathcal{N} $ is a neighbourhood of the
-superpixel $p$, which defines its adjacency. Given this posterior probability,
-the equivalent energy function can be directly obtained
+$ \mathcal{N}_r $ is a neighbourhood of the
+superpixel $p$ containing all the superpixels which are inside a circle of radius $r$ with center in $p_c$. This neighbourhood defines its adjacency. 
+Given this posterior probability, the equivalent energy function can be directly obtained
 by extracting the negative logarithm of the posterior,
 
 \begin{equation}
 E(l) = \displaystyle \sum_{p \in \Omega} D_p(l_p;I_0,I_1) +
-\sum_{p,q \in \mathcal{N}} S_{p,q}(l_p,l_q)
+\sum_{p,q \in \mathcal{N}_r} S_{p,q}(l_p,l_q)
 \label{eq_energy}
 \end{equation}
 
@@ -79,8 +79,8 @@ The terms $D$, and $S$ in (\ref{eq_energy}) stand for data term and spatial smoo
 are popularly known in the MRF literature. The first one determines how accurate is the labelling in terms
 of consistency of the measured data (color, shape, etc.). In the classical optical flow formulation of this equation,
 the data term corresponds to the pixel brightness conservation\cite{c7}\cite{c5}. However, as superpixels are a set
-of similar (or somehow homogeneous) pixels, an adequate color based feature can be a low dimensional
-color histogram. So $D$ can be written more precisely as the Hellinger distance between the histograms:
+of similar (or somehow homogeneous) pixels, an adequate appearance based feature can be a low dimensional
+color histogram with $N$ bins. So $D$ can be written more precisely as the Hellinger distance between the histograms:
 
 \begin{equation}
 D_p(l_p;I_0,I_1) = \sqrt{ 1 - \frac{1}{\sqrt{\bar{h}(p)\bar{h}(p')N^2} } \sum_{i}\sqrt{h_{i}(p)h_{i}(p')} }
@@ -88,11 +88,11 @@ D_p(l_p;I_0,I_1) = \sqrt{ 1 - \frac{1}{\sqrt{\bar{h}(p)\bar{h}(p')N^2} } \sum_{i
 \end{equation}
 
 Where $h(p)$ and $h(p')$ are the histograms of the superpixel $p$ and its correspondent superpixel in the
-second frame $I_1$. %The function $\rho$ is the Bhattacharyya distance. 
-Note that the low dimensional histogram gives certain robustness against noise,
+second frame $I_1$. 
+Note that the low dimensional histogram ($N=2, N=3$) gives certain robustness against noise,
 and slowly changing colors between frames. 
 
-In the other hand, the spatial term is a penalty function for horizontal
+On the other hand, the spatial term is a penalty function for horizontal
 and vertical changes of the vectors that have origin in the centroid of the superpixel of the first frame and
 end in the centroid of the superpixel of the second frame.
 
