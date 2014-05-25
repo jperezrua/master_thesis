@@ -1,0 +1,15 @@
+\beamer@endinputifotherversion {3.10pt}
+\beamer@sectionintoc {2}{Introduction}{3}{0}{1}
+\beamer@sectionintoc {3}{Object Flow}{4}{0}{2}
+\beamer@subsectionintoc {3}{1}{Tracking}{5}{0}{2}
+\beamer@subsectionintoc {3}{2}{Segmentation}{6}{0}{2}
+\beamer@subsectionintoc {3}{3}{Background tracking}{7}{0}{2}
+\beamer@subsectionintoc {3}{4}{Segmentation refinement}{8}{0}{2}
+\beamer@subsectionintoc {3}{5}{More results}{9}{0}{2}
+\beamer@subsectionintoc {3}{6}{Flow estimation}{10}{0}{2}
+\beamer@sectionintoc {4}{Results}{11}{0}{3}
+\beamer@subsectionintoc {4}{1}{Visual}{11}{0}{3}
+\beamer@subsectionintoc {4}{2}{Numerical}{12}{0}{3}
+\beamer@sectionintoc {5}{Applications}{14}{0}{4}
+\beamer@subsectionintoc {5}{1}{Video edition}{14}{0}{4}
+\beamer@subsectionintoc {5}{2}{Structure from Motion}{15}{0}{4}

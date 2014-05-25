@@ -6,12 +6,19 @@ composed of three main steps, object tracking, segmentation and
 flow estimation. For the segmentation step a new promising video object 
 segmentation algorithm was proposed, and, to the best of our knowledge, 
 the introduced superpixel flow is the first energy based algorithm for superpixel matching.
-For the last step, we presented a flow estimation method based on a modification of the simple-flow method to use 
-the obtained segmentation mask. The experiments showed that this object based flow estimation improves the dense motion 
-estimation in comparisson to optical flow techniques.
+This superpixel matching technique is used to track regions that belong to the background of the 
+scene and allows a fine initialization of segmentation techniques, leading to a precise and stable 
+segmentation method for objects in video sequences.
+For the last step, a flow estimation method based on a modification of the simple-flow method to use 
+the obtained segmentation mask is presented. The experiments showed that this object based flow estimation improves the dense motion 
+estimation in comparison to optical flow techniques. Moreover, it is also shown than a simple 
+mixing of tracking and locally computed optical flow is already better than global optical flow methods. 
+This mixture seems to be in contradiction with the classic aperture problem. However, as the results are evaluated only inside an interest region (the object), this problem disappears. Thus, as the tracker provides 
+a global motion displacement, and the dense flow is only computed within the given tracker windows, a 
+more precise flow is obtained.
 Future work can be further explored in the use of the object flow as feedback hint for tracking-by-detection methods. Also, 
 several kind of applications of the object flow can be more deeply approached. For instance, 
-in the structure-from-motion pipeline, video based rendering, automatic video edition, and video inpainting  among others.
+in the structure-from-motion pipeline, video based rendering, automatic video edition, and video in-painting  among others.
 
 
 

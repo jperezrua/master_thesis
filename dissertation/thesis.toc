@@ -5,25 +5,26 @@
 \contentsline {chapter}{\numberline {2}Background and Related Work}{4}
 \contentsline {section}{\numberline {2.1}Introduction}{4}
 \contentsline {section}{\numberline {2.2}Object Tracking}{4}
-\contentsline {section}{\numberline {2.3}Optical Flow}{6}
-\contentsline {section}{\numberline {2.4}Object segmentation in video}{7}
-\contentsline {section}{\numberline {2.5}Related work}{8}
-\contentsline {section}{\numberline {2.6}Simple Flow}{9}
-\contentsline {chapter}{\numberline {3}Object Flow Pipeline}{12}
-\contentsline {section}{\numberline {3.1}Algorithm description}{12}
-\contentsline {section}{\numberline {3.2}Superpixel flow}{12}
-\contentsline {subsection}{\numberline {3.2.1}Problem definition}{12}
-\contentsline {subsection}{\numberline {3.2.2}Energy Formulation}{14}
-\contentsline {subsection}{\numberline {3.2.3}Energy Minimization}{15}
-\contentsline {subsection}{\numberline {3.2.4}Matching Results}{16}
-\contentsline {section}{\numberline {3.3}Background regions tracking and segmentation}{17}
-\contentsline {subsection}{\numberline {3.3.1}Segmentation results}{18}
-\contentsline {section}{\numberline {3.4}Flow estimation}{21}
-\contentsline {chapter}{\numberline {4}Results and Implementation Details}{23}
-\contentsline {section}{\numberline {4.1}Experiments}{23}
-\contentsline {section}{\numberline {4.2}Implementation details}{25}
-\contentsline {chapter}{\numberline {5}Applications}{29}
-\contentsline {section}{\numberline {5.1}Video edition}{29}
-\contentsline {section}{\numberline {5.2}Structure from motion}{29}
-\contentsline {chapter}{\numberline {6}Conclusions}{32}
-\contentsline {chapter}{\numberline {Bibliography\hspace {-96pt}}}{36}
+\contentsline {subsection}{\numberline {2.2.1}Tracking-by-detection methods}{6}
+\contentsline {section}{\numberline {2.3}Optical Flow}{7}
+\contentsline {subsection}{\numberline {2.3.1}Simple Flow}{8}
+\contentsline {section}{\numberline {2.4}Object segmentation in video}{9}
+\contentsline {section}{\numberline {2.5}Related work}{11}
+\contentsline {chapter}{\numberline {3}Object Flow Pipeline}{13}
+\contentsline {section}{\numberline {3.1}Algorithm description}{13}
+\contentsline {section}{\numberline {3.2}Superpixel flow}{13}
+\contentsline {subsection}{\numberline {3.2.1}Problem definition}{13}
+\contentsline {subsection}{\numberline {3.2.2}Energy Formulation}{15}
+\contentsline {subsection}{\numberline {3.2.3}Energy Minimization}{16}
+\contentsline {subsection}{\numberline {3.2.4}Matching Results}{17}
+\contentsline {section}{\numberline {3.3}Background regions tracking and segmentation}{18}
+\contentsline {subsection}{\numberline {3.3.1}Segmentation results}{19}
+\contentsline {section}{\numberline {3.4}Flow estimation}{22}
+\contentsline {chapter}{\numberline {4}Results and Implementation Details}{24}
+\contentsline {section}{\numberline {4.1}Experiments}{24}
+\contentsline {section}{\numberline {4.2}Implementation details}{26}
+\contentsline {chapter}{\numberline {5}Applications}{30}
+\contentsline {section}{\numberline {5.1}Video edition}{30}
+\contentsline {section}{\numberline {5.2}Structure from motion}{30}
+\contentsline {chapter}{\numberline {6}Conclusions}{33}
+\contentsline {chapter}{\numberline {Bibliography\hspace {-96pt}}}{37}

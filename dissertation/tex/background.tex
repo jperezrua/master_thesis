@@ -5,7 +5,7 @@
 The background of the object flow concept is mainly related to object tracker techniques and optical flow methods. A short state of the art review is presented in 
 following sections, without going too deeply in any specific approach, since those are widely diverse. Of course, another important point is the object based segmentation in videos problem. Several works have involved this or similar problem in 
 the state of the art, and only the more related approaches are presented. On the other hand, as the object flow itself is a novel method, the related work is not large.
- However, as, in terms of applications, some works have done towards specific oncomings to this concept. Some of these works are superficially explained.
+ However, as, in terms of applications, some works have done towards specific oncomings to this concept. Some of these are superficially explained.
 
 \section{Object Tracking}
 
@@ -39,6 +39,36 @@ The Struck tracker \cite{c23}, for instance, seems to hold the higher position w
       \label{tr_per}
    \end{figure}
 
+\subsection{Tracking-by-detection methods}
+
+Current tracking methods look at the problem as a classification task and use online learning techniques to update the object model \cite{c23}. The main reasons for the success of these approaches are the recent advances in object detection
+methods ({\it boosting}, {\it SVM}) and fast learning algorithms. 
+The normal 
+flow on these methods includes to 
+sample the image to create a list 
+of labelled training examples. 
+
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=0.66\textwidth]{../images/tbd.png}
+      \caption{Usual approaches for tracking-by-detection methods. Right: generate a set of samples and, depending on the type of learner, produce training labels. Left: Structured output methods avoid these steps by operating directly in the tracking output. Extracted from \cite{c23}}
+      \label{tr_tbd}
+   \end{figure}
+
+
+Usually, the position of the object 
+is computed from the sample with the maximum classification score in a local window. 
+This method, however, is not perfect, and most of the methods 
+focus on increasing the robustness 
+of the classifier to poor labelling 
+and sampling, by including semi-supervised learning, robust statistics or multiple-instance 
+learning \cite{c25}. Other approaches deal with these problems 
+in a whole different way. For instance, the use of structured learning seems to outperform most 
+of the tracking-by-detection methods \cite{c23}. In this way, 
+the tracking is defined directly 
+as predicting the change in object location between frames, by the use 
+of structured output spaces (the same that is used in applications like text translation). Fig. \ref{tr_tbd} shows a diagram of most used approaches to tracking-by-detection methods. 
+   
 \section{Optical Flow}
 
    \begin{figure}[thpb]
@@ -70,6 +100,46 @@ According to the update of 2011 of the work in \cite{c17}, the first 15 optical 
       \label{of_per}
    \end{figure}
 
+\subsection{Simple Flow}
+
+As the Simple Flow \cite{c21} is the optical flow technique that is used as base of the proposed 
+object flow method, it is presented in more detail. 
+The main characteristic of this method is its efficient approach, which tries to concentrate in the zones where there is evidence of motion, and use linear 
+interpolation for excluded zones. 
+Moreover, the problem is not solved in the usual way by minimizing a variation of (\ref{eq_ener}), but using a simpler likelihood model that 
+follows the constant-color assumption, without including explicitly the pairwise terms that account for smoothing. The smoothness prior it is taken into 
+account, however, by implementation of local filters that uses pixel weighting to take into account pixel proximity ($w_d$) and color similarity ($w_c$)., leading to a equation 
+of the type: 
+
+\begin{equation}
+E(x_0, y_0, u, v) = \sum_{(x,y) \in \mathcal{N}_{0}} w_{d}w_{c}||  I_{0}(x,y) - I_{1}(x+u,y+v) ||^2
+\label{eq_simple}
+\end{equation}
+
+   \begin{figure}[tbhp]
+      \centering
+      \includegraphics[width=0.66\textwidth]{../images/simpleflow.png}
+      \caption{  Results of the Simple Flow method in several datasets. }
+      \label{simple_of}
+   \end{figure}
+
+   \begin{figure}[tbhp]
+      \centering
+      \includegraphics[width=0.95\textwidth]{../images/simpleoptflow.png}
+      \caption{  Results of the Simple Flow method in several datasets. }
+      \label{simple_of}
+   \end{figure}
+
+The practical implementation of this equation requires a cross-bilateral filter to compute $E$, as it takes into account 
+pixel $(x_0,y_0)$ centred $nxn$ windows between $I_0$ and $I_1$, producing $n^2$-dimensional vector for each pixel. 
+The flow is the vector $(u_0, v_0)$ that minimized $E$, producing an integer value. The precision can be enhanced by fitting 
+parabolas at  $(u_0, v_0)$ and extracting the minimum. A final bilateral filtering is applied to the flow field, discarding 
+occluded pixels (determined by cross-matching using the computed forward and backward flows). 
+To recover large motions, instead of using large $nxn$ windows, a multi scale approach is followed. 
+If more accuracy is desired, a more global optimization can follow, for instance, connecting the global approach used in Sun et al. \cite{c40}.
+This simple approach for computing optical flow ranked in a very good position in the Middlebury evaluation \cite{c17}, 
+and some results can be appreciated in the Fig. \ref{simple_of}.
+
 \section{Object segmentation in video}
 
 Among the state of the art segmentation methods for objects in video
@@ -79,7 +149,7 @@ computational reasons \cite{c34}. On the other hand, for the problem of extracti
 preselected object in still frames, max-flow min-cut based approaches 
 have demostrated to be a powerful tool \cite{c14}\cite{c18}. 
 
-   \begin{figure}[bhp]
+   \begin{figure}[tbhp]
       \centering
       \includegraphics[height=0.275\textheight]{../images/point_traj_segm.png}
       \caption{  Sparse motion trajectories for segmentation. Results in several datasets  \cite{c34}. }
@@ -118,45 +188,6 @@ The full set of these ideas can lead to some conclusions towards the object flow
 to improve tracking methods. It remains unexplored to complete the cycle by improving the optical flow with the state of the tracker. Moreover, the use of superpixels 
 can be combined with motion estimation to obtain both an object based segmentation and the enhancement of the motion itself.
 
-\section{Simple Flow}
-
-As the Simple Flow \cite{c21} is the optical flow technique that is used as base of the proposed 
-object flow method, it is presented in more detail. 
-The main characteristic of this method is its efficient approach, which tries to concentrate in the zones where there is evidence of motion, and use linear 
-interpolation for excluded zones. 
-Moreover, the problem is not solved in the usual way by minimizing a variation of (\ref{eq_ener}), but using a simpler likelihood model that 
-follows the constant-color assumption, without including explicitly the pairwise terms that account for smoothing. The smoothness prior it is taken into 
-account, however, by implementation of local filters that uses pixel weighting to take into account pixel proximity ($w_d$) and color similarity ($w_c$)., leading to a equation 
-of the type: 
-
-\begin{equation}
-E(x_0, y_0, u, v) = \sum_{(x,y) \in \mathcal{N}_{0}} w_{d}w_{c}||  I_{0}(x,y) - I_{1}(x+u,y+v) ||^2
-\label{eq_simple}
-\end{equation}
-
-   \begin{figure}[bhp]
-      \centering
-      \includegraphics[width=0.66\textwidth]{../images/simpleflow.png}
-      \caption{  Results of the Simple Flow method in several datasets. }
-      \label{simple_of}
-   \end{figure}
-
-   \begin{figure}[bhp]
-      \centering
-      \includegraphics[width=0.95\textwidth]{../images/simpleoptflow.png}
-      \caption{  Results of the Simple Flow method in several datasets. }
-      \label{simple_of}
-   \end{figure}
-
-The practical implementation of this equation requires a cross-bilateral filter to compute $E$, as it takes into account 
-pixel $(x_0,y_0)$ centred $nxn$ windows between $I_0$ and $I_1$, producing $n^2$-dimensional vector for each pixel. 
-The flow is the vector $(u_0, v_0)$ that minimized $E$, producing an integer value. The precision can be enhanced by fitting 
-parabolas at  $(u_0, v_0)$ and extracting the minimum. A final bilateral filtering is applied to the flow field, discarding 
-occluded pixels (determined by cross-matching using the computed forward and backward flows). 
-To recover large motions, instead of using large $nxn$ windows, a multi scale approach is followed. 
-If more accuracy is desired, a more global optimization can follow, for instance, connecting the global approach used in Sun et al. \cite{c40}.
-This simple approach for computing optical flow ranked in a very good position in the Middlebury evaluation \cite{c17}, 
-and some results can be appreciated in the Fig. \ref{simple_of}.
 
 
 
