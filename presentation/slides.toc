@@ -13,3 +13,4 @@
 \beamer@sectionintoc {5}{Applications}{14}{0}{4}
 \beamer@subsectionintoc {5}{1}{Video edition}{14}{0}{4}
 \beamer@subsectionintoc {5}{2}{Structure from Motion}{15}{0}{4}
+\beamer@sectionintoc {6}{Conclusions}{16}{0}{5}

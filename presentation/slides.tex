@@ -11,11 +11,11 @@
 
 \title{Object Flow}
 \author{Juan M. Perez}
-\date{June 17, 2014}
-\institute[2014]{Technicolor}
+\date{May 26, 2014}
+\titlegraphic{\includegraphics[width=0.5\textwidth]{../dissertation/images/logo/technicolor_large.png}}
 
 \begin{document}
-
+\setbeamertemplate{footline}[frame number]
 \frame{\titlepage}
 
 \section[Outline]{}
@@ -62,8 +62,7 @@ What information to use to refine the object motion?
   \begin{columns}[T]
     \begin{column}{.5\textwidth}
 		\begin{block}{Tracking}
-Tracking has shown tremendous advances in the last years. 
-Tracking by detection methods had shown very good performance in 
+Tracking by detection methods have shown very good performance in 
 modern benchmarks.
 \includegraphics[width=1.0\textwidth]{../images/trackers_performance.png}
  	
@@ -189,5 +188,22 @@ $ S_{p,q}(l_p, l_q) = \lambda(p)
 	\frametitle{SfM}
 \includegraphics[width=1.0\textwidth]{../images/SFM.png}
 \end{frame}
+
+\section{Conclusions}
+
+\begin{frame}
+\frametitle{Conclusions}
+\begin{enumerate}
+\item The object flow problem is presented.
+\item A method to match superpixel is explored.
+\item An algorithm for object segmentation in video is explained.
+\item A system to compute the object flow is proposed.
+\item This system has shown to be more precise for dense object motion estimation than regular optical flow methods. 
+\item Examples of the use of the 
+object flow in real scenarios are presented.
+\end{enumerate}
+
+\end{frame}
+
 
 \end{document}
