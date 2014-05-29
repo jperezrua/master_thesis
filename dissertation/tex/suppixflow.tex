@@ -53,12 +53,12 @@ For other kind of the techniques, other approaches should be followed.
 \subsection{Energy Formulation}
 
 Inspired by a large number of optical flow and stereo techniques \cite{c7}\cite{c12}\cite{c13}, 
-the superpixel flow can be modeled with a pairwise Markov Random Field. If
+the superpixel flow can be modeled with a pairwise Markov Random Field in the super pixel space $\Gamma$. If
 the matching is performed with MAP inference, its posterior probability is: 
 
 \begin{equation}
-P(l|I_0,I_1) = \displaystyle \prod_{p \in \Omega} \mathrm{e}^{-D_p(l_p;I_0,I_1)} 
-\prod_{p,q \in \mathcal{N}_r} \mathrm{e}^{-S_{p,q}(l_p;l_q)} ,
+P(l|I_0,I_1) = \displaystyle \prod_{p \in \Gamma} \mathrm{e}^{-D_p(l_p;I_0,I_1)} 
+\prod_{(p,q): q \in \mathcal{N}_r} \mathrm{e}^{-S_{p,q}(l_p;l_q)} ,
 \label{eq_prob}
 \end{equation}
 
@@ -70,8 +70,8 @@ Given this posterior probability, the equivalent energy function can be directly
 by extracting the negative logarithm of the posterior,
 
 \begin{equation}
-E(l) = \displaystyle \sum_{p \in \Omega} D_p(l_p;I_0,I_1) +
-\sum_{p,q \in \mathcal{N}_r} S_{p,q}(l_p,l_q)
+E(l) = \displaystyle \sum_{p \in \Gamma} D_p(l_p;I_0,I_1) +
+\sum_{(p,q): q \in \mathcal{N}_r} S_{p,q}(l_p,l_q) .
 \label{eq_energy}
 \end{equation}
 
@@ -139,9 +139,14 @@ matching would be the most similar one in terms of color, shape, or the spatial 
 neighbourhood in the second frame and select random pairs from every neighbourhood of every superpixel
 in the first frame. This is suitable for problems where the images are extracted from the same video
 sequence. 
+In this case, the proposed approach is, in order to mantain generality, to enforce a proximity prior and to extract possible matches from 
+a circular neighborhoud in the subsequent frame centered on the current superpixel centroid. The radius of this neighborhoud is not necesarily 
+of the same value as the radius $r$, and it accounts for the maximum possible matching distance between superpixels.
 To speed-up the minimization procedure, the QBPO properties can be exploited. For instance, the fusion of the
-proposed solutions is always guaranteed to be of lowest or equal energy than the two proposals. Thus, one could
-split the fusion procedure in several cores and build a hierarchical chain as fusions of proposal are subsequently fused.
+proposed solutions is always guaranteed to be of lowest or equal energy than the two proposals. Thus, it does not matter the order in which the solutions are merged. 
+One could, then, split the fusion procedure in several cores and build a hierarchical chain as proposals are subsequently fused. The idea of this implementation is compatible with 
+the modern tendency to move the algorithms to the GPU level.
+
 
    \begin{figure}[thpb]
       \centering
@@ -154,6 +159,7 @@ split the fusion procedure in several cores and build a hierarchical chain as fu
    \end{figure}
 
 \subsection{Matching Results}
+
    \begin{figure}[thpb]
       \centering
       \includegraphics[width=0.70\textwidth]{../images/matches_snowshoes.png}
@@ -164,7 +170,7 @@ split the fusion procedure in several cores and build a hierarchical chain as fu
 	\setlength{\belowcaptionskip}{-10pt}
 	
 The Fig. \ref{figurelabel_matches} shows some examples of superpixel matching between subsequent frames with the presented method. 
-It can be seen that the matching performs well even in difficult cases, like the hands in the top row. It has to be noted
+It can be seen that the matching performs well even in difficult cases, like the hands in the first column ({\it yunakim long2} sequence). It has to be noted
 as well that even in superpixels where there is a lack of texture, there is correct matching. This seems to be
 the effect of enforcing the regularization between superpixels that are close, but are also similar to
 each other.
@@ -175,4 +181,4 @@ The Fig. \ref{figurelabel_matchessnow} shows
  results for large separations between frames, without tweaking or adjusting any parameters. 
 For this case, however, the matches in the texture-less part of the scene
  are mostly invalids. Though this is expected because of the aperture problem and
- heavy occlusions.
+ heavy occlusions, thus, the matching in this region lacks of meaning.

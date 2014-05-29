@@ -7,7 +7,7 @@
 The algorithm proposed in \cite{c18}, offers a good deal in terms of
 background-foreground separation from user interaction. A technique like this, however,
 performs very well in still images, but it may not be well adapted for sequential videos. 
-Extensions to this method, like the GrabCut algorithm (\cite{c14}), work by implementing an iterative graph-cut based 
+Extensions to this method, like the GrabCut algorithm \cite{c14}, work by implementing an iterative graph-cut based 
 minimization to separate regions according to appearance information from a loosely drawn rectangle around the object, and small user-interaction-based hints. 
 Given the tracker state for every frame, the minimization procedure of the methods in \cite{c18} and \cite{c14} could be extended to video. However, 
 a lot of details in the segmentation contour may be lose if no fine hints are given.
@@ -15,26 +15,44 @@ These hints usually depend on on-the-fly supervised methods. However, this need 
 Some authors had approached the graph-cut based segmentation techniques in sequential
 videos to propagate a consistent segmentation \cite{c15}. However, some more work on reducing user interaction given the extra flow-like information
 that video sequences offer is still needed.
-We propose to combine the presented superpixel flow as an automatic initialization method for the desired segmentation method.
- 
-The main idea to perform object segmentation consist in tracking (or more exactly, matching) superpixels that are labelled as background, thanks to an object tracker initialization. Thus, the superpixels that are initially outside the tracker region of interest, 
-can be propagated through the sequence, and if they fall into the window on a subsequent frame, they
-can be safely labelled as background (Fig.  \ref{figurelabel_entering}). \\
+Determining the spatial support of the object in a given frame benefits from the output of the tracker. Appearance cues alone, learned inside and outside the tracking window 
+can result in a misleading modeling of the foreground and the background. In contrast, we propose to perform foreground-background segmentation by tracking 
+background pixels surrounding the target, thanks to the tracker output. Thus, the pixels that are initially outside the tracker window, 
+are followed through the sequence and as long as they enter the tracked region, they can be safely labeled as background. 
+This idea can be observed in the Fig.  \ref{figurelabel_entering}, 
+where the object window given by the tracker (green) loosely separates the foreground from the background. Points outside the tracker (blue) are labeled as background in previous frames, and as they enter the tracker window (red points), they can be used to improve the modeling  of the foreground and the background. 
+The red window is used to save computational power by avoiding to track points that are too far from the interest object.
+
 
    \begin{figure}[thpb]
       \centering
-      \includegraphics[height=0.25\textheight]{../images/tracking_points.png}
+      \includegraphics[height=0.285\textheight]{../images/tracking_points.png}
       \caption{Example image of points entering a tracking region (green) due to object motion in a video sequence.}
       \label{figurelabel_entering}
    \end{figure}
 \setlength{\belowcaptionskip}{-10pt}
 
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=1\textwidth]{../images/pointTr.png}
+      \caption{Point tracking using an optical flow method.}
+      \label{pointtr}
+   \end{figure}
+
+
+This idea can be applied in several levels in a video sequence. The first method to develop such an algorithm is to do it in the pixel level. The Fig. \ref{pointtr} shows some results by applying 
+a dense optical flow technique (Fast Block Matching) in an external window. However, as it can appreciated, the results are rather sparse and after some time, the regularization of the 
+optical flow method leads to some of the points being wrongly tracked inside the object boundaries. Both problems, sparsity and tracking errors due to drift and regularization can be 
+overcome by implementig the same idea, but in the superpixel level.
 To save computational power, the tracked superpixels are 
-limited to the ones that fall inside a control region (red box in the Fig.  \ref{figurelabel_entering}). Usually, after several frames, 
+limited to the ones that fall inside a control region (red box in the Fig.  \ref{figurelabel_entering}). 
+
+Normally, after several frames, 
 the labeled superpixels will almost completely cover the unwanted areas in a dinamyc scene. We call this process background segments tracking.  The Fig. \ref{figurelabel_spflow} shows this idea in a real scenario. From left to right, initially the superpixels with 
 elements outside the bounding box are labeled as background (green), then, as the sequence changes, the labeled superpixels flow inside the window, giving hints for the model initialization in the background-foreground separation algorithm. 
-At this point, some generic segmentation technique can be connected to the pipeline to refine the segmentation (e.g. region growing). We prefer, however graph based segmentation methods (\cite{c18}\cite{c15}) because the usual user interaction can be replaced by the tracked background regions.
-%Having several labeled superpixels can reduce widely or totally the necessity for user interaction in subsequent frames in %comparison with other segmentation techniques. Thus, to perform object segmentation in a full video sequence, the required
+At this point, some generic segmentation technique can be connected to the pipeline to refine the segmentation (e.g. region growing). We prefer, however graph based segmentation methods (\cite{c18}\cite{c15}) because the usual user interaction can be replaced by the tracked background regions, and the algorithms are faster and more robust.
+%Having several labeled superpixels can reduce widely or totally the necessity for user interaction in subsequent frames in %comparison with other segmentation techniques. 
+% Thus, to perform object segmentation in a full video sequence, the required
 %user interaction would only be the initial bounding box. Moreover, a fully automatic approach can be
 %obtained if a reliable object detector is available.
 
@@ -53,10 +71,13 @@ background-foreground models are updated as the frames go on, giving more robust
 propagation of the segmentation. The method is tested in the Walking Couple sequence, by allowing only a small amount of iterations in the
 graph based segmentation. Observe how the contour in the man's head is correctly delineated when
 another person's head occludes part of it. In this case, the superpixels that belong to the woman’s face
-were correctly propagated and thus, labeled as background. \\
+were correctly propagated and thus, labeled as background. Its also impressive that the segmentation process recovers after a heavy oclussion.
+In this case, the fact that the tracker is also robust to the occlusion is a key factor that help the system mantain a correct segmentation trhough such a difficult 
+case.
+
    \begin{figure}[thpb]
       \centering
-      \includegraphics[width=1.0\textwidth]{../images/Sequence2.png}
+      \includegraphics[width=1.0\textwidth]{../images/Sequence.png}
       \caption{Segmentation through the sequence “Walking
 	       Couple” (Yellow contour) initialized in the man’s head. The yellow box correspond to the tracker output.
 	        The labeled background superpixel are not shown for clarity.}

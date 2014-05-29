@@ -1,18 +1,5 @@
 %\subsection{Superpixel flow}
 \label{sec:suppix}
-%As a preprocessing step in the object flow pipeline, we propose a superpixel matching technique which assumes a flowlike behavior in the image 
-%sequences (natural video), which can be used to track superpixels. 
-%This matching, however, has to comply with a set of constraints. 
-%Firstly, two correspondent superpixels should be similar in terms of some appearance
-%feature, which most likely depends on the way the superpixelization was performed (color, texture,
-%shape). Also, the superpixel flow  should maintain certain global regularity (at least for
-%superpixels that belong to the same object). %In this sense, it seems
-
-%If the size compactness of the superpixels is maintained,  it actually seems to 
-%share some of the properties of the optical flow problem, with the difference that the
-%smoothness is usually a very strong constraint for the last one. 
-%The strength of this smoothness prior relies not only in the nature of the problem, but also
-%because it gives better cues towards an easier-to-minimize global approach.
 
 In order to perform the background segments tracking,  we propose a superpixel matching technique, 
 which we call superpixel flow. The objective of the superpixel flow is to find the best match for every superpixel $p$ in the first 
@@ -35,7 +22,7 @@ E(l) = \displaystyle \sum_{p \in \Gamma} D_p(l_p;I_0,I_1) +
 \end{equation}
 
 With $l$ the set of labels of the superpixels in $I_0$,
-that match with those in $I_1$. $\mathcal{N}_r$ is a neighbourhood of radius $r$ of the superpixel $p$.
+that match with those in $I_1$, in the super pixel space $\Gamma$. $\mathcal{N}_r$ is a neighbourhood of radius $r$ of the superpixel $p$.
 The terms $D$, and $S$ in (\ref{eq_energy}) stand for data term and spatial smoothness term. 
 The first one determines how accurate is the labeling in terms
 of consistency with the measured data (color, shape,etc.). In the classical optical flow equivalent of this equation,

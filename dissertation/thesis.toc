@@ -10,21 +10,24 @@
 \contentsline {subsection}{\numberline {2.3.1}Simple Flow}{8}
 \contentsline {section}{\numberline {2.4}Object segmentation in video}{9}
 \contentsline {section}{\numberline {2.5}Related work}{11}
-\contentsline {chapter}{\numberline {3}Object Flow Pipeline}{13}
-\contentsline {section}{\numberline {3.1}Algorithm description}{13}
-\contentsline {section}{\numberline {3.2}Superpixel flow}{13}
-\contentsline {subsection}{\numberline {3.2.1}Problem definition}{13}
-\contentsline {subsection}{\numberline {3.2.2}Energy Formulation}{15}
-\contentsline {subsection}{\numberline {3.2.3}Energy Minimization}{16}
-\contentsline {subsection}{\numberline {3.2.4}Matching Results}{17}
-\contentsline {section}{\numberline {3.3}Background regions tracking and segmentation}{18}
-\contentsline {subsection}{\numberline {3.3.1}Segmentation results}{19}
+\contentsline {chapter}{\numberline {3}Object Flow Pipeline}{14}
+\contentsline {section}{\numberline {3.1}Algorithm description}{14}
+\contentsline {section}{\numberline {3.2}Superpixel flow}{14}
+\contentsline {subsection}{\numberline {3.2.1}Problem definition}{14}
+\contentsline {subsection}{\numberline {3.2.2}Energy Formulation}{16}
+\contentsline {subsection}{\numberline {3.2.3}Energy Minimization}{17}
+\contentsline {subsection}{\numberline {3.2.4}Matching Results}{18}
+\contentsline {section}{\numberline {3.3}Background regions tracking and segmentation}{19}
+\contentsline {subsection}{\numberline {3.3.1}Segmentation results}{21}
 \contentsline {section}{\numberline {3.4}Flow estimation}{22}
-\contentsline {chapter}{\numberline {4}Results and Implementation Details}{24}
-\contentsline {section}{\numberline {4.1}Experiments}{24}
-\contentsline {section}{\numberline {4.2}Implementation details}{26}
-\contentsline {chapter}{\numberline {5}Applications}{30}
-\contentsline {section}{\numberline {5.1}Video edition}{30}
-\contentsline {section}{\numberline {5.2}Structure from motion}{30}
-\contentsline {chapter}{\numberline {6}Conclusions}{33}
-\contentsline {chapter}{\numberline {Bibliography\hspace {-96pt}}}{37}
+\contentsline {section}{\numberline {3.5}Feedback for tracking methods}{28}
+\contentsline {chapter}{\numberline {4}Results and Implementation Details}{31}
+\contentsline {section}{\numberline {4.1}Experiments}{31}
+\contentsline {section}{\numberline {4.2}Implementation details}{33}
+\contentsline {chapter}{\numberline {5}Applications}{38}
+\contentsline {section}{\numberline {5.1}Video edition}{38}
+\contentsline {section}{\numberline {5.2}Structure from motion}{38}
+\contentsline {chapter}{\numberline {6}Conclusions}{42}
+\contentsline {section}{\numberline {6.1}Discussion}{42}
+\contentsline {section}{\numberline {6.2}Final remarks}{43}
+\contentsline {chapter}{\numberline {Bibliography\hspace {-96pt}}}{48}

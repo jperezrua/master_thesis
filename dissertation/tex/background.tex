@@ -5,7 +5,7 @@
 The background of the object flow concept is mainly related to object tracker techniques and optical flow methods. A short state of the art review is presented in 
 following sections, without going too deeply in any specific approach, since those are widely diverse. Of course, another important point is the object based segmentation in videos problem. Several works have involved this or similar problem in 
 the state of the art, and only the more related approaches are presented. On the other hand, as the object flow itself is a novel method, the related work is not large.
- However, as, in terms of applications, some works have done towards specific oncomings to this concept. Some of these are superficially explained.
+ However, as, in terms of applications, some works have been done towards specific oncomings to this concept. Some of these are superficially explained.
 
 \section{Object Tracking}
 
@@ -51,7 +51,7 @@ of labelled training examples.
    \begin{figure}[thpb]
       \centering
       \includegraphics[width=0.66\textwidth]{../images/tbd.png}
-      \caption{Usual approaches for tracking-by-detection methods. Right: generate a set of samples and, depending on the type of learner, produce training labels. Left: Structured output methods avoid these steps by operating directly in the tracking output. Extracted from \cite{c23}}
+      \caption{Usual approaches for tracking-by-detection methods. Right: generate a set of samples and, depending on the type of learner, produce training labels. Left: Structured output methods avoid these steps by operating directly in the tracking output. Extracted from \cite{c23}.}
       \label{tr_tbd}
    \end{figure}
 
@@ -118,7 +118,7 @@ E(x_0, y_0, u, v) = \sum_{(x,y) \in \mathcal{N}_{0}} w_{d}w_{c}||  I_{0}(x,y) - 
 
    \begin{figure}[tbhp]
       \centering
-      \includegraphics[width=0.66\textwidth]{../images/simpleflow.png}
+      \includegraphics[width=0.85\textwidth]{../images/simpleflow.png}
       \caption{  Results of the Simple Flow method in several datasets. }
       \label{simple_of}
    \end{figure}
@@ -147,11 +147,11 @@ sequences, point trajectories based ones stand for its performance and
 reliability \cite{c33}, even when only sparse trajectories are known because of
 computational reasons \cite{c34}. On the other hand, for the problem of extracting out a 
 preselected object in still frames, max-flow min-cut based approaches 
-have demostrated to be a powerful tool \cite{c14}\cite{c18}. 
+have demonstrated to be a powerful tool \cite{c14}\cite{c18}. 
 
-   \begin{figure}[tbhp]
+   \begin{figure}[thpb]
       \centering
-      \includegraphics[height=0.275\textheight]{../images/point_traj_segm.png}
+      \includegraphics[height=0.28\textheight]{../images/point_traj_segm.png}
       \caption{  Sparse motion trajectories for segmentation. Results in several datasets  \cite{c34}. }
       \label{pt_seg}
    \end{figure}
@@ -177,17 +177,37 @@ intrinsically in the accuracy of the motion estimation to perform a good segment
 low-order parametric motion models to model background movement, and by incorporating radial maps, obtain a frame-by-frame 
 moving object segmentation \cite{c36}, in contrast with the methods that combine motion awareness with appearance information \cite{c35}. 
 
-In the other hand, other authors had used the optical flow constraints to track objects, 
-which is, up to some extent, the inverse problem proposed for the object flow \cite{c37}. Some authors went further in this sense, to create specialized trackers 
-for deformable objects by combining model based tracking with the optical flow constraint. Even when a work like the last one is very interesting for video editing 
-tasks, the approach is limited by the mesh model availability. In this sense, the object flow proposal seems to be more generic, and thus, more adequate for this kind 
-of applications.
-From other point of view, the use of superpixels seems to provide a reliable hint for large displacement optical flow. The work presented in \cite{c39} 
+From other point of view, regarding the problem of large displacement motion estimation, the use of superpixels seems to provide a reliable hint. The work presented in \cite{c39} 
 provide an interesting method to combine the idea of optical flow with superpixels, to obtain an optical flow method which can perform well in difficult datasets \cite{c27}. 
 The full set of these ideas can lead to some conclusions towards the object flow pipeline proposal. For instance, authors have already exploited the optical flow 
-to improve tracking methods. It remains unexplored to complete the cycle by improving the optical flow with the state of the tracker. Moreover, the use of superpixels 
-can be combined with motion estimation to obtain both an object based segmentation and the enhancement of the motion itself.
+to improve tracking methods. It remains unexplored to complete the cycle by improving the optical flow with the state of the tracker. Moreover, these works have shown 
+that the use of superpixels can be combined with motion estimation to obtain both an object based segmentation and the enhancement of the motion itself.
 
+On the other hand, other authors had used the optical flow constraints to track objects, 
+which is, up to some extent, the inverse problem proposed for the object flow \cite{c37}. Some authors went further in this sense, to create specialized trackers 
+for deformable objects by combining model based tracking with the optical flow constraint \cite{c38}. Even when a work like the last one is very interesting for video editing 
+tasks, the approach is limited by the availability of the mesh model. In this sense, the object flow proposal seems to be more generic, and thus, more adequate for this kind 
+of applications. The Fig. \ref{soa1} shows some results of this approach for the video edition tasks that can also be approached with the object flow. These results are obtained in 
+a controlled environment without long range motion.
 
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=0.75\textwidth]{../images/soa_app.png}
+      \caption{  Video edition with the method in  \cite{c38}. }
+      \label{soa1}
+   \end{figure}
 
+In the same line of applications, an interesting work is the Unwrap Mosaics \cite{c41} which is a very different way to approach the video edition task. 
 
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=1.00\textwidth]{../images/soa_app2.png}
+      \caption{  Video edition with the method in  \cite{c41}. }
+      \label{soa2}
+   \end{figure}
+
+The Unwrap Mosaics \cite{c41}, is based in a new 
+video representation, which is presented by defining a 2D-2D transformation supported in a segmentation mask (given by hand), which can be used to apply the desired editing in the 
+interest object, and then, given the compute transformation, the edition can be mapped back to the initial sequence. The Fig. \ref{soa2} shows the video edition flow derived from 
+this method. However, relying in precomputed segmentation and point trajectories, the Unwrap Mosaics can be mixed with the Object Flow pipeline to provide a robust and 
+complete video edition framework.

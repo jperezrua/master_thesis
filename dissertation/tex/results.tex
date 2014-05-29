@@ -8,14 +8,20 @@
       \caption{Extrapolation results from integrated flow in 4 sequences. In descending order: Amelia Retro, Boy, Walking, Puppy. From Left to Right: Annotated object, Backward object flow, Backward optical flow, Forward object flow, Backward optical flow.}
       \label{sample}
    \end{figure}
-	\setlength{\belowcaptionskip}{-10pt}
 
 To evaluate the performance of the object flow in comparison with optical flow techniques, we performed 
 a number of experiments on several video sequences. We annotated an initial bounding box for the videos, 
-and a segmentation contour of the interest object for every frame. The experiment measures the ability of the method to 
+and a segmentation contour (Fig. \ref{handmade}) of the interest object for every frame. The experiment measures the ability of the method to 
 extrapolate an image from the initial frame and the integrated flow. For every pair of frames the video sequence, the PSNR between the annotated
 current state of the object and the extrapolated images is computed. The Fig. \ref{sample} is a sample of the performed experiment, each column is an image generated from the given flow. 
 Two types integration are evaluated, {\it From-the-reference}, or forward integration, and {\it To-the-reference}, or backward integration, as discussed in \cite{c20}. So, for each row in the Fig. \ref{sample}, two columns correspond to the object flow, and two columns correspond to optical flow, with both types of integration.
+
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=1.0\textwidth]{../images/handmade_contour.png}
+      \caption{Handmade contour (yellow) in the Amelia dataset used as ground truth.}
+      \label{handmade}
+   \end{figure}
 
 The Fig. \ref{of_res} shows PSNR graphics for 4 different sequences. For every pair of frames an image is extrapolated, and the PSNR with the ground-truth object is computed.
 The results are shown with both, Euler integration (Labelled as {\it forward} in the figs.) of the used flow, 
@@ -28,7 +34,6 @@ counterparts. Moreover, the object flow method with backward integration usually
       \caption{PSNR graphs for extrapolated images using Object flow and the Simple Optical Flow for 4 sequences. From left to right and up to bottom: Puppy Seq.; Amelia Retro Seq.; Boy Seq.; Walking Seq.}
       \label{of_res}
    \end{figure}
-	\setlength{\belowcaptionskip}{-10pt}
 
 
 Now, in order to study how the object flow concept compares to several state of the art optical flow 
@@ -46,7 +51,6 @@ the object flow performs better than all the studied optical flow techniques.
 		Bottom: First and frame\#30. The extrapolations are performed using backward accumulation of the flows.}
       \label{compare2}
    \end{figure}
-	\setlength{\belowcaptionskip}{-10pt}
 
 
 Observe that the object details are lost in comparison with the ground-truth object image (Fig. \ref{compare2}). For example, the closed eyes detail is missing in the most of the optical 
@@ -60,7 +64,6 @@ good delimitation to establish this prior).
       \caption{PSNR graphs for extrapolated images using Object flow and the different Optical Flow techniques for the Amelia sequence. }
       \label{of_res2}
    \end{figure}
-	\setlength{\belowcaptionskip}{-10pt}
 
 \section{Implementation details}
 
@@ -95,7 +98,11 @@ And the used optical flow methods are:
 \end{itemize}
 
 The Fig. \ref{class} shows a simplified class diagram for the implemented framework. It can be appreciated that all major interfaces inherit from the {\it cv::Algorithm} class to provide 
-implementation flexibilities through instantation by smart pointers ({\it cv::Ptr}) and to mantain organization in the interfaces. 
+implementation flexibilities through instantation by smart pointers ({\it cv::Ptr}) and to mantain organization in the interfaces. Also, for some of the implementations, only interface wrappers 
+had to be programmed due to the availability of some of the methods in the OpenCV library (e.g. CamShift, MIL and Boosting trackers). Another detail in the 
+implentation of the framework is the use of {\it GPU} implementations of several of the methods to improve time efficiency of the object flow. This was done with the Nvidia
+paralell computing toolkit (CUDA), obtaining a performance for object based video edition of ~3.5 frames per second, computed in a video of 1920x1080 pixels per frame, on a computer with a 
+low level Nvidia card (NVS 3100M), and a 2.5 GHz processor.
 
    \begin{figure}[thbp]
       \centering
@@ -103,5 +110,4 @@ implementation flexibilities through instantation by smart pointers ({\it cv::Pt
       \caption{Simplified class diagram for the implemented workflow.}
       \label{class}
    \end{figure}
-	\setlength{\belowcaptionskip}{-10pt}
 

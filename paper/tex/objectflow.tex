@@ -41,7 +41,7 @@ This is assumption is not far from reality in most scenes with an interest objec
 Naturally, as the object tracker is included, is expected that the object flow should be more robust to rapid motions than the
 optical flow. 
 Thus, the full motion is split in two, the long range motion, given by the tracker window, and the precision part, given by the targeted optical flow. The Fig. \ref{of} shows 
-the object flow for a frame in the Puppy sequence. Observe the motion vectors are computed only inside the object of interest, preserving a strong smoothing prior, but 
+the object flow for several frames in the Puppy sequence. Observe the motion vectors are computed only inside the object of interest, preserving a strong smoothing prior, but 
 also allowing internal variations in the flow. 
 
 As a first approximation to the object flow, the Simple Flow technique \cite{c21} is taken as core base. This is because of its scalability 

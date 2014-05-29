@@ -3,30 +3,40 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Sequences used to evaluate object trackers in \cite {c16}. }}{5}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Performance summary for the top 15 trackers benchmarked in \cite {c16}, initialized with different size of bounding box. }}{5}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Usual approaches for tracking-by-detection methods. Right: generate a set of samples and, depending on the type of learner, produce training labels. Left: Structured output methods avoid these steps by operating directly in the tracking output. Extracted from \cite {c23}}}{6}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Usual approaches for tracking-by-detection methods. Right: generate a set of samples and, depending on the type of learner, produce training labels. Left: Structured output methods avoid these steps by operating directly in the tracking output. Extracted from \cite {c23}.}}{6}
 \contentsline {figure}{\numberline {2.4}{\ignorespaces Frame pairs used to evaluate optical flow methods in \cite {c17}, Ground truth flow coded with the proposed flow coding. }}{7}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Performance summary for the top 15 opt. flow methods benchmarked in \cite {c17} by interpolation error. }}{8}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Results of the Simple Flow method in several datasets. }}{9}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Results of the Simple Flow method in several datasets. }}{10}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Sparse motion trajectories for segmentation. Results in several datasets \cite {c34}. }}{12}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Sparse motion trajectories for segmentation. Results in several datasets \cite {c34}. }}{11}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Video edition with the method in \cite {c38}. }}{12}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Video edition with the method in \cite {c41}. }}{12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Block diagram of the proposed pipeline.}}{14}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces The yellow lines show selected superpixel matching between pairs of consecutive frames in a video with the proposed method. The video frames go from right to left.}}{17}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces The yellow lines show selected superpixel matching between a pair of distant frames in the Snow Shoes sequence.}}{17}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Example image of points entering a tracking region (green) due to object motion in a video sequence.}}{19}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Background segments automatic labeling and propagation, the flow goes from left to right.}}{19}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Segmentation through the sequence “Walking Couple” (Yellow contour) initialized in the man’s head. The yellow box correspond to the tracker output. The labeled background superpixel are not shown for clarity.}}{20}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Face segmentation in the “Amelie Retro” and the “Snow shoes” sequences in several different frames, and T-shirt extraction from Tennis sequence. For each group, the Top Row: One-iteration window-based graph-cuts; and the Bottom Row: One-iteration graph-cuts initialized with superpixel tracking.}}{21}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Object flow with the color code of \cite {c17} (bottom) for frames in the Puppy sequence (up). }}{22}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Top row: First and last frames used from the Amelia sequence. Bottom row: From left to right: Groundtruth patch; patch generated with the basic object flow combining the {\it Struck} Tracker and the {\it TVL1} optical flow; and patch generated with the globally computed {\it TVL1} optical flow.}}{23}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Block diagram of the proposed pipeline.}}{15}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces The yellow lines show selected superpixel matching between pairs of consecutive frames in a video with the proposed method. The video frames go from right to left.}}{18}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces The yellow lines show selected superpixel matching between a pair of distant frames in the Snow Shoes sequence.}}{19}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Example image of points entering a tracking region (green) due to object motion in a video sequence.}}{20}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Point tracking using an optical flow method.}}{20}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Background segments automatic labeling and propagation, the flow goes from left to right.}}{21}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Segmentation through the sequence “Walking Couple” (Yellow contour) initialized in the man’s head. The yellow box correspond to the tracker output. The labeled background superpixel are not shown for clarity.}}{23}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Face segmentation in the “Amelie Retro” and the “Snow shoes” sequences in several different frames, and T-shirt extraction from Tennis sequence. For each group, the Top Row: One-iteration window-based graph-cuts; and the Bottom Row: One-iteration graph-cuts initialized with superpixel tracking.}}{24}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Object flow with the color code of \cite {c17} (bottom) for frames in the Puppy sequence (up). }}{25}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Simple object flow algorithm diagram.}}{26}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Top row: First and last frames used from the Amelia sequence. Bottom row: From left to right: Groundtruth patch; patch generated with the basic object flow combining the {\it Struck} Tracker and the {\it TVL1} optical flow; and patch generated with the globally computed {\it TVL1} optical flow.}}{27}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces An overview on how tracking-by-detection methods try to deal with occlusions. Extracted from \cite {c25}.}}{28}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Struck tracker in the Walking Couple sequence. Top: Original Implementation. Bottom: Struck tracker with sampling refinement by background regions tracking.}}{29}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Extrapolation results from integrated flow in 4 sequences. In descending order: Amelia Retro, Boy, Walking, Puppy. From Left to Right: Annotated object, Backward object flow, Backward optical flow, Forward object flow, Backward optical flow.}}{24}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces PSNR graphs for extrapolated images using Object flow and the Simple Optical Flow for 4 sequences. From left to right and up to bottom: Puppy Seq.; Amelie Retro Seq.; Boy Seq.; Walking Seq.}}{27}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Top: The first frame and the accumulated flows are used to extrapolate objects in the frame number 30. The used methods from left to right: Groundtruth object, Object flow, TVL1, Block Matching, Brox, Farneback and Simple Flow. Bottom: First and frame\#30. The extrapolations are performed using backward accumulation of the flows.}}{28}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces PSNR graphs for extrapolated images using Object flow and the different Optical Flow techniques for the Amelia sequence. }}{28}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Simplified class diagram for the implemented workflow.}}{29}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Extrapolation results from integrated flow in 4 sequences. In descending order: Amelia Retro, Boy, Walking, Puppy. From Left to Right: Annotated object, Backward object flow, Backward optical flow, Forward object flow, Backward optical flow.}}{31}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Handmade contour (yellow) in the Amelia dataset used as ground truth.}}{32}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces PSNR graphs for extrapolated images using Object flow and the Simple Optical Flow for 4 sequences. From left to right and up to bottom: Puppy Seq.; Amelia Retro Seq.; Boy Seq.; Walking Seq.}}{35}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Top: The first frame and the accumulated flows are used to extrapolate objects in the frame number 30. The used methods from left to right: Groundtruth object, Object flow, TVL1, Block Matching, Brox, Farneback and Simple Flow. Bottom: First and frame\#30. The extrapolations are performed using backward accumulation of the flows.}}{36}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces PSNR graphs for extrapolated images using Object flow and the different Optical Flow techniques for the Amelia sequence. }}{36}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Simplified class diagram for the implemented workflow.}}{37}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Selected frames in the test Dmitry test sequence for video edition. Top: Inserted logo. Bottom: original frames}}{31}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces SFM based on the object flow matches in the Crazyhorse dataset. Top: views of the computed structure. Bottom: Used frames. }}{32}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces SFM based on the object flow matches in the Puppy dataset. Top: views of the computed structure. Bottom: Used frames. }}{32}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Selected frames in the Dmitry test sequence for video edition. Top: Inserted logo. Bottom: original frames}}{39}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Selected frames in the Juan test sequence for video edition. The logo of the University of Burgundy is inserted in the sequence. }}{39}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces SFM based on the object flow matches in the Puppy dataset. Top: views of the computed structure. Bottom: Used frames. }}{40}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces SFM based on the object flow matches in the JuanFace dataset. Top: views of the computed structure. Bottom: Used frames. }}{41}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Sequence with different difficult cases for flow estimation methods: Autobalanace, illumination changes, specularities. }}{43}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Close-up to the generated artifacts due to the illumination changes and specular reflections. }}{44}
