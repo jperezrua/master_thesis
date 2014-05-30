@@ -18,7 +18,7 @@
 \contentsline {subsection}{\numberline {3.2.3}Energy Minimization}{17}
 \contentsline {subsection}{\numberline {3.2.4}Matching Results}{18}
 \contentsline {section}{\numberline {3.3}Background regions tracking and segmentation}{19}
-\contentsline {subsection}{\numberline {3.3.1}Segmentation results}{21}
+\contentsline {subsection}{\numberline {3.3.1}Segmentation results}{22}
 \contentsline {section}{\numberline {3.4}Flow estimation}{22}
 \contentsline {section}{\numberline {3.5}Feedback for tracking methods}{28}
 \contentsline {chapter}{\numberline {4}Results and Implementation Details}{31}

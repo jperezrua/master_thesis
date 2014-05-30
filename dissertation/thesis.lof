@@ -17,14 +17,14 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces The yellow lines show selected superpixel matching between a pair of distant frames in the Snow Shoes sequence.}}{19}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Example image of points entering a tracking region (green) due to object motion in a video sequence.}}{20}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces Point tracking using an optical flow method.}}{20}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Background segments automatic labeling and propagation, the flow goes from left to right.}}{21}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces Segmentation through the sequence “Walking Couple” (Yellow contour) initialized in the man’s head. The yellow box correspond to the tracker output. The labeled background superpixel are not shown for clarity.}}{23}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Background segments automatic labelling and propagation, the flow goes from left to right.}}{22}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Segmentation through the sequence “Walking Couple” (Yellow contour) initialized in the man’s head. The yellow box correspond to the tracker output. The labelled background superpixel are not shown for clarity.}}{23}
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Face segmentation in the “Amelie Retro” and the “Snow shoes” sequences in several different frames, and T-shirt extraction from Tennis sequence. For each group, the Top Row: One-iteration window-based graph-cuts; and the Bottom Row: One-iteration graph-cuts initialized with superpixel tracking.}}{24}
 \contentsline {figure}{\numberline {3.9}{\ignorespaces Object flow with the color code of \cite {c17} (bottom) for frames in the Puppy sequence (up). }}{25}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces Simple object flow algorithm diagram.}}{26}
-\contentsline {figure}{\numberline {3.11}{\ignorespaces Top row: First and last frames used from the Amelia sequence. Bottom row: From left to right: Groundtruth patch; patch generated with the basic object flow combining the {\it Struck} Tracker and the {\it TVL1} optical flow; and patch generated with the globally computed {\it TVL1} optical flow.}}{27}
-\contentsline {figure}{\numberline {3.12}{\ignorespaces An overview on how tracking-by-detection methods try to deal with occlusions. Extracted from \cite {c25}.}}{28}
-\contentsline {figure}{\numberline {3.13}{\ignorespaces Struck tracker in the Walking Couple sequence. Top: Original Implementation. Bottom: Struck tracker with sampling refinement by background regions tracking.}}{29}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Simple object flow algorithm diagram.}}{27}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Top row: First and last frames used from the Amelia sequence. Bottom row: From left to right: Groundtruth patch; patch generated with the basic object flow combining the {\it Struck} Tracker and the {\it TVL1} optical flow; and patch generated with the globally computed {\it TVL1} optical flow.}}{28}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces An overview on how tracking-by-detection methods try to deal with occlusions. Extracted from \cite {c25}.}}{29}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Struck tracker in the Walking Couple sequence. Top: Original Implementation. Bottom: Struck tracker with sampling refinement by background regions tracking.}}{30}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Extrapolation results from integrated flow in 4 sequences. In descending order: Amelia Retro, Boy, Walking, Puppy. From Left to Right: Annotated object, Backward object flow, Backward optical flow, Forward object flow, Backward optical flow.}}{31}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Handmade contour (yellow) in the Amelia dataset used as ground truth.}}{32}
