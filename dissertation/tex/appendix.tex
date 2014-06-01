@@ -1,3 +1,30 @@
-\chapter{The first appendix}
-If you need to add any appendix, do it here...
- Etc.
+\appendix
+\chapter{UML Diagram}
+
+A UML diagram of the implemented framework is presented. All the implemented algorithms 
+inherit from the OpenCV {\it cv::Algorithm} interface.
+
+   \begin{figure}[thbp]
+      \centering
+      \includegraphics[width=0.75\textwidth]{../images/ClassDiagram.png}
+      \label{class}
+   \end{figure}
+   
+\chapter{Segmentation in Video}
+\label{app:seg}
+Some segmentation results in video are shown. In the Snow Shoes sequence, the 
+segmentation contours (man on the right) are shown in yellow in 4 of the frames.
+
+   \begin{figure}[thbp]
+      \centering
+      \includegraphics[width=1.00\textwidth]{../images/other_segm1.png}
+      \label{othersegm1}
+   \end{figure}
+
+For the Amelia sequence, the face is tracked and segmented (yellow).
+
+   \begin{figure}[thbp]
+      \centering
+      \includegraphics[width=1.00\textwidth]{../images/other_segm2.png}
+      \label{othersegm1}
+   \end{figure}

@@ -24,7 +24,8 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{chap:intro}{{1}{1}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.1}Problem definition}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces  Object flow definition diagram. }}{2}}
+\newlabel{sec:definition}{{1.1}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces  Object flow definition diagram. Top: Original frames with the tracker state, which indicates the object global motion (green arrow). Bottom: The object region is identified, and a dense motion field is obtained within its boundaries.}}{2}}
 \newlabel{diagram}{{1.1}{2}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.2}Objectives}{3}}
 \@writefile{toc}{\contentsline {section}{\numberline {1.3}Document organization}{3}}
@@ -50,7 +51,7 @@
 \citation{c23}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Sequences used to evaluate object trackers in \cite  {c16}. }}{5}}
 \newlabel{tr_db}{{2.1}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces  Performance summary for the top 15 trackers benchmarked in \cite  {c16}, initialized with different size of bounding box. }}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces  Performance summary for the top 15 trackers benchmarked in \cite  {c16}, initialized with different size of bounding box by factors of 0.8, 0.9, 1.0, 1.1 and 1.2. }}{5}}
 \newlabel{tr_per}{{2.2}{5}}
 \citation{c23}
 \citation{c23}
@@ -88,7 +89,7 @@
 \citation{c34}
 \citation{c34}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.6}{\ignorespaces  Results of the Simple Flow method in several datasets. }}{9}}
-\newlabel{simple_of}{{2.6}{9}}
+\newlabel{simple_of_m}{{2.6}{9}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}Object segmentation in video}{9}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces  Results of the Simple Flow method in several datasets. }}{10}}
 \newlabel{simple_of}{{2.7}{10}}
@@ -99,9 +100,11 @@
 \citation{c39}
 \citation{c27}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces  Sparse motion trajectories for segmentation. Results in several datasets \cite  {c34}. }}{11}}
-\newlabel{pt_seg}{{2.8}{11}}
+\newlabel{pt_segment}{{2.8}{11}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.5}Related work}{11}}
 \citation{c37}
+\citation{c38}
+\citation{c38}
 \citation{c38}
 \citation{c38}
 \citation{c41}
@@ -109,11 +112,8 @@
 \citation{c41}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces  Video edition with the method in \cite  {c38}. }}{12}}
 \newlabel{soa1}{{2.9}{12}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces  Video edition with the method in \cite  {c41}. }}{12}}
-\newlabel{soa2}{{2.10}{12}}
-\citation{c22}
-\citation{c22}
-\citation{c23}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces  Video edition with the method in \cite  {c41}. }}{13}}
+\newlabel{soa2}{{2.10}{13}}
 \citation{c1}
 \citation{c1}
 \citation{c10}
@@ -121,141 +121,168 @@
 \citation{c9}
 \citation{c11}
 \citation{c8}
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Object Flow Pipeline}{14}}
+\citation{c2}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Superpixel flow}{14}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:core}{{3}{14}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Algorithm description}{14}}
-\newlabel{sec:desc}{{3.1}{14}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Superpixel flow}{14}}
-\newlabel{sec:suppix}{{3.2}{14}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.1}Problem definition}{14}}
-\citation{c2}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces Block diagram of the proposed pipeline.}}{15}}
-\newlabel{figurelabel_sys}{{3.1}{15}}
+\newlabel{chap:suppix}{{3}{14}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Problem definition}{14}}
 \citation{c9}
 \citation{c10}
 \citation{c9}
 \citation{c7}
 \citation{c12}
 \citation{c13}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Energy Formulation}{15}}
+\newlabel{eq_prob}{{3.1}{15}}
 \citation{c7}
 \citation{c5}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.2}Energy Formulation}{16}}
-\newlabel{eq_prob}{{3.1}{16}}
-\newlabel{eq_energy}{{3.2}{16}}
 \citation{c3}
 \citation{c4}
 \citation{c3}
 \citation{c7}
 \citation{c4}
+\newlabel{eq_energy}{{3.2}{16}}
+\newlabel{eq_Dp}{{3.3}{16}}
+\newlabel{eq_Spq}{{3.4}{16}}
 \citation{c3}
 \citation{c4}
-\newlabel{eq_Dp}{{3.3}{17}}
-\newlabel{eq_Spq}{{3.4}{17}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.3}Energy Minimization}{17}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces The yellow lines show selected superpixel matching between pairs of consecutive frames in a video with the proposed method. The video frames go from right to left.}}{18}}
-\newlabel{figurelabel_matches}{{3.2}{18}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2.4}Matching Results}{18}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.3}Energy Minimization}{17}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.1}{\ignorespaces The yellow lines show selected superpixel matching between pairs of consecutive frames in a video with the proposed method. The video frames go from right to left. The images are a close-up of the actual frame, to appreciate the details.}}{17}}
+\newlabel{figurelabel_matches}{{3.1}{17}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.4}Matching Results}{18}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3.2}{\ignorespaces The coloured lines show selected superpixel matchings between a pair of distant frames in the Snow Shoes sequence.}}{18}}
+\newlabel{figurelabel_matchessnow}{{3.2}{18}}
+\citation{c22}
+\citation{c16}
 \citation{c18}
 \citation{c14}
 \citation{c18}
 \citation{c14}
 \citation{c15}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.3}{\ignorespaces The yellow lines show selected superpixel matching between a pair of distant frames in the Snow Shoes sequence.}}{19}}
-\newlabel{figurelabel_matchessnow}{{3.3}{19}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.3}Background regions tracking and segmentation}{19}}
-\newlabel{sec:segm}{{3.3}{19}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.4}{\ignorespaces Example image of points entering a tracking region (green) due to object motion in a video sequence.}}{20}}
-\newlabel{figurelabel_entering}{{3.4}{20}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.5}{\ignorespaces Point tracking using an optical flow method.}}{20}}
-\newlabel{pointtr}{{3.5}{20}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Object Flow Pipeline}{19}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{chap:core}{{4}{19}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Algorithm description}{19}}
+\newlabel{sec:desc}{{4.1}{19}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Block diagram of the proposed pipeline.}}{20}}
+\newlabel{figurelabel_sys}{{4.1}{20}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Background regions tracking and segmentation}{20}}
+\newlabel{sec:segm}{{4.2}{20}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Example image of points entering a tracking region (green) due to object motion in a video sequence.}}{21}}
+\newlabel{figurelabel_entering}{{4.2}{21}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Point tracking using an optical flow method.}}{21}}
+\newlabel{pointtr}{{4.3}{21}}
 \citation{c18}
 \citation{c15}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Background regions tracking between a frames A and B}}{21}}
-\newlabel{algo1}{{1}{21}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Background regions tracking between a frames A and B}}{22}}
+\newlabel{algo1}{{1}{22}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Segmentation results}{22}}
 \citation{c18}
 \citation{c19}
 \citation{c17}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.6}{\ignorespaces Background segments automatic labelling and propagation, the flow goes from left to right.}}{22}}
-\newlabel{figurelabel_spflow}{{3.6}{22}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Segmentation results}{22}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.4}Flow estimation}{22}}
-\newlabel{sec:core}{{3.4}{22}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.7}{\ignorespaces Segmentation through the sequence “Walking Couple” (Yellow contour) initialized in the man’s head. The yellow box correspond to the tracker output. The labelled background superpixel are not shown for clarity.}}{23}}
-\newlabel{figurelabel_walking}{{3.7}{23}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.8}{\ignorespaces Face segmentation in the “Amelie Retro” and the “Snow shoes” sequences in several different frames, and T-shirt extraction from Tennis sequence. For each group, the Top Row: One-iteration window-based graph-cuts; and the Bottom Row: One-iteration graph-cuts initialized with superpixel tracking.}}{24}}
-\newlabel{figurelabel_comp}{{3.8}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Background segments automatic labelling and propagation, the flow goes from left to right.}}{23}}
+\newlabel{figurelabel_spflow}{{4.4}{23}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Flow estimation}{23}}
+\newlabel{sec:core}{{4.3}{23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces Segmentation through the sequence “Walking Couple” (Yellow contour) initialized in the man’s head. The yellow box correspond to the tracker output. The labelled background superpixel are not shown for clarity.}}{24}}
+\newlabel{figurelabel_walking}{{4.5}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Face segmentation in the “Amelie Retro” and the “Snow shoes” sequences in several different frames, and T-shirt extraction from Tennis sequence. For each group, the Top Row: One-iteration window-based graph-cuts; and the Bottom Row: One-iteration graph-cuts initialized with superpixel tracking.}}{25}}
+\newlabel{figurelabel_comp}{{4.6}{25}}
 \citation{c17}
 \citation{c17}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.9}{\ignorespaces Object flow with the color code of \cite  {c17} (bottom) for frames in the Puppy sequence (up). }}{25}}
-\newlabel{of}{{3.9}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.7}{\ignorespaces Object flow with the color code of \cite  {c17} (bottom) for frames in the Puppy sequence (up). }}{26}}
+\newlabel{of}{{4.7}{26}}
 \citation{c21}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.10}{\ignorespaces  Simple object flow algorithm diagram.}}{27}}
-\newlabel{sof_d}{{3.10}{27}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.8}{\ignorespaces  Simple object flow algorithm diagram.}}{28}}
+\newlabel{sof_d}{{4.8}{28}}
 \citation{c25}
 \citation{c25}
 \citation{c25}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.11}{\ignorespaces Top row: First and last frames used from the Amelia sequence. Bottom row: From left to right: Groundtruth patch; patch generated with the basic object flow combining the {\it  Struck} Tracker and the {\it  TVL1} optical flow; and patch generated with the globally computed {\it  TVL1} optical flow.}}{28}}
-\newlabel{of_nose}{{3.11}{28}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.5}Feedback for tracking methods}{28}}
-\newlabel{sec:feedback}{{3.5}{28}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.12}{\ignorespaces An overview on how tracking-by-detection methods try to deal with occlusions. Extracted from \cite  {c25}.}}{29}}
-\newlabel{tr_mil}{{3.12}{29}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3.13}{\ignorespaces Struck tracker in the Walking Couple sequence. Top: Original Implementation. Bottom: Struck tracker with sampling refinement by background regions tracking.}}{30}}
-\newlabel{tr_strucktest}{{3.13}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.9}{\ignorespaces Top row: First and last frames used from the Amelia sequence. Bottom row: From left to right: Groundtruth patch; patch generated with the basic object flow combining the {\it  Struck} Tracker and the {\it  TVL1} optical flow; and patch generated with the globally computed {\it  TVL1} optical flow.}}{29}}
+\newlabel{of_nose}{{4.9}{29}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Feedback for tracking methods}{29}}
+\newlabel{sec:feedback}{{4.4}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.10}{\ignorespaces An overview on how tracking-by-detection methods try to deal with occlusions. Extracted from \cite  {c25}.}}{30}}
+\newlabel{tr_mil}{{4.10}{30}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.11}{\ignorespaces Struck tracker in the Walking Couple sequence. Top: Original Implementation. Bottom: Struck tracker with sampling refinement by background regions tracking.}}{31}}
+\newlabel{tr_strucktest}{{4.11}{31}}
 \citation{c20}
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Results and Implementation Details}{31}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Implementation Details and Evaluation}{32}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:results}{{4}{31}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Experiments}{31}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Extrapolation results from integrated flow in 4 sequences. In descending order: Amelia Retro, Boy, Walking, Puppy. From Left to Right: Annotated object, Backward object flow, Backward optical flow, Forward object flow, Backward optical flow.}}{31}}
-\newlabel{sample}{{4.1}{31}}
+\newlabel{chap:results}{{5}{32}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Experiments}{32}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Reconstruction results from integrated flow in 4 sequences. In descending order: Amelia Retro, Boy, Walking, Puppy. From Left to Right: Annotated object, Backward object flow, Backward optical flow, Forward object flow, Backward optical flow.}}{32}}
+\newlabel{sample}{{5.1}{32}}
 \citation{c20}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Handmade contour (yellow) in the Amelia dataset used as ground truth.}}{32}}
-\newlabel{handmade}{{4.2}{32}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Implementation details}{33}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces PSNR graphs for extrapolated images using Object flow and the Simple Optical Flow for 4 sequences. From left to right and up to bottom: Puppy Seq.; Amelia Retro Seq.; Boy Seq.; Walking Seq.}}{35}}
-\newlabel{of_res}{{4.3}{35}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.4}{\ignorespaces Top: The first frame and the accumulated flows are used to extrapolate objects in the frame number 30. The used methods from left to right: Groundtruth object, Object flow, TVL1, Block Matching, Brox, Farneback and Simple Flow. Bottom: First and frame\#30. The extrapolations are performed using backward accumulation of the flows.}}{36}}
-\newlabel{compare2}{{4.4}{36}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.5}{\ignorespaces PSNR graphs for extrapolated images using Object flow and the different Optical Flow techniques for the Amelia sequence. }}{36}}
-\newlabel{of_res2}{{4.5}{36}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4.6}{\ignorespaces Simplified class diagram for the implemented workflow.}}{37}}
-\newlabel{class}{{4.6}{37}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Handmade contour (yellow) in the Amelia dataset used as ground truth.}}{33}}
+\newlabel{handmade}{{5.2}{33}}
+\citation{c44}
+\citation{c46}
+\citation{c46}
+\citation{c45}
+\citation{c25}
+\citation{c47}
+\citation{c23}
+\citation{c48}
+\citation{c31}
+\citation{c30}
+\citation{c32}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Implementation details}{34}}
+\citation{c21}
+\citation{c28}
+\citation{c49}
+\citation{c29}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces PSNR graphs for reconstructed images using Object flow and the Simple Optical Flow for 4 sequences. From left to right and up to bottom: Puppy Seq.; Amelia Retro Seq.; Boy Seq.; Walking Seq.}}{36}}
+\newlabel{of_res}{{5.3}{36}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Top: The first frame and the accumulated flows are used to reconstruct objects in the frame number 30. The used methods from left to right: Groundtruth object, Object flow, TVL1, Block Matching, Brox, Farneback and Simple Flow. Bottom: First and frame\#30. The reconstructions are performed using backward accumulation of the flows.}}{37}}
+\newlabel{compare2}{{5.4}{37}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces PSNR graphs for reconstructed images using Object flow and the different Optical Flow techniques for the Amelia sequence. }}{37}}
+\newlabel{of_res2}{{5.5}{37}}
 \citation{c43}
 \citation{c43}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Applications}{38}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Applications}{38}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:apps}{{5}{38}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Video edition}{38}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Structure from motion}{38}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces  Selected frames in the Dmitry test sequence for video edition. Top: Inserted logo. Bottom: original frames}}{39}}
-\newlabel{pt_seg}{{5.1}{39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces  Selected frames in the Juan test sequence for video edition. The logo of the University of Burgundy is inserted in the sequence. }}{39}}
-\newlabel{pt_seg2}{{5.2}{39}}
+\newlabel{chap:apps}{{6}{38}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Video editing}{38}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Structure from motion}{38}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces  Selected frames in the Dmitry test sequence for video editing. Top: Inserted logo. Bottom: original frames}}{39}}
+\newlabel{pt_seg}{{6.1}{39}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces  Selected frames in the Juan test sequence for video editing. The logo of the University of Burgundy is inserted in the sequence. }}{39}}
+\newlabel{pt_seg2}{{6.2}{39}}
 \citation{c43}
 \citation{c42}
-\newlabel{eq_dfc}{{5.1}{40}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces  SFM based on the object flow matches in the Puppy dataset. Top: views of the computed structure. Bottom: Used frames. }}{40}}
-\newlabel{sfm2}{{5.3}{40}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces  SFM based on the object flow matches in the JuanFace dataset. Top: views of the computed structure. Bottom: Used frames. }}{41}}
-\newlabel{sfm3}{{5.4}{41}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusions}{42}}
+\newlabel{eq_dfc}{{6.1}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces  SFM based on the object flow matches in the Puppy dataset. Top: views of the computed structure. Bottom: Used frames. }}{40}}
+\newlabel{sfm2}{{6.3}{40}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces  SFM based on the object flow matches in the JuanFace dataset. Top: views of the computed structure. Bottom: Used frames. }}{41}}
+\newlabel{sfm3}{{6.4}{41}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions}{42}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chap:conclusion}{{6}{42}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Discussion}{42}}
-\newlabel{sec:discussion}{{6.1}{42}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Final remarks}{43}}
-\newlabel{sec:remarks}{{6.2}{43}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces  Sequence with different difficult cases for flow estimation methods: Autobalanace, illumination changes, specularities. }}{43}}
-\newlabel{of_errors}{{6.1}{43}}
+\newlabel{chap:conclusion}{{7}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Discussion}{42}}
+\newlabel{sec:discussion}{{7.1}{42}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Final remarks}{43}}
+\newlabel{sec:remarks}{{7.2}{43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.1}{\ignorespaces  Sequence with different difficult cases for flow estimation methods: Autobalanace, illumination changes, specularities. }}{43}}
+\newlabel{of_errors}{{7.1}{43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7.2}{\ignorespaces Close-up to the generated artifacts due to the illumination changes and specular reflections. }}{44}}
+\newlabel{zoom_errors}{{7.2}{44}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}UML Diagram}{45}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{class}{{A}{45}}
 \bibstyle{plain}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Close-up to the generated artifacts due to the illumination changes and specular reflections. }}{44}}
-\newlabel{zoom_errors}{{6.2}{44}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Segmentation in Video}{46}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{app:seg}{{B}{46}}
+\newlabel{othersegm1}{{B}{46}}
+\newlabel{othersegm1}{{B}{47}}
 \bibcite{c1}{1}
 \bibcite{c2}{2}
 \bibcite{c3}{3}
@@ -299,4 +326,10 @@
 \bibcite{c41}{41}
 \bibcite{c42}{42}
 \bibcite{c43}{43}
-\@writefile{toc}{\contentsline {chapter}{\numberline {Bibliography\hspace  {-96pt}}}{48}}
+\bibcite{c44}{44}
+\bibcite{c45}{45}
+\bibcite{c46}{46}
+\bibcite{c47}{47}
+\bibcite{c48}{48}
+\bibcite{c49}{49}
+\@writefile{toc}{\contentsline {chapter}{\numberline {Bibliography\hspace  {-96pt}}}{51}}

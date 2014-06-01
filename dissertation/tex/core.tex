@@ -7,12 +7,13 @@
 \section{Algorithm description}
 \label{sec:desc}
 
-The Fig. \ref{figurelabel_sys} shows a simplified block diagram of the proposed system. Two details are important, 
-the use of the tracker window to initialize a segmentation procedure, and the use of this segmentation over the tracked window 
-to perform a more precise motion flow computation in the interest pixels. The dotted line represents the possible interaction 
-between precise flow information and the next tracker state. For instance, the current object flow can work as direction hint, and 
-the segmentation information can be used to improve the sampling process of the learning stage in several trackers by detection methods \cite{c22}, and 
-thus the tracker and motion flow algorithm can work for mutual enhancement.
+Following the definition of the problem given in the Section \ref{sec:definition}, a 
+ system for computing the object flow have devised.
+The Fig. \ref{figurelabel_sys} shows a simplified block diagram of the proposed system. It is important to recognize the two main 
+components of our work-flow: object tracking and segmentation, and pixel-wise flow computation on the pixels of interest.  The scheme is completed by feeding back the flow 
+information to improve the tracker as depicted in the figure. For instance, one can make the most of dense displacement vectors to refine the motion of the target, and 
+the segmentation information can be used to improve the sampling process of the learning stage in several trackers by detection methods \cite{c22}. Thus, 
+the tracker and motion flow algorithm can work for mutual enhancement.
 
    \begin{figure}[thpb]
       \centering
@@ -21,12 +22,14 @@ thus the tracker and motion flow algorithm can work for mutual enhancement.
       \label{figurelabel_sys}
    \end{figure}
 
-The first step in the object flow pipeline can be selected according to specific need for a given application. We prefer, in general, tracking-by-detection methods 
-like $Struck$ \cite{c22} or $MIL$ \cite{c23}, which, as said before rank in the top of state of the art benchmarking, but other approaches could be followed. In the second place, for the object segmentation in video we propose the use 
-of labelled background regions through the concept of superpixel flow, which is explained in the next section. The last step, the flow computation, uses a modified 
+ The object tracking in the object flow pipeline can be selected according to a specific need for a given application. Here, recent methods based on tracking-by-detection are preferred, given that they are in the top of modern benchmarks for object tracking \cite{c16} in terms of accuracy and stability to initialization changes. Even more, as previously mentioned 
+tracking-by-detection techniques benefit from the background-foreground separation of the next stage in the object flow pipeline. For instance, the sampling process in the {\it Struck} 
+tracker can be improved by selecting positive samples only inside the region of the target object.
+In the second place, for the object segmentation in video, the 
+labelled background regions through the concept of superpixel flow, as explained in 
+Section \ref{chap:suppix}, is shown. The last step, the flow computation, uses a modified 
 {\it Simple Flow} algorithm, which uses the provided segmentation masks for an accurate estimation.
 
-\input{tex/suppixflow}
 \input{tex/segmentation}
 \input{tex/objectflow}
 \input{tex/feedback}

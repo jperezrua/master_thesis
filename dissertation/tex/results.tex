@@ -1,18 +1,18 @@
-\chapter{Results and Implementation Details} \label{chap:results}
+\chapter{Implementation Details and Evaluation} \label{chap:results}
 
 \section{Experiments}
 
    \begin{figure}[th]
       \centering
       \includegraphics[width=1.0\textwidth]{../images/extrapolated.png}
-      \caption{Extrapolation results from integrated flow in 4 sequences. In descending order: Amelia Retro, Boy, Walking, Puppy. From Left to Right: Annotated object, Backward object flow, Backward optical flow, Forward object flow, Backward optical flow.}
+      \caption{Reconstruction results from integrated flow in 4 sequences. In descending order: Amelia Retro, Boy, Walking, Puppy. From Left to Right: Annotated object, Backward object flow, Backward optical flow, Forward object flow, Backward optical flow.}
       \label{sample}
    \end{figure}
 
 To evaluate the performance of the object flow in comparison with optical flow techniques, we performed 
 a number of experiments on several video sequences. We annotated an initial bounding box for the videos, 
 and a segmentation contour (Fig. \ref{handmade}) of the interest object for every frame. The experiment measures the ability of the method to 
-extrapolate an image from the initial frame and the integrated flow. For every pair of frames the video sequence, the PSNR between the annotated
+reconstruct an image from the initial frame and the integrated flow. For every pair of frames the video sequence, the PSNR between the annotated
 current state of the object and the extrapolated images is computed. The Fig. \ref{sample} is a sample of the performed experiment, each column is an image generated from the given flow. 
 Two types integration are evaluated, {\it From-the-reference}, or forward integration, and {\it To-the-reference}, or backward integration, as discussed in \cite{c20}. So, for each row in the Fig. \ref{sample}, two columns correspond to the object flow, and two columns correspond to optical flow, with both types of integration.
 
@@ -23,7 +23,7 @@ Two types integration are evaluated, {\it From-the-reference}, or forward integr
       \label{handmade}
    \end{figure}
 
-The Fig. \ref{of_res} shows PSNR graphics for 4 different sequences. For every pair of frames an image is extrapolated, and the PSNR with the ground-truth object is computed.
+The Fig. \ref{of_res} shows PSNR graphics for 4 different sequences. For every pair of frames an image is reconstructed, and the PSNR with the ground-truth object is computed.
 The results are shown with both, Euler integration (Labelled as {\it forward} in the figs.) of the used flow, 
 and using the integration method described in \cite{c20}, labelled as {\it backward} in the figures. The results show that the object flow methods are generally more precise than its optical flow 
 counterparts. Moreover, the object flow method with backward integration usually performs much better than any other combination of techniques. For this experiment, the object flow is compared with the simple-flow optical-flow method. This experiment directly shows that the object flow concept is indeed capable of increasing accuracy of a given optical flow method. 
@@ -31,7 +31,7 @@ counterparts. Moreover, the object flow method with backward integration usually
    \begin{figure}[hb]
       \centering
       \includegraphics[width=0.925\textwidth]{../images/psnr_v2.png}
-      \caption{PSNR graphs for extrapolated images using Object flow and the Simple Optical Flow for 4 sequences. From left to right and up to bottom: Puppy Seq.; Amelia Retro Seq.; Boy Seq.; Walking Seq.}
+      \caption{PSNR graphs for reconstructed images using Object flow and the Simple Optical Flow for 4 sequences. From left to right and up to bottom: Puppy Seq.; Amelia Retro Seq.; Boy Seq.; Walking Seq.}
       \label{of_res}
    \end{figure}
 
@@ -39,7 +39,7 @@ counterparts. Moreover, the object flow method with backward integration usually
 Now, in order to study how the object flow concept compares to several state of the art optical flow 
 methods, another extrapolation experiment is performed. 
 The Fig. \ref{compare2} presents a visual comparison between the object flow and several optical flow 
-techniques in the Amelia sequence for object extrapolation, and the involved frames (the first and last used frames in the sequence). 
+techniques in the Amelia sequence for object reconstruction, and the involved frames (the first and last used frames in the sequence). 
 The Fig. \ref{of_res2} shows the PSNR results for every extrapolated frame in the full sequence, 
 the object flow performs better than all the studied optical flow techniques.
 
@@ -47,8 +47,8 @@ the object flow performs better than all the studied optical flow techniques.
    \begin{figure}[t]
       \centering
       \includegraphics[width=0.925\textwidth]{../images/compare2.png}
-      \caption{Top: The first frame and the accumulated flows are used to extrapolate objects in the frame number 30. The used methods from left to right: Groundtruth object, Object flow, TVL1, Block Matching, Brox, Farneback and Simple Flow. 
-		Bottom: First and frame\#30. The extrapolations are performed using backward accumulation of the flows.}
+      \caption{Top: The first frame and the accumulated flows are used to reconstruct objects in the frame number 30. The used methods from left to right: Groundtruth object, Object flow, TVL1, Block Matching, Brox, Farneback and Simple Flow. 
+		Bottom: First and frame\#30. The reconstructions are performed using backward accumulation of the flows.}
       \label{compare2}
    \end{figure}
 
@@ -61,7 +61,7 @@ good delimitation to establish this prior).
    \begin{figure}[th]
       \centering
       \includegraphics[width=1.0\textwidth]{../images/psnr2.png}
-      \caption{PSNR graphs for extrapolated images using Object flow and the different Optical Flow techniques for the Amelia sequence. }
+      \caption{PSNR graphs for reconstructed images using Object flow and the different Optical Flow techniques for the Amelia sequence. }
       \label{of_res2}
    \end{figure}
 
@@ -73,41 +73,34 @@ OpticalFlow and ObjectFlow. The function of these base classes is to define the 
 the implemented or adopted tracking methods are:
 
 \begin{itemize}
-  \item Color Histograms Mean-Shift,
-  \item Color Spatiograms Mean-Shift,
-  \item Color Spatiograms Based Particle Filter,
-  \item Color Histogram Cam-Shift,
-  \item Multiple Instance Learning Tracker,
-  \item Boosting Tracker,
-  \item Struck Tracker,
-  \item TLD Tracker.
+  \item Color Histograms Mean-Shift \cite{c44},
+  \item Color Spatiograms Mean-Shift \cite{c46},
+  \item Color Spatiograms Based Particle Filter \cite{c46},
+  \item Color Histogram Cam-Shift \cite{c45},
+  \item Multiple Instance Learning Tracker \cite{c25},
+  \item Boosting Tracker \cite{c47},
+  \item Struck Tracker \cite{c23},
+  \item TLD Tracker \cite{c48}.
 \end{itemize}
 
 And the used optical flow methods are:
 
 \begin{itemize}
-  \item Lucas-Kanade,
-  \item Horn,
-  \item TV-L1,
+  \item Lucas-Kanade \cite{c31},
+  \item Horn \cite{c30},
+  \item TV-L1 \cite{c32},
   \item Fast Block Matching, 
-  \item Simple Flow,
-  \item Farneback,
+  \item Simple Flow \cite{c21},
+  \item Farneback \cite{c28},
   \item Affine Transformation based on Keypoint matching,
-  \item Thin Plate Spline Transformation based on Keypoint matching,
-  \item Brox method.
+  \item Thin Plate Spline Transformation based on Keypoint matching \cite{c49},
+  \item Brox method \cite{c29}.
 \end{itemize}
 
-The Fig. \ref{class} shows a simplified class diagram for the implemented framework. It can be appreciated that all major interfaces inherit from the {\it cv::Algorithm} class to provide 
+The Appendix \ref{class} shows a simplified class diagram for the implemented framework. It can be appreciated that all major interfaces inherit from the {\it cv::Algorithm} class to provide 
 implementation flexibilities through instantation by smart pointers ({\it cv::Ptr}) and to mantain organization in the interfaces. Also, for some of the implementations, only interface wrappers 
 had to be programmed due to the availability of some of the methods in the OpenCV library (e.g. CamShift, MIL and Boosting trackers). Another detail in the 
 implentation of the framework is the use of {\it GPU} implementations of several of the methods to improve time efficiency of the object flow. This was done with the Nvidia
 paralell computing toolkit (CUDA), obtaining a performance for object based video edition of ~3.5 frames per second, computed in a video of 1920x1080 pixels per frame, on a computer with a 
 low level Nvidia card (NVS 3100M), and a 2.5 GHz processor.
-
-   \begin{figure}[thbp]
-      \centering
-      \includegraphics[width=0.925\textwidth]{../images/ClassDiagram.png}
-      \caption{Simplified class diagram for the implemented workflow.}
-      \label{class}
-   \end{figure}
 

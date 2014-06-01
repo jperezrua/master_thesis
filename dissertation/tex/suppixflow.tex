@@ -2,9 +2,20 @@
 % Juan Manuel Perez Rua
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Superpixel flow} \label{sec:suppix}
+%\section{Superpixel flow} \label{sec:suppix}
+\chapter{Superpixel flow} \label{chap:suppix}
 
-\subsection{Problem definition}
+During the initial stages of the object flow pipeline definition, the use of superpixel 
+methods was considered. However, as the object flow refers mainly to the problem of 
+estimating motion for objects in video, the superpixel method studied had to be able to 
+maintain consistency between frames. Thus, usual approaches for time-consistent superpixels 
+were studied. These methods carried some disadvantages, as explained later, and a novel 
+idea had to be introduced in order to develop the concept of the object flow as it 
+was being thought. This novel idea is the problem of matching precomputed superpixel 
+between frames, by maintaining the time-smoothness which is natural of videos. 
+This is, to incorporate the idea of flowing pixels to the superpixel level.
+
+\section{Problem definition}
 Superpixels and over segmentation techniques became a widely used pre-processing 
 stage for a large number of machine vision applications, after the
 original concept was introduced \cite{c1}. Superpixels are traditionally used as 
@@ -13,9 +24,10 @@ single frame processing \cite{c1}\cite{c10}\cite{c11}. In the search for
 consistency in superpixel labelling through video, some authors have proposed different 
 techniques, which go from simple extension to supervoxels\cite{c9}\cite{c11},
 to more complicated approaches \cite{c8}. These approaches, nonetheless, usually require a 
-global processing and knowledge of all (or several of) the video frames beforehand. 
+global processing and knowledge of all (or several of) the video frames beforehand, which would 
+affect the desired online characteristic of the target application, in this case, of the object flow.
 
-As a preprocessing step in the object flow pipeline, we propose a superpixel matching technique which assumes a flow-like behaviour in the image 
+Thus, as a prerequisite concept in the object flow pipeline, we propose a superpixel matching technique which assumes a flow-like behaviour in the image 
 sequences (natural video), which can be used to track superpixels. 
 Some previous work have been done towards a
 superpixel based image comparison using the Earth Mover's Distance, by taking superpixels 
@@ -37,23 +49,22 @@ smoothness is usually a very strong constraint for the last one.
 The strength of this smoothness prior relies not only in the nature of the problem, but also
 because it gives better cues towards an easier-to-minimize global approach.
 
-The objective of the superpixel flow is therefore to find the best labeling $l$ for every superpixel $p$
-(with $l_p \in {0,1,...N-1}$) between a pair of frames ($I_{0}$,$I_{1}$), but holding a flow-like behavior.
+The objective of the superpixel flow is therefore to find the best labelling $l$ for every superpixel $p$ (with $l_p \in {0,1,...M-1}$, between a pair of frames ($I_{0}$,$I_{1}$), but holding a flow-like behaviour. $M$ is the number of superpixels in the second frame.
 
-Thus, the superpixelization should maintain certain size homegenity within a single frame. Some super
+Thus, the superpixelization should maintain certain size homogeneity within a single frame. Some super
 pixel techniques can cope with this requirement \cite{c9}\cite{c10}. For the experiments presented 
-in this work, the SLIC method \cite{c9} is prefered, because it usually gives
-good results in terms of homegenity of the superpixelization across the sequence. 
+in this work, the SLIC method \cite{c9} is preferred, because it usually gives
+good results in terms of homogeneity of the superpixelization across the sequence. 
 The proposed steps to solve the propagation problem assume this requirement is hold. 
 For other kind of the techniques, other approaches should be followed.
 
 %\addtolength{\textheight}{-3cm}   % This command serves to balance the column lengths
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Energy Formulation}
+\section{Energy Formulation}
 
 Inspired by a large number of optical flow and stereo techniques \cite{c7}\cite{c12}\cite{c13}, 
-the superpixel flow can be modeled with a pairwise Markov Random Field in the super pixel space $\Gamma$. If
+the superpixel flow can be modelled with a pairwise Markov Random Field in the super pixel space $\Gamma$. If
 the matching is performed with MAP inference, its posterior probability is: 
 
 \begin{equation}
@@ -65,7 +76,8 @@ P(l|I_0,I_1) = \displaystyle \prod_{p \in \Gamma} \mathrm{e}^{-D_p(l_p;I_0,I_1)}
 With $l$ the set of labels of the super pixels in $I_0$,
 that match with those in $I_1$.
 $ \mathcal{N}_r $ is a neighbourhood of the
-superpixel $p$ containing all the superpixels which are inside a circle of radius $r$ with center in $p_c$. This neighbourhood defines its adjacency. 
+superpixel $p$ containing all the superpixels which are inside a circle of radius $r$ with center in $p_c$. This neighbourhood defines its adjacency, and its not of a constant size, like in the pixel 
+equivalent of these kind of equations, where a 4 or 8 neighbourhood is defined.  
 Given this posterior probability, the equivalent energy function can be directly obtained
 by extracting the negative logarithm of the posterior,
 
@@ -115,7 +127,7 @@ belong to different objects within the image, the term $\lambda$ allows them to 
 matches that do not hold the smoothness prior with the same strength. 
 It has to be noted that the proposed energy function is highly non-convex.
 
-\subsection{Energy Minimization}
+\section{Energy Minimization}
 
 A fair amount of work has been dedicated to discrete optimization techniques in computer vision,
 leading to well-defined and widely tested approaches to solve pairwise MRF\cite{c3}\cite{c4}.
@@ -139,14 +151,6 @@ matching would be the most similar one in terms of color, shape, or the spatial 
 neighbourhood in the second frame and select random pairs from every neighbourhood of every superpixel
 in the first frame. This is suitable for problems where the images are extracted from the same video
 sequence. 
-In this case, the proposed approach is, in order to mantain generality, to enforce a proximity prior and to extract possible matches from 
-a circular neighborhoud in the subsequent frame centered on the current superpixel centroid. The radius of this neighborhoud is not necesarily 
-of the same value as the radius $r$, and it accounts for the maximum possible matching distance between superpixels.
-To speed-up the minimization procedure, the QBPO properties can be exploited. For instance, the fusion of the
-proposed solutions is always guaranteed to be of lowest or equal energy than the two proposals. Thus, it does not matter the order in which the solutions are merged. 
-One could, then, split the fusion procedure in several cores and build a hierarchical chain as proposals are subsequently fused. The idea of this implementation is compatible with 
-the modern tendency to move the algorithms to the GPU level.
-
 
    \begin{figure}[thpb]
       \centering
@@ -154,17 +158,28 @@ the modern tendency to move the algorithms to the GPU level.
       \caption{The yellow lines show selected superpixel
 		matching between pairs of consecutive frames in a video
 		with the proposed method. The video frames go from right
-		to left.}
+		to left. The images are a close-up of the actual frame, to 
+		appreciate the details.}
       \label{figurelabel_matches}
    \end{figure}
 
-\subsection{Matching Results}
+In this case, the proposed approach is, in order to maintain generality, to enforce a proximity prior and to extract possible matches from 
+a circular neighbourhood in the subsequent frame centred on the current superpixel centroid. The radius of this neighbourhood is not necessarily 
+of the same value as the radius $r$, and it accounts for the maximum possible matching distance between superpixels. Thus, this maximum search distance becomes a parameter to control the maximum 
+amount of displacement of the superpixels. There is a direct relation between the value of this 
+parameter and the processing time.
+To speed-up the minimization procedure, the QBPO properties can be exploited. For instance, the fusion of the
+proposed solutions is always guaranteed to be of lowest or equal energy than the two proposals. Thus, it does not matter the order in which the solutions are merged. 
+One could, then, split the fusion procedure in several cores and build a hierarchical chain as proposals are subsequently fused. The idea of this implementation is compatible with 
+the modern tendency to move the algorithms to the GPU level.
+
+\section{Matching Results}
 
    \begin{figure}[thpb]
       \centering
-      \includegraphics[width=0.70\textwidth]{../images/matches_snowshoes.png}
-      \caption{The yellow lines show selected superpixel
-		matching between a pair of distant frames in the Snow Shoes sequence.}
+      \includegraphics[width=0.8\textwidth]{../images/matches_snowshoes2.png}
+      \caption{The coloured lines show selected superpixel
+		matchings between a pair of distant frames in the Snow Shoes sequence.}
       \label{figurelabel_matchessnow}
    \end{figure}   
 	\setlength{\belowcaptionskip}{-10pt}

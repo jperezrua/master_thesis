@@ -11,7 +11,7 @@ Extensions to this method, like the GrabCut algorithm \cite{c14}, work by implem
 minimization to separate regions according to appearance information from a loosely drawn rectangle around the object, and small user-interaction-based hints. 
 Given the tracker state for every frame, the minimization procedure of the methods in \cite{c18} and \cite{c14} could be extended to video. However, 
 a lot of details in the segmentation contour may be lose if no fine hints are given.
-These hints usually depend on on-the-fly supervised methods. However, this need could be minimized in videos, given the extra information that offers the flow of the sequence.
+These hints usually depend on on-the-fly supervised methods. However, this need could be minimized in videos, given the extra information that offers the dynamics of the sequence.
 Some authors had approached the graph-cut based segmentation techniques in sequential
 videos to propagate a consistent segmentation \cite{c15}. However, some more work on reducing user interaction given the extra flow-like information
 that video sequences offer is still needed.
@@ -118,7 +118,8 @@ segmentation, some results are shown in the Fig. \ref{figurelabel_comp}. For the
 allowed in the graph-cut based methods. The top row frames (Fig. \ref{figurelabel_comp}) were initialized only with the tracker, 
 and the bottom row was initialized with the superpixel tracking technique. 
 Observe that in general, the contour delineated is usually better in terms of precision and
-stability for the later one.
+stability for the later one. Complete segmentation results can be observed in the Appendix \ref{app:seg}.
+
    \begin{figure}[thp]
       \centering
       \includegraphics[width=1.0\textwidth]{../images/compareSegm.png}
