@@ -3,13 +3,14 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Object Flow Pipeline} \label{chap:core}
-
+Following the definition of the problem given in the Section \ref{sec:definition}, a 
+ system for computing the object flow have been devised. 
+ This system is composed of three  main steps, which will be explained in short.  
+ 
 \section{Algorithm description}
 \label{sec:desc}
 
-Following the definition of the problem given in the Section \ref{sec:definition}, a 
- system for computing the object flow have devised.
-The Fig. \ref{figurelabel_sys} shows a simplified block diagram of the proposed system. It is important to recognize the two main 
+Fig. \ref{figurelabel_sys} shows a simplified block diagram of the proposed system. It is important to recognize the two main 
 components of our work-flow: object tracking and segmentation, and pixel-wise flow computation on the pixels of interest.  The scheme is completed by feeding back the flow 
 information to improve the tracker as depicted in the figure. For instance, one can make the most of dense displacement vectors to refine the motion of the target, and 
 the segmentation information can be used to improve the sampling process of the learning stage in several trackers by detection methods \cite{c22}. Thus, 

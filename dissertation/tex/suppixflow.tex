@@ -150,20 +150,64 @@ For instance, for a given superpixel in the initial frame, the corresponding
 matching would be the most similar one in terms of color, shape, or the spatial distance. More candidate solutions can be added by defining a
 neighbourhood in the second frame and select random pairs from every neighbourhood of every superpixel
 in the first frame. This is suitable for problems where the images are extracted from the same video
-sequence. 
+sequence. This algorithmic process is presented more precisely in the Algorithm \ref{algo2}, where it 
+can be seen that for every iteration, a single binary QBPO is optimized, and successively 
+merged onto a final solution ($winner$). These solutions are extracted by selecting 
+radial neighbourhood superpixels ($radius\_r$) in the frame $A$, to match with 
+superpixels in a radial neighbourhood ($radius\_p$) in the frame $B$.
 
-   \begin{figure}[thpb]
-      \centering
-      \includegraphics[width=1.00\textwidth]{../images/matches.png}
-      \caption{The yellow lines show selected superpixel
-		matching between pairs of consecutive frames in a video
-		with the proposed method. The video frames go from right
-		to left. The images are a close-up of the actual frame, to 
-		appreciate the details.}
-      \label{figurelabel_matches}
-   \end{figure}
+\begin{algorithm}[thpb]
+\caption{Superpixel flow minimization algorithm}
+\label{algo2}
+\begin{algorithmic}
+\REQUIRE list: $superpixelsA, superpixelsB$, float: $radius\_r, radius\_p$
 
-In this case, the proposed approach is, in order to maintain generality, to enforce a proximity prior and to extract possible matches from 
+graph: $graph$
+vector: $option, winner$
+
+\COMMENT{ Initialize winner labels }
+\STATE $winner[p] = q | argmin( hellingerDistance(p, q) )$
+	
+\COMMENT{ Build unary terms }
+\FORALL{$n iterations$}
+	\STATE $graph.restart()$
+	
+	\FORALL{$p \in superpixelsA$}
+		\FORALL{$q \in superpixelsB$}
+	
+    		\STATE $distance = hellingerDistance(p, q)$
+    		\STATE $graph.addUnaryTerm(p, q, distance)$
+
+		\ENDFOR
+	\ENDFOR
+
+	\FORALL{$p \in superpixelsA$}
+		\STATE $p_c = centroid(p)$
+		\FORALL{$q \in superpixelsA | distance(p_c,q_c)<radius\_r$}
+
+		\STATE $option[q] = selectRandomSuppixInB( q_c, radius\_p )$
+		
+		\STATE $d00 = robustDistance(winner[p], winner[q])$
+		\STATE $d01 = robustDistance(winner[p], option[q])$
+		\STATE $d10 = robustDistance(option[p], winner[q])$
+		\STATE $d11 = robustDistance(option[p], option[q])$
+								
+		\STATE $graph.AddPairWiseTerm(p,q,d00,d0,d10,d11)$
+		\STATE $graph.solveQPBO()$
+		\ENDFOR
+	\ENDFOR
+	
+	\COMMENT{ Update winner labels }
+	\FORALL{$p \in superpixelsA$}
+		\STATE $winner[p] = graph.getLabel(p)$
+	\ENDFOR
+\ENDFOR
+
+\RETURN $winner$
+\end{algorithmic}
+\end{algorithm}
+
+In this case, the proposed approach is, to enforce a proximity prior and to extract possible matches from 
 a circular neighbourhood in the subsequent frame centred on the current superpixel centroid. The radius of this neighbourhood is not necessarily 
 of the same value as the radius $r$, and it accounts for the maximum possible matching distance between superpixels. Thus, this maximum search distance becomes a parameter to control the maximum 
 amount of displacement of the superpixels. There is a direct relation between the value of this 
@@ -177,23 +221,32 @@ the modern tendency to move the algorithms to the GPU level.
 
    \begin{figure}[thpb]
       \centering
-      \includegraphics[width=0.8\textwidth]{../images/matches_snowshoes2.png}
-      \caption{The coloured lines show selected superpixel
-		matchings between a pair of distant frames in the Snow Shoes sequence.}
-      \label{figurelabel_matchessnow}
-   \end{figure}   
-	\setlength{\belowcaptionskip}{-10pt}
+      \includegraphics[width=1.00\textwidth]{../images/matches.png}
+      \caption{The yellow lines show selected superpixel
+		matching between pairs of consecutive frames in a video
+		with the proposed method. The video frames go from right
+		to left. The images are a close-up of the actual frame, to 
+		appreciate the details.}
+      \label{figurelabel_matches}
+   \end{figure}
 	
 The Fig. \ref{figurelabel_matches} shows some examples of superpixel matching between subsequent frames with the presented method. 
 It can be seen that the matching performs well even in difficult cases, like the hands in the first column ({\it yunakim long2} sequence). It has to be noted
 as well that even in superpixels where there is a lack of texture, there is correct matching. This seems to be
 the effect of enforcing the regularization between superpixels that are close, but are also similar to
-each other.
- 
-Moreover, unlike most of the optical flow methods, superpixel flow extends 
+each other. Moreover, unlike most of the optical flow methods, superpixel flow extends 
  naturally for more distant frames. 
 The Fig. \ref{figurelabel_matchessnow} shows
  results for large separations between frames, without tweaking or adjusting any parameters. 
 For this case, however, the matches in the texture-less part of the scene
  are mostly invalids. Though this is expected because of the aperture problem and
  heavy occlusions, thus, the matching in this region lacks of meaning.
+
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=0.7\textwidth]{../images/matches_snowshoes2.png}
+      \caption{The coloured lines show selected superpixel
+		matchings between a pair of distant frames in the Snow Shoes sequence.}
+      \label{figurelabel_matchessnow}
+   \end{figure}   
+	\setlength{\belowcaptionskip}{-10pt}

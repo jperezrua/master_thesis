@@ -14,22 +14,22 @@
 \contentsline {section}{\numberline {3.1}Problem definition}{14}
 \contentsline {section}{\numberline {3.2}Energy Formulation}{15}
 \contentsline {section}{\numberline {3.3}Energy Minimization}{17}
-\contentsline {section}{\numberline {3.4}Matching Results}{18}
-\contentsline {chapter}{\numberline {4}Object Flow Pipeline}{19}
-\contentsline {section}{\numberline {4.1}Algorithm description}{19}
-\contentsline {section}{\numberline {4.2}Background regions tracking and segmentation}{20}
-\contentsline {subsection}{\numberline {4.2.1}Segmentation results}{22}
-\contentsline {section}{\numberline {4.3}Flow estimation}{23}
-\contentsline {section}{\numberline {4.4}Feedback for tracking methods}{29}
-\contentsline {chapter}{\numberline {5}Implementation Details and Evaluation}{32}
-\contentsline {section}{\numberline {5.1}Experiments}{32}
-\contentsline {section}{\numberline {5.2}Implementation details}{34}
-\contentsline {chapter}{\numberline {6}Applications}{38}
-\contentsline {section}{\numberline {6.1}Video editing}{38}
-\contentsline {section}{\numberline {6.2}Structure from motion}{38}
-\contentsline {chapter}{\numberline {7}Conclusions}{42}
-\contentsline {section}{\numberline {7.1}Discussion}{42}
-\contentsline {section}{\numberline {7.2}Final remarks}{43}
-\contentsline {chapter}{\numberline {A}UML Diagram}{45}
-\contentsline {chapter}{\numberline {B}Segmentation in Video}{46}
-\contentsline {chapter}{\numberline {Bibliography\hspace {-96pt}}}{51}
+\contentsline {section}{\numberline {3.4}Matching Results}{19}
+\contentsline {chapter}{\numberline {4}Object Flow Pipeline}{20}
+\contentsline {section}{\numberline {4.1}Algorithm description}{20}
+\contentsline {section}{\numberline {4.2}Background regions tracking and segmentation}{21}
+\contentsline {subsection}{\numberline {4.2.1}Segmentation results}{24}
+\contentsline {section}{\numberline {4.3}Flow estimation}{27}
+\contentsline {section}{\numberline {4.4}Feedback for tracking methods}{30}
+\contentsline {chapter}{\numberline {5}Implementation Details and Evaluation}{33}
+\contentsline {section}{\numberline {5.1}Experiments}{33}
+\contentsline {section}{\numberline {5.2}Implementation details}{35}
+\contentsline {chapter}{\numberline {6}Applications}{39}
+\contentsline {section}{\numberline {6.1}Video editing}{39}
+\contentsline {section}{\numberline {6.2}Structure from motion}{39}
+\contentsline {chapter}{\numberline {7}Conclusions}{43}
+\contentsline {section}{\numberline {7.1}Discussion}{43}
+\contentsline {section}{\numberline {7.2}Final remarks}{44}
+\contentsline {chapter}{\numberline {A}UML Diagram}{46}
+\contentsline {chapter}{\numberline {B}Segmentation in Video}{47}
+\contentsline {chapter}{\numberline {Bibliography\hspace {-96pt}}}{52}
