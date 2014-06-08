@@ -87,11 +87,22 @@ As it has been demonstrated that the object flow
 increases accuracy of the point trajectories estimation, it can be connected to a {\it SfM} 
 pipeline as point matching method, not only as camera motion direct estimator. Some results can be appreciated in Figs. \ref{sfm2} and \ref{sfm3}. These results are generated 
 by using the Changchang Wu's public tools based on his work on Linear-Time Incremental Structure From Motion \cite{c42} and sets of matches generated 
-with the object flow between pairs of frames.
+with the object flow between pairs of frames. Fig. \ref{sfm4} shows the results of the reconstruction by extracting sift features between frames (not only consecutive pairs). It can be 
+appreciated, by analyzing  Fig. \ref{sfm3} and Fig. \ref{sfm4}, that the object flow matches, being of dense nature, can be used to obtain a more dense structure of the interest object. 
+On the other hand, the Sift matches between pairs of frames provide a less dense reconstruction if only the interest object is taken into account. However, the Sift matches offer a global 
+structure, by not taking into account only matches inside the interest region, and some elements of the environment are also reconstructed, including a  better reconstruction of the shoulders. 
+It is worth pointing out, then, that both kind of matches offer advantages, and the feature election becomes a matter of the specific needs of the application. 
    
    \begin{figure}[tpbh]
       \centering
       \includegraphics[width=0.95\textwidth]{../images/SFM3_1.png}
       \caption{ SFM based on the object flow matches in the JuanFace dataset. Top: views of the computed structure. Bottom: Used frames. }
       \label{sfm3}
+   \end{figure}
+
+   \begin{figure}[tpbh]
+      \centering
+      \includegraphics[width=0.95\textwidth]{../images/SFM3_2.png}
+      \caption{ SFM based on the Sift matches between frames. Top: views of the computed structure. Bottom: Used frames. }
+      \label{sfm4}
    \end{figure}

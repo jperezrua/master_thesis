@@ -1,87 +1,81 @@
 \relax 
+\citation{c16,c17}
+\citation{c20,c22}
+\citation{c16,c23,c24}
+\citation{c25}
 \citation{c16}
-\citation{c17}
-\citation{c22}
-\citation{c22}
+\citation{c16}
 \citation{c23}
 \@writefile{toc}{\contentsline {section}{\numberline {I}Introduction}{1}}
 \newlabel{sec:introduction}{{I}{1}}
-\@writefile{toc}{\contentsline {section}{\numberline {II}Algorithm description}{1}}
+\@writefile{toc}{\contentsline {section}{\numberline {II}The object flow estimation pipeline}{1}}
 \newlabel{sec:desc}{{II}{1}}
+\citation{c14,c18}
+\citation{c9,c10}
 \citation{c9}
-\citation{c10}
-\citation{c9}
-\citation{c7}
-\citation{c12}
-\citation{c13}
-\citation{c7}
-\citation{c5}
-\citation{c3}
-\citation{c4}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Block diagram of the proposed pipeline.}}{2}}
+\citation{c7,c12,c13}
+\citation{c5,c7}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Block diagram of the object flow pipeline.}}{2}}
 \newlabel{figurelabel_sys}{{1}{2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {II-A}Superpixel flow}{2}}
-\newlabel{sec:suppix}{{II-A}{2}}
+\newlabel{sec:segm}{{II}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Example image of points entering a tracking region (green) due to object motion in a video sequence.}}{2}}
+\newlabel{figurelabel_entering}{{2}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Background segments automatic labeling and propagation, the flow goes from left to right. The superpixels that are outside the tracker window (yellow) are labeled as background (green) in the first frame. These labels are propagated when the sequence runs.}}{2}}
+\newlabel{figurelabel_spflow}{{3}{2}}
+\newlabel{sec:suppix}{{II}{2}}
 \newlabel{eq_energy}{{1}{2}}
-\newlabel{eq_Dp}{{2}{2}}
-\newlabel{eq_Spq}{{3}{2}}
-\citation{c18}
-\citation{c15}
+\citation{c3,c4}
+\citation{c7}
 \citation{c18}
 \citation{c19}
 \citation{c17}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The yellow lines show selected superpixel matching between a pair of distant frames in the Snow Shoes sequence.}}{3}}
-\newlabel{figurelabel_matchessnow}{{2}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {II-B}Background regions tracking for object segmentation}{3}}
-\newlabel{sec:segm}{{II-B}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Example image of points entering a tracking region (green) due to object motion in a video sequence.}}{3}}
-\newlabel{figurelabel_entering}{{3}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Background segments automatic labeling and propagation, the flow goes from left to right.}}{3}}
-\newlabel{figurelabel_spflow}{{4}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {II-C}Segmentation results}{3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {II-D}Flow estimation}{3}}
-\newlabel{sec:core}{{II-D}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The yellow lines show selected superpixel matching between pairs of images in several datasets.}}{3}}
+\newlabel{figurelabel_matchessnow}{{4}{3}}
+\newlabel{eq_Dp}{{2}{3}}
+\newlabel{eq_Spq}{{3}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Segmentation through the sequence “Walking Couple” (Yellow contour) initialized in the man's head. The yellow box correspond to the tracker output. The labeled background superpixel are not shown for clarity.}}{3}}
+\newlabel{figurelabel_walking}{{5}{3}}
 \citation{c17}
 \citation{c17}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Segmentation through the sequence “Walking Couple” (Yellow contour) initialized in the man’s head. The yellow box correspond to the tracker output. The labeled background superpixel are not shown for clarity.}}{4}}
-\newlabel{figurelabel_walking}{{5}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Face segmentation in the “Amelie Retro” and the “Snow shoes” sequences in three different frames. For each group, the Top Row: One-iteration window-based graph-cuts; and the Bottom Row: One-iteration graph-cuts initialized with superpixel tracking.}}{4}}
-\newlabel{figurelabel_comp}{{6}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Object flow with the color code of \cite  {c17} (bottom) for frames in the Puppy sequence (up). }}{4}}
-\newlabel{of}{{7}{4}}
 \citation{c21}
 \citation{c20}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Face segmentation in the Amelia Retro and the Snow shoes sequences in three different frames. For each group, the Top Row: One-iteration grab-cut initialized with tracker window; and the Bottom Row: One-iteration grab-cut initialized with the background regions tracking.}}{4}}
+\newlabel{figurelabel_comp}{{6}{4}}
+\newlabel{sec:core}{{II}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Object flow with the color code of \cite  {c17} (bottom) for frames in the Puppy sequence (up). }}{4}}
+\newlabel{of}{{7}{4}}
+\@writefile{toc}{\contentsline {section}{\numberline {III}Experimental results}{4}}
 \citation{c20}
-\@writefile{toc}{\contentsline {section}{\numberline {III}Experimental results}{5}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Extrapolation results from integrated flow in 4 sequences. In descending order: Amelia Retro, Boy, Walking, Puppy. From Left to Right: Annotated object, Backward object flow, Backward optical flow, Forward object flow, Backward optical flow.}}{5}}
 \newlabel{sample}{{8}{5}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces PSNR graphs for extrapolated images using Object flow and the Simple Optical Flow for 4 sequences. In descendent order: Puppy Seq.; Amelie Retro Seq.; Boy Seq.; Walking Seq.}}{5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {III-A}Object flow for video editing}{5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces PSNR graphs for extrapolated images using Object flow and the Simple Optical Flow for 4 sequences. In descending order: Puppy Seq.; Amelie Retro Seq.; Boy Seq.; Walking Seq.}}{5}}
 \newlabel{of_res}{{9}{5}}
-\@writefile{toc}{\contentsline {section}{\numberline {IV}Conclusions}{5}}
 \bibstyle{splncs}
-\bibcite{c1}{1}
-\bibcite{c2}{2}
-\bibcite{c3}{3}
-\bibcite{c4}{4}
-\bibcite{c5}{5}
-\bibcite{c6}{6}
-\bibcite{c7}{7}
-\bibcite{c8}{8}
-\bibcite{c9}{9}
-\bibcite{c10}{10}
-\bibcite{c11}{11}
-\bibcite{c12}{12}
-\bibcite{c13}{13}
-\bibcite{c14}{14}
-\bibcite{c15}{15}
-\bibcite{c16}{16}
-\bibcite{c17}{17}
+\bibcite{c12}{1}
+\bibcite{c24}{2}
+\bibcite{c5}{3}
+\bibcite{c22}{4}
+\bibcite{c14}{5}
+\bibcite{c3}{6}
+\bibcite{c4}{7}
+\bibcite{c10}{8}
+\bibcite{c25}{9}
+\bibcite{c13}{10}
+\bibcite{c21}{11}
+\bibcite{c9}{12}
+\bibcite{c17}{13}
+\bibcite{c23}{14}
+\bibcite{c20}{15}
+\bibcite{c7}{16}
+\bibcite{c19}{17}
 \bibcite{c18}{18}
-\bibcite{c19}{19}
-\bibcite{c20}{20}
-\bibcite{c21}{21}
+\bibcite{c16}{19}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Top: Comparison between extrapolated objects using several methods: Groundtruth object, Object flow, TVL1, Block Matching, Brox, Farneback and Simple Flow. Bottom: First and current frame. The extrapolation is performed using backward accumulation of the flow.}}{6}}
 \newlabel{compare2}{{10}{6}}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces PSNR graphs for extrapolated images using Object flow and the different Optical Flow techniques for the Amelia sequence. }}{6}}
 \newlabel{of_res2}{{11}{6}}
+\@writefile{toc}{\contentsline {section}{\numberline {IV}Conclusions}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces An application of the object flow for augmented reality/video edition. }}{6}}
+\newlabel{of_app}{{12}{6}}
 \@writefile{toc}{\contentsline {section}{References}{6}}

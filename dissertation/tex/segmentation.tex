@@ -40,7 +40,7 @@ The red window is used to save computational power by avoiding to track points t
 
 
 This idea can be applied in several levels in a video sequence. The first method to develop such an algorithm is to do it in the pixel level. The Fig. \ref{pointtr} shows some results by applying 
-a dense optical flow technique (Fast Block Matching) in an external window. However, as it can appreciated, the results are rather sparse and after some time, the regularization of the 
+a dense optical flow technique (Fast Block Matching \cite{c50}) in an external window. However, as it can appreciated, the results are rather sparse and after some time, the regularization of the 
 optical flow method leads to some of the points being wrongly tracked inside the object boundaries. Both problems, sparsity and tracking errors due to drift and regularization, can be 
 overcome by implementing the same idea, but in the superpixel level.
 To save computational power, the tracked superpixels are 

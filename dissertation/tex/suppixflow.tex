@@ -47,7 +47,7 @@ If the size compactness of the superpixels is maintained,  it actually seems to
 share some of the properties of the optical flow problem, with the difference that the
 smoothness is usually a very strong constraint for the last one. 
 The strength of this smoothness prior relies not only in the nature of the problem, but also
-because it gives better cues towards an easier-to-minimize global approach.
+because it gives better cues towards a solvable system (The color constancy assumption alone is not enough to obtain a determined system).
 
 The objective of the superpixel flow is therefore to find the best labelling $l$ for every superpixel $p$ (with $l_p \in {0,1,...M-1}$, between a pair of frames ($I_{0}$,$I_{1}$), but holding a flow-like behaviour. $M$ is the number of superpixels in the second frame.
 
@@ -95,29 +95,25 @@ of similar (or somehow homogeneous) pixels, an adequate appearance based feature
 color histogram with $N$ bins. So $D$ can be written more precisely as the Hellinger distance between the histograms:
 
 \begin{equation}
-D_p(l_p;I_0,I_1) = \sqrt{ 1 - \frac{1}{\sqrt{\bar{h}(p)\bar{h}(p')N^2} } \sum_{i}\sqrt{h_{i}(p)h_{i}(p')} }
+D_p(l_p;I_0,I_1) = \sqrt{ 1 - \frac{1}{\sqrt{\bar{h}(p)\bar{h}(p')N^2} } \sum_{i}\sqrt{h_{i}(p)h_{i}(p')} },
 \label{eq_Dp}
 \end{equation}
 
-Where $h(p)$ and $h(p')$ are the histograms of the superpixel $p$ and its correspondent superpixel in the
+\noindent where $h(p)$ and $h(p')$ are the histograms of the superpixel $p$ and its correspondent superpixel in the
 second frame $I_1$. 
 Note that the low dimensional histogram ($N=2, N=3$) gives certain robustness against noise,
 and slowly changing colors between frames. 
 
 On the other hand, the spatial term is a penalty function for horizontal
 and vertical changes of the vectors that have origin in the centroid of the superpixel of the first frame and
-end in the centroid of the superpixel of the second frame.
+end in the centroid of the superpixel of the second frame, and it can be written as
 
 \begin{equation}
 S_{p,q}(l_p, l_q) = \lambda(p)
-  \sqrt{\frac{|u_{p_c}-u_{q_c}|}{\|p_c-q_c\|}+ \frac{|v_{p_c}-v_{q_c}|}{\|p_c-q_c\|}}
+  \sqrt{\frac{|u_{p_c}-u_{q_c}|}{\|p_c-q_c\|}+ \frac{|v_{p_c}-v_{q_c}|}{\|p_c-q_c\|}},
 \label{eq_Spq}
 \end{equation}
-\begin{center}
- where, $ \lambda(p) = (1 + \rho(h(p),h(q)))^2 $ \\
-\end{center}
-
-In (\ref{eq_Spq}) the operator $\rho$ is the Hellinger distance as used in the
+ where, $ \lambda(p) = (1 + \rho(h(p),h(q)))^2 $, and the operator $\rho$ is the Hellinger distance as used in the
 data term (\ref{eq_Dp}). The histogram distance is nonetheless computed between superpixels $p$ and $q$, 
 which belong to the same neighbourhood. The superpixels centroids are noted as $q_c$ and $p_c$, 
 and $u$ and $v$ are the horizontal and vertical changes between centroids.
@@ -151,7 +147,7 @@ matching would be the most similar one in terms of color, shape, or the spatial 
 neighbourhood in the second frame and select random pairs from every neighbourhood of every superpixel
 in the first frame. This is suitable for problems where the images are extracted from the same video
 sequence. This algorithmic process is presented more precisely in the Algorithm \ref{algo2}, where it 
-can be seen that for every iteration, a single binary QBPO is optimized, and successively 
+can be seen that for every iteration, a single binary QBPO is solved, and successively 
 merged onto a final solution ($winner$). These solutions are extracted by selecting 
 radial neighbourhood superpixels ($radius\_r$) in the frame $A$, to match with 
 superpixels in a radial neighbourhood ($radius\_p$) in the frame $B$.
@@ -244,7 +240,7 @@ For this case, however, the matches in the texture-less part of the scene
 
    \begin{figure}[thpb]
       \centering
-      \includegraphics[width=0.7\textwidth]{../images/matches_snowshoes2.png}
+      \includegraphics[width=0.7\textwidth]{../images/matches_snowshoes.png}
       \caption{The coloured lines show selected superpixel
 		matchings between a pair of distant frames in the Snow Shoes sequence.}
       \label{figurelabel_matchessnow}

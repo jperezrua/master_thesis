@@ -14,6 +14,9 @@
 \usepackage{latexsym,amssymb}
 \usepackage{setspace,cite}
 \usepackage{etoolbox}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb} % define this before the line numbering.
+\usepackage{color}
 
 \overrideIEEEmargins
 % See the \addtolength command later in the file to balance the column lengths
@@ -26,12 +29,7 @@ Object Flow
 \author{
 Juan Manuel Perez Rua, Tomas Crivelli and Patrick Perez% <-this % stops a space
 \thanks{This was supported by Technicolor R\&D}
-\thanks{Juan Manuel Perez Rua  is with Technicolor R\&D,
-        {\tt\small juanmanuel.perezrua@technicolor.com}}%
-\thanks{Tomas Crivelli  is with Technicolor R\&D,
-        {\tt\small tomas.crivelli@technicolor.com}}%
-\thanks{Patrick Perez  is with Technicolor R\&D,
-        {\tt\small patrick.perez@technicolor.com}}%
+\thanks{ \noindent {\tt\small juanmanuel.perezrua@technicolor.com}, {\tt\small tomas.crivelli@technicolor.com}, {\tt\small patrick.perez@technicolor.com} }
 }
 \begin{document}
 
@@ -43,12 +41,10 @@ Juan Manuel Perez Rua, Tomas Crivelli and Patrick Perez% <-this % stops a space
 
 
 %===========================================================
+
 \input{tex/abstract}
 \input{tex/introduction}
 \input{tex/description}
-\input{tex/suppix}
-\input{tex/segmentation}
-\input{tex/objectflow}
 \input{tex/conclusions}
 %===========================================================
 \bibliographystyle{splncs}

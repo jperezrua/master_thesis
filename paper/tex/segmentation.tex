@@ -1,7 +1,8 @@
 %\section{Superpixel propagation for object segmentation in videos}
 % \subsection{Background regions tracking for object segmentation}
 \label{sec:segm}
-Determining the spatial support of the object in a given frame benefits from the output of the tracker. Appearance cues alone, learned inside and outside the tracking window can result in a misleading modeling of the foreground and the background. In contrast, we propose to perform foreground-background segmentation by tracking background pixels surrounding the target, thanks to the tracker output. Thus, the pixels that are initially outside the tracker window, 
+Determining the spatial support of the object in a given frame benefits from the output of the tracker. Appearance cues alone, learned inside and outside the tracking window, can result in a misleading modeling of the foreground and the background. In contrast, we propose to perform foreground-background segmentation by tracking background pixels surrounding the target 
+window obtained from the object tracker. Thus, the pixels that are initially outside the tracker window, 
 are followed through the sequence and as long as they enter the tracked region, they can be safely labeled as background. This idea can be observed in the Fig.  \ref{figurelabel_entering}, 
 where the object window given by the tracker (green) loosely separates the foreground from the background. Points outside the tracker (blue) are labeled as background in previous frames, and as they enter the tracker window (red points), they can be used to improve the modeling  of the foreground and the background. The red window is used to save computational power by avoiding to track points that are too far from the interest object.
 
@@ -23,17 +24,17 @@ where the object window given by the tracker (green) loosely separates the foreg
 \setlength{\belowcaptionskip}{-10pt}
 }
 
-Tracking pixels as independent points, however, carries several problems. First, to track all the background points means to compute the optical flow between the image pair, which can become very inneficient 
-when taking into account large objects. Second, the point tracking techniques causes some drift in the trajectories, which can lead to wrong labelling as background. Finally, the background labelling could be 
+Tracking pixels as independent points, however, carries several problems. First, to track all the background points means to compute the optical flow between the image pair, which can become very inefficient 
+when taking into account large objects. Second, the point tracking techniques causes some drift in the trajectories, which can lead to wrong labeling as background. Finally, the background labeling could be 
 more dense, and less complex if superpixels are tracked instead of pixels.  After several frames, 
-the labeled superpixels will almost completely cover the unwanted areas in a dinamyc scene. We call this process background segments tracking.  Fig. \ref{figurelabel_spflow} shows this idea in a real scenario. From left to right, initially the superpixels with elements outside the bounding box are labeled as background (green), then, as the sequence runs, the labeled superpixels flow inside the window, propagating the background mask. 
-The segmentation is then refined  applying the grab-cut method (\cite{c18}\cite{c15}) guided by the background labeling, which works a an initialization, replacing the usual user interaction.
+the labeled superpixels will almost completely cover the unwanted areas in a dynamic scene. We call this process background segments tracking.  Fig. \ref{figurelabel_spflow} shows this idea in a real scenario. From left to right, initially the superpixels with elements outside the bounding box are labeled as background (green), then, as the sequence runs, the labeled superpixels flow inside the window, propagating the background mask. 
+The segmentation is then refined  applying the grab-cut method \cite{c14,c18} guided by the background labeling, which works a an initialization, replacing the usual user interaction.
 
 \ifcsdef{r@accv_format}{
    \begin{figure}[thpb]
       \centering
       \includegraphics[width=0.95\textwidth]{../images/suppixflow2.png}
-      \caption{Background segments automatic labeling and propagation, the flow goes from left to right. The superpixels that are outside the tracker window (yellow) are labelled as background (green) in the first frame. These labels are propagated 
+      \caption{Background segments automatic labeling and propagation, the flow goes from left to right. The superpixels that are outside the tracker window (yellow) are labeled as background (green) in the first frame. These labels are propagated 
 when the sequence runs.}
       \label{figurelabel_spflow}
    \end{figure}
@@ -41,7 +42,7 @@ when the sequence runs.}
    \begin{figure}[thpb]
       \centering
       \includegraphics[width=0.5\textwidth]{../images/suppixflow2.png}
-      \caption{Background segments automatic labeling and propagation, the flow goes from left to right. The superpixels that are outside the tracker window (yellow) are labelled as background (green) in the first frame. These labels are propagated 
+      \caption{Background segments automatic labeling and propagation, the flow goes from left to right. The superpixels that are outside the tracker window (yellow) are labeled as background (green) in the first frame. These labels are propagated 
 when the sequence runs.}
       \label{figurelabel_spflow}
    \end{figure}
@@ -49,32 +50,31 @@ when the sequence runs.}
 
 \input{tex/suppix}
 
+Fig. \ref{figurelabel_walking} shows segmentation results for an image sequence where the interest object is the head of a person.
+The head tracker and the superpixel flow provide information for better background-foreground separation. The method is tested in the Walking Couple sequence, by allowing only a small amount of iterations in the
+grab-cut segmentation. Observe how the contour in the man's head is correctly delineated when
+another person's head occludes part of it. In this case, the superpixels that belong to the woman's face
+were correctly propagated and thus, labeled as background, despite the similar (skin) color between foreground and background regions.
+
 \ifcsdef{r@accv_format}{
-   \vspace*{-0.2cm}
-   \begin{figure}[thpb]
+   \begin{figure}[t]
       \centering
-      \includegraphics[width=0.775\textwidth]{../images/Sequence2.png}
+      \includegraphics[width=1.0\textwidth]{../images/Sequence.png}
       \caption{Segmentation through the sequence “Walking
-	       Couple” (Yellow contour) initialized in the man’s head. The yellow box correspond to the tracker output.
+	       Couple” (Yellow contour) initialized in the man's head. The yellow box correspond to the tracker output.
 	        The labeled background superpixel are not shown for clarity.}
       \label{figurelabel_walking}
    \end{figure}
 }{
-   \begin{figure}[thpb]
+   \begin{figure}[tpb]
       \centering
       \includegraphics[width=0.5\textwidth]{../images/Sequence.png}
       \caption{Segmentation through the sequence “Walking
-	       Couple” (Yellow contour) initialized in the man’s head. The yellow box correspond to the tracker output.
+	       Couple” (Yellow contour) initialized in the man's head. The yellow box correspond to the tracker output.
 	        The labeled background superpixel are not shown for clarity.}
       \label{figurelabel_walking}
    \end{figure}
 }
-
-Fig. \ref{figurelabel_walking} shows segmentation results for an image sequence where the interest object is the head of a person.
-The head tracker and the superpixel flow provide information for better background-foreground separation. The method is tested in the Walking Couple sequence, by allowing only a small amount of iterations in the
-grab-cut segmentation. Observe how the contour in the man's head is correctly delineated when
-another person's head occludes part of it. In this case, the superpixels that belong to the woman’s face
-were correctly propagated and thus, labeled as background, despite the similar (skin) color between foreground and background regions.
 
 In order to understand the effect of including superpixel propagation in a video sequence for object
 segmentation, some results are shown in the Fig. \ref{figurelabel_comp}. For these experiments only one iteration is
@@ -82,23 +82,22 @@ allowed in the graph-cut based methods. The top row frames (Fig. \ref{figurelabe
 and the bottom row was initialized with the superpixel tracking technique. 
 Observe that in general, the contour delineated is usually better in terms of precision and
 stability for the later one.
-\vspace*{-0.5cm}
 \ifcsdef{r@accv_format}{
-   \begin{figure}[thpb]
+   \begin{figure}[t]
       \centering
       \includegraphics[width=1.0\textwidth]{../images/compareSegm2.png}
       \caption{Face segmentation in the Snow Shoes sequence and T-shirt extraction from 
-	      “Tennis” sequence in several frames. For each
+	      Tennis sequence in several frames. For each
 	       group, the Top Row: One-iteration grab-cut initialized with tracker window;
 	       and the Bottom Row: One-iteration grab-cut initialized with the background regions tracking.}
       \label{figurelabel_comp}
    \end{figure}
 }{
-   \begin{figure}[thpb]
+   \begin{figure}[tpb]
       \centering
       \includegraphics[width=0.5\textwidth]{../images/Compare.png}
-      \caption{Face segmentation in the “Amelia Retro” and the
-	      “Snow shoes” sequences in three different frames. For each
+      \caption{Face segmentation in the Amelia Retro and the
+	      Snow shoes sequences in three different frames. For each
 	       group, the Top Row: One-iteration grab-cut initialized with tracker window;
 	       and the Bottom Row: One-iteration grab-cut initialized with the background regions tracking.}
       \label{figurelabel_comp}

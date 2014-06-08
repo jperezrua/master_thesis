@@ -80,16 +80,19 @@ of structured output spaces (the same that is used in applications like text tra
 
 Optical flow is another traditional problem in computer vision, and it may be argued that its under-determined nature makes it one of the most difficult ones. 
 Several well known databases and benchmarks have been proposed to account for the different intrinsic complications of the problem. The last and larger benchmarking 
-work for this problem may be Baker et al. \cite{c17}, but other useful studies are available \cite{c27}. 
-These works reveal that most of the existing methods establish the problem as the optimization of an energy function that takes into account two terms (Eq. \ref{eq_ener}). The first one, $E_{data}$ 
-measures data consistency over input frames, and $E_{prior}$ which favours flow with certain characteristics, e.g. smoothness in the flow. It seems that one of the major 
-challenges remains to be the best pair of objective function and optimization method. A number of combinations have been proposed \cite{c29}\cite{c30}\cite{c32}. However, 
-totally different approaches had been also proposed, e.g. by using polynomial expansions \cite{c28}.
+work for this problem may be Baker et al. \cite{c17}, but other useful studies are available \cite{c27}. These benchmarks show how the art has improved since the pioneer 
+works of Lucas-Kanade \cite{c31} and Horn \cite{c5}.
+The work presented in \cite{c17} reveals that most of the existing optical flow methods establish the problem as the optimization of an energy function that takes into account two terms, yielding
 
 \begin{equation}
-E_{global} = E_{data} + \lambda E_{prior}
+E_{global} = E_{data} + \lambda E_{prior}.
 \label{eq_ener}
 \end{equation}
+
+ The first term, $E_{data}$ 
+measures data consistency over input frames, and $E_{prior}$ which favours flow with certain characteristics, e.g. smoothness in the flow. It seems that one of the major 
+challenges remains to be the best pair of objective function and optimization method. A number of combinations have been proposed \cite{c29}\cite{c30}\cite{c32}. However, 
+some other authors have proposed totally different approaches to solve the optical flow problem, e.g. by using polynomial expansions \cite{c28}.
 
 According to the update of 2011 of the work in \cite{c17}, the first 15 optical flow methods by interpolation error are shown in the Fig. \ref{of_per}. It has to be noted that the performance in several of the dataset is already very good for the most of these methods.
 
@@ -108,14 +111,16 @@ The main characteristic of this method is its efficient approach, which tries to
 interpolation for excluded zones (Fig. \ref{simple_of_m}). 
 Moreover, the problem is not solved in the usual way by minimizing a variation of (\ref{eq_ener}), but using a simpler likelihood model that 
 follows the constant-color assumption, without including explicitly the pairwise terms that account for smoothing. The smoothness prior it is taken into 
-account, however, by implementation of local filters that uses pixel weighting to take into account pixel proximity ($w_d$) and color similarity ($w_c$), leading to the Eq. \ref{eq_simple}, which tries 
-to find the vector $(u,v)$ that explain the motions in the point $(x_0,y_0)$, but also in its 
-neighbourhood $\mathcal{N}_{0}$.
+account, however, by implementation of local filters that uses pixel weighting to take into account pixel proximity ($w_d$) and color similarity ($w_c$), leading to
 
 \begin{equation}
-E(x_0, y_0, u, v) = \sum_{(x,y) \in \mathcal{N}_{0}} w_{d}w_{c}||  I_{0}(x,y) - I_{1}(x+u,y+v) ||^2
+E(x_0, y_0, u, v) = \sum_{(x,y) \in \mathcal{N}_{0}} w_{d}w_{c}||  I_{0}(x,y) - I_{1}(x+u,y+v) ||^2,
 \label{eq_simple}
 \end{equation}
+
+\noindent  which tries 
+to find the vector $(u,v)$ that explain the motions in the point $(x_0,y_0)$, but also in its 
+neighbourhood $\mathcal{N}_{0}$.
 
    \begin{figure}[tbhp]
       \centering
@@ -157,14 +162,13 @@ have demonstrated to be a powerful tool \cite{c14}\cite{c18}.
       \label{pt_segment}
    \end{figure}
 
-
-The Fig. \ref{pt_segment} shows high accuracy segmentation results when using sparse motion trajectories \cite{c34}. However, to overcome 
+Fig. \ref{pt_segment} shows high accuracy segmentation results when using sparse motion trajectories \cite{c34}. However, to overcome 
 the sparsity of the flow the authors proposed a variational method to densify the output mask. The information propagation is done 
 by presenting the problem as a non-linear diffusion process that takes superpixels into account. It is expected, then, that this 
 method can be precise, but slow.
 In this work we propose to mix single frame graph based segmentation approaches with the idea 
 of background regions tracking. However, the sparsity of point trajectories is 
-overcame by using superpixels. Therefore, instead of tracking points, background regions are tracked via the novel concept of 
+overcome by using superpixels. Therefore, instead of tracking points, background regions are tracked via the novel concept of 
 superpixel flow. 
 We show in future sections how this extra information can be used to complement the
 graph based techniques for an efficient foreground-background segmentation. 
@@ -188,13 +192,13 @@ On the other hand, other authors had used the optical flow constraints to track 
 which is, up to some extent, the inverse problem proposed for the object flow \cite{c37}. Some authors went further in this sense, to create specialized trackers 
 for deformable objects by combining model based tracking with the optical flow constraint \cite{c38}. Even when \cite{c38} is very interesting for video editing 
 tasks, the approach is limited by the availability of the mesh model. In this sense, the object flow proposal is more generic, and thus, more adequate for this kind 
-of applications. Fig. \ref{soa1} shows some results of \cite{c38} for the video edition tasks that can also be approached with the object flow. These results are obtained in 
+of applications. Fig. \ref{soa1} shows some results of \cite{c38} for the video editing tasks that can also be approached with the object flow. These results are obtained in 
 a controlled environment without long range motion.
 
    \begin{figure}[thpb]
       \centering
       \includegraphics[width=0.75\textwidth]{../images/soa_app.png}
-      \caption{  Video edition with the method in  \cite{c38}. }
+      \caption{  Video editing with the method in  \cite{c38}. }
       \label{soa1}
    \end{figure}
 
@@ -203,17 +207,17 @@ In the same line of applications, an interesting work is the Unwrap Mosaics \cit
    \begin{figure}[thpb]
       \centering
       \includegraphics[width=1.00\textwidth]{../images/soa_app2.png}
-      \caption{  Video edition with the method in  \cite{c41}. }
+      \caption{  Video editing with the method in  \cite{c41}. }
       \label{soa2}
    \end{figure}
 
 The Unwrap Mosaics \cite{c41}, is based in a new 
 video representation, which is presented by defining a 2D-2D transformation supported in a segmentation mask (given by hand), and it is used to apply the desired editing in the 
-interest object, and then, given the computed mapping, the edition can be back propagated to the initial sequence. Fig. \ref{soa2} shows the video edition pipeline derived from 
+interest object, and then, given the computed mapping, the edition can be back propagated to the initial sequence. Fig. \ref{soa2} shows the video editing pipeline derived from 
 this method. However, as it relies in precomputed segmentation and point trajectories, the Unwrap Mosaics can be mixed with the Object Flow pipeline to provide a robust and 
 complete video edition framework. 
 
 The object flow pipeline is, then, explained in detail in following sections. Some concepts 
 are introduced first however. For instance, the superpixel flow and its mathematical 
-modelling are deeply exposed in the next section. The proposed segmentation method 
+modeling are deeply exposed in the next section. The proposed segmentation method 
 is also explained later, as part of the object flow pipeline.

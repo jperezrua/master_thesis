@@ -8,10 +8,9 @@ are available when needed as independent bricks.
 This paper presents a framework for combining object tracking 
 techniques with optical flow methods aiming towards a precise 
 motion description for objects in video sequences. 
-Firstly, we introduce a method to extend max-flow min-cut based 
-segmentation techniques to videos, without adding the computational 
-load of performing a graph cut optimization approach for 3-dimensional
-graphs. 
+Firstly, we introduce a method to segment objects in video sequences without 
+adding the computational cost of performing a graph based optimization for 
+3-dimensional graphs. 
 This is done by exploiting the inherent foreground-background 
 separation hints given by object trackers, and the novel concept 
 of superpixel flow. 
@@ -19,9 +18,9 @@ Then, we show that long-motion awareness obtained from object
 tracking, together with a per frame object segmentation can 
 improve the precision of the object motion description in 
 comparison to several optical flow techniques. 
-We may call the proposed approach {\it Object flow} as it offers a 
-dense and semantic aware description of the current motion state 
-of the studied object. 
+We call the proposed approach {\it Object flow} as it offers a 
+dense description of the current motion state 
+of the studied object within its support boundaries. 
 
 
 \end{abstract}

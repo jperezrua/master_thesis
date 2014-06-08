@@ -38,13 +38,21 @@ The main idea behind the object flow is that given the availability of several r
 segmentation method for video, the optical flow computation can be refined by computing it successively between pairs
 of tracked windows. The basic proposal to perform this refinement consist on considering the segmentation limits  as reliable smoothness boundaries. 
 This is, of course, under the assumption that the motion is indeed smooth within the object region. 
-This is assumption is not far from reality in most scenes with an interest object, and it is indeed a better way to determine the limits of the regularization 
+This  assumption is not far from reality in most scenes with an interest object, and it is indeed a better way to determine the limits of the regularization 
 than using the difference between raw pixel values.
 Naturally, as the object tracker is included, is expected that the object flow should be more robust to rapid motions than the
 optical flow. 
 Thus, the full motion is split in two, the long range motion, given by the tracker window, and the precision part, given by the targeted optical flow. The Fig. \ref{of} shows 
-the object flow for a frame in the Puppy sequence. Observe the motion vectors are computed only inside the object of interest, preserving a strong smoothing prior, but 
+the object flow for several frames in the Puppy sequence, and the Fig. \ref{of2} shows the same for the MPI\_S1 sequence. Observe the motion vectors are computed 
+only inside the object of interest, preserving a strong smoothing prior, but 
 also allowing internal variations in the flow. 
+
+   \begin{figure}[thpb]
+      \centering
+      \includegraphics[width=1.0\textwidth]{../images/other_of.png}
+      \caption{ Object flow for several frames of the MPI\_S1 sequence. The flow is shown enlarged for better details.}
+      \label{of2}
+   \end{figure}
 
 As a first approximation to the object flow, the Simple Flow technique \cite{c21} is taken as core base. This is because of its scalability 
 to higher resolutions and because its specialization to the concept of object flow is only natural. The reason behind this is that in the Simple Flow pipeline 
